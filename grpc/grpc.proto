@@ -4,24 +4,48 @@ syntax = "proto3";
 option go_package = "github.com/kajikentaro/gRPC-test/grpc";
 package gRPC_test;
 
-service DBWriter {
-  rpc CreateNewUser (User) returns (User) {}
-  rpc WriteDB (Data) returns (Data) {}
-  rpc ReadDB (User) returns (DataList) {}
+service TopPageClient {
+  rpc fetchAudioList (void) returns (AudioList){}
+  rpc uploadAudio(Audio) returns (void) {}
+
+  rpc deleteTag(TagUuid) returns (Status){}
+  rpc deleteAudio(AudioUuid) returns (Status){}
+}
+
+
+message TagUuid{
+  string uuid = 1;
+}
+message AudioUuid{
+  string uuid = 1;
+}
+
+message Status{
+  int64 status = 1;
+}
+
+
+message AudioList{
+  repeated Audio = 1;
+}
+
+message Audio{
+  AudioUuid uuid = 1;
+  string audioName = 2;
+  string description = 3;
+  string url = 4;
+  repeated Tag tagList = 5; 
+}
+
+message Tag{
+  TagUuid uuid = 1;
+  int64 startMs = 1;
+  int64 endMs = 2;
+  string tagName = 3;
 }
 
 message User{
   int64 id = 1;
   string name = 2;
   string email = 3;
-}
-
-message Data{
-  int64 id = 1;
-  int64 user_id = 2;
-  string value = 3;
-}
-
-message DataList{
-  repeated Data dataList = 1;
 }
