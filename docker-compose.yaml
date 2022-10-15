@@ -1,0 +1,60 @@
+version: '3.2'
+
+services:
+  dev_front:
+    image: node:18-alpine
+    container_name: grpc_dev_front
+    volumes:
+      - type: volume
+        source: share_volume_dev
+        target: /root/app
+    tty: true
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+
+  dev_back:
+    image: golang:1.19.2-alpine
+    hostname: dev_back
+    container_name: grpc_dev_back
+    volumes:
+      - type: volume
+        source: share_volume_dev
+        target: /root/app
+    tty: true
+    ports:
+      - "50051:50051"
+    env_file:
+      - .env
+
+  envoy:
+    build:
+      context: ./envoy
+    container_name: grpc_envoy
+    image: grpcweb/envoy
+    ports:
+      - "8080:8080"
+      - "9901:9901"
+
+  db:
+    container_name: grpc_db
+    hostname: grpc_db
+    build:
+      context: ./db
+    tty: true
+    volumes:
+      - type: bind
+        source: ./db/DATA
+        target: /var/lib/mysql
+    healthcheck:
+      test: "mysql --password=${MYSQL_ROOT_PASSWORD} --execute 'show databases;'"
+      interval: 3s
+      timeout: 30s
+      retries: 10
+      start_period: 0s
+    env_file:
+      - .env
+
+volumes:
+  share_volume_dev:
