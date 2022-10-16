@@ -12,7 +12,6 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/lestrrat-go/jwx/v2/jwa"
 	"github.com/lestrrat-go/jwx/v2/jwt"
@@ -20,22 +19,16 @@ import (
 	"golang.org/x/oauth2/google"
 )
 
-//go:embed prolis_private.pem
+//go:embed resource/prolis_private.pem
 var pemBytes []byte
 var privateKey *rsa.PrivateKey
 
-//go:embed oauth_config.json
+//go:embed resource/oauth_config.json
 var configOAuth []byte
 var conf *oauth2.Config
 
-func getEnv(key string, defaultValue string) string {
-	if val, ok := os.LookupEnv(key); ok {
-		return val
-	}
-	return defaultValue
-}
-
-func init() {
+// main.goから呼ばれるエントリーポイント
+func RunOAuthServer() {
 	// JWT設定
 	block, _ := pem.Decode(pemBytes)
 	var err error
@@ -52,16 +45,11 @@ func init() {
 	if conf.ClientSecret = getEnv("GOOGLE_CLIENT_SECRET", "NONE"); conf.ClientSecret == "NONE" {
 		log.Fatalln("GOOGLE_CLIENT_SECRET環境変数が存在しません。.envが読み込まれているか確認してください")
 	}
-	// TODO これを外すとうまくいかない。なおす
-	// conf.ClientSecret = "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"
 
-	fmt.Println(conf.ClientSecret, getEnv("GOOGLE_CLIENT_SECRET", "NONE"))
-}
-
-func main() {
+	// サーバー起動
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/callback", callback)
-	err := http.ListenAndServe(":3001", nil)
+	err = http.ListenAndServe(":3001", nil)
 	if err != nil {
 		log.Fatalf("httpサーバーの起動に失敗しました %v", err)
 	}
