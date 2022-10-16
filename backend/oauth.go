@@ -89,7 +89,7 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 	state, err := r.Cookie("STATE")
 	if state.Value == "" || err != nil || state.Value != query.Get("state") {
-		log.Fatalf("stateの検証に失敗しました expected: %v actual: %v \n error: ", query.Get("state"), state, err)
+		log.Fatalf("stateの検証に失敗しました expected: %v actual: %v \n error: %v", query.Get("state"), state, err)
 	}
 
 	// トークン取得
@@ -117,7 +117,7 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	token.Set("email", user.Email)
 	signed, err := jwt.Sign(token, jwt.WithKey(jwa.RS256, privateKey))
 	if err != nil {
-		log.Fatalf("error jwt.Sign: %w", err)
+		log.Fatalf("error jwt.Sign: %v", err)
 		return
 	}
 
