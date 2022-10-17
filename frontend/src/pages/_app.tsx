@@ -1,7 +1,7 @@
 import '../../styles/globals.scss'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
-// bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

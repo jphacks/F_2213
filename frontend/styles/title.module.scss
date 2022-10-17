@@ -1,7 +1,53 @@
-.titleLogo {
-
+@font-face {
+  font-family: "title_font";
+  src: url("../public/fonts/bananaslipplus.otf") format("opentype");
 }
 
-#text {
-  color: #fff;
+.text {
+  color: white;
+  text-align: center;
+  .title_logo {
+    color: #aeeebe;
+    text-shadow: 5px 5px 5px #1e2728;
+    font-size: 200px;
+    font-family: "title_font";
+    margin: -40px 0 20px 0;
+  }
+  .carousel {
+    margin: 0 400px;
+  }
+  .login_contents {
+    margin: 30px 400px;
+    border-radius: 10px;
+    background-color: #ffffffb5;
+    .button_title {
+      padding: 20px;
+      font-size: 20px;
+      color: #6a6a6a;
+    }
+    .button_body {
+      margin: 10px 20px 20px 20px;
+      padding: 5px 10px 10px 15px;
+      border: 2px solid#bababa;
+      background-color: #fff;
+      &:hover {
+        border: 2px solid#383838;
+      }
+      .button_massage {
+        padding: 0px 15px;
+        font-size: 14px;
+        color: #6a6a6a;
+      }
+    }
+  }
+
+  .description {
+    font-size: 25px;
+    margin: 20px 0;
+  }
+  .copyright {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
