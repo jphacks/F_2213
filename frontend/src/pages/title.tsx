@@ -11,6 +11,7 @@ export default () => {
     <main>
         <TitleLogo></TitleLogo>
         <p> [テキストを入力] </p>
+        <div className={styles#text}>Copyright Since 2022 Iino, Watatani, kaji. All rights reserved.</div>
     </main>
   );
 };
