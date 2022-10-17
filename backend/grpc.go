@@ -71,12 +71,12 @@ func RunGrpc() {
 	flag.Parse()
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
-		log.Fatalf("failed to listen: %v", err)
+		log.Fatalf("listenに失敗しました: %v", err)
 	}
 	s := grpc.NewServer()
 	pb.RegisterDBWriterServer(s, &server{})
 	log.Printf("grpc server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil {
-		log.Fatalf("failed to serve: %v", err)
+		log.Fatalf("grpcサーバーの起動に失敗しました: %v", err)
 	}
 }

@@ -27,6 +27,8 @@ var privateKey *rsa.PrivateKey
 var configOAuth []byte
 var conf *oauth2.Config
 
+var AFTER_AUTH_REDIRECT_URL string
+
 // main.goから呼ばれるエントリーポイント
 func RunOAuthServer() {
 	// JWT設定
@@ -44,6 +46,12 @@ func RunOAuthServer() {
 	}
 	if conf.ClientSecret = getEnv("GOOGLE_CLIENT_SECRET", "NONE"); conf.ClientSecret == "NONE" {
 		log.Fatalln("GOOGLE_CLIENT_SECRET環境変数が存在しません。.envが読み込まれているか確認してください")
+	}
+
+	// リダイレクトURL取得
+	AFTER_AUTH_REDIRECT_URL := getEnv("NEXT_PUBLIC_AFTER_AUTH_URL", "NONE")
+	if AFTER_AUTH_REDIRECT_URL == "NONE" {
+		log.Fatalln("NEXT_PUBLIC_AFTER_AUTH_URL環境変数が存在しません。.envが読み込まれているか確認してください")
 	}
 
 	// サーバー起動
@@ -90,21 +98,21 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 	state, err := r.Cookie("STATE")
 	if state.Value == "" || err != nil || state.Value != query.Get("state") {
-		log.Fatalf("stateの検証に失敗しました expected: %v actual: %v \n error: %v", query.Get("state"), state, err)
+		log.Printf("stateの検証に失敗しました expected: %v actual: %v \n error: %v", query.Get("state"), state, err)
 	}
 
 	// トークン取得
 	code := query.Get("code")
 	tok, err := conf.Exchange(oauth2.NoContext, code)
 	if err != nil {
-		log.Fatalf("トークンの取得に失敗しました code: %v \n error: %v", code, err)
+		log.Printf("トークンの取得に失敗しました code: %v \n error: %v", code, err)
 	}
 
 	// ユーザー情報取得
 	client := conf.Client(oauth2.NoContext, tok)
 	res, err := client.Get("https://openidconnect.googleapis.com/v1/userinfo")
 	if err != nil {
-		log.Fatal("ユーザー情報の取得に失敗しました", err)
+		log.Print("ユーザー情報の取得に失敗しました", err)
 	}
 	defer res.Body.Close()
 	byteArray, _ := io.ReadAll(res.Body)
@@ -118,7 +126,7 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	token.Set("email", user.Email)
 	signed, err := jwt.Sign(token, jwt.WithKey(jwa.RS256, privateKey))
 	if err != nil {
-		log.Fatalf("error jwt.Sign: %v", err)
+		log.Printf("error jwt.Sign: %v", err)
 		return
 	}
 
@@ -131,10 +139,5 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	}
 	http.SetCookie(w, cookie)
 
-	// リダイレクト
-	redirectUrl := getEnv("NEXT_PUBLIC_AFTER_AUTH_URL", "NONE")
-	if redirectUrl == "NONE" {
-		log.Fatalln("NEXT_PUBLIC_AFTER_AUTH_URL環境変数が存在しません。.envが読み込まれているか確認してください")
-	}
-	http.Redirect(w, r, redirectUrl, 302)
+	http.Redirect(w, r, AFTER_AUTH_REDIRECT_URL, 302)
 }
