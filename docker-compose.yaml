@@ -16,12 +16,23 @@ services:
 
   dev_back:
     image: golang:1.19.2-alpine
-    hostname: dev_back
+    hostname: grpc_back
     container_name: grpc_dev_back
     volumes:
       - type: volume
         source: share_volume_dev
         target: /root/app
+    tty: true
+    ports:
+      - "50051:50051"
+    env_file:
+      - .env
+
+  prod_back:
+    build:
+      context: ./backend
+    hostname: grpc_back
+    container_name: grpc_prod_back
     tty: true
     ports:
       - "50051:50051"

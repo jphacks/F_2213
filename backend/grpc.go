@@ -53,7 +53,7 @@ func connectDB() *sqlx.DB {
 	)
 	db, err := sqlx.Connect("mysql", dataSource)
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatalln("mysql との通信が確保できません", err)
 		os.Exit(1)
 	}
 
