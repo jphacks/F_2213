@@ -1,44 +1,43 @@
-import styles from "../../styles/title.module.scss";
+import Styles from "../../styles/title.module.scss";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "next/image";
 import Button from "react-bootstrap/Button";
 
 const TitleLogo = () => {
   // hoverlogo();
-
-  return <h1 className={styles.title_logo}>プロリス</h1>;
+  return <h1 className={Styles.title_logo}>プロリス</h1>;
 };
 
 const IntroCarousel = () => {
-  const photo_width = 600;
-  const photo_rate = 9 / 16;
+  const photo_width : number = 600;
+  const photo_rate : number = 9 / 16;
 
-  const e1 = "/images/examples/e1.jpg";
-  const e2 = "/images/examples/e2.png";
-  const e3 = "/images/examples/e3.png";
+  const e1 : string = "/images/examples/e1.jpg";
+  const e2 : string = "/images/examples/e2.png";
+  const e3: string = "/images/examples/e3.png";
   const photo_urls = [e1, e2, e3];
   const showList = photo_urls.map((x) => (
     <Carousel.Item interval={2000} key={x}>
       <Image src={x} width={photo_width} height={photo_width * photo_rate} />
     </Carousel.Item>
   ));
-  return <Carousel className={styles.carousel}>{showList}</Carousel>;
+  return <Carousel className={Styles.carousel}>{showList}</Carousel>;
 };
 
 export default () => {
   return (
     <main>
-      <div className={styles.text}>
+      <div className={Styles.text}>
         <TitleLogo></TitleLogo>
-        <div className={styles.description}>
+        <div className={Styles.description}>
           example <br />
           example <br />
         </div>
         <IntroCarousel></IntroCarousel>
-        <div className={styles.login_contents}>
-          <div className={styles.button_title}>ログインする</div>
+        <div className={Styles.login_contents}>
+          <div className={Styles.button_title}>ログインする</div>
 
-          <Button className={styles.button_body} variant="outline-light">
+          <Button className={Styles.button_body} variant="outline-light">
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18">
               <path
                 d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 002.38-5.88c0-.57-.05-.66-.15-1.18z"
@@ -57,10 +56,10 @@ export default () => {
                 fill="#EA4335"
               ></path>
             </svg>
-            <span className={styles.button_massage}>Googleで続ける</span>
+            <span className={Styles.button_massage}>Googleで続ける</span>
           </Button>
         </div>
-        <div className={styles.copyright}>
+        <div className={Styles.copyright}>
           Copyright Since 2022 Iino, Watatani, kaji. All rights reserved.
         </div>
       </div>
