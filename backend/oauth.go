@@ -49,6 +49,7 @@ func RunOAuthServer() {
 	// サーバー起動
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/callback", callback)
+	log.Printf("auth server listening at %v", ":3001")
 	err = http.ListenAndServe(":3001", nil)
 	if err != nil {
 		log.Fatalf("httpサーバーの起動に失敗しました %v", err)
@@ -74,7 +75,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 	// リダイレクト
 	url := conf.AuthCodeURL(state)
-	fmt.Printf("リダイレクトURL: %v\n", url)
+	log.Printf("リダイレクトURL: %v\n", url)
 	http.Redirect(w, r, url, 302)
 }
 

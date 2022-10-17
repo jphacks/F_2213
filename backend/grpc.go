@@ -33,7 +33,7 @@ func (s *server) CreateNewUser(ctx context.Context, in *pb.User) (*pb.User, erro
 	userId, _ := res.LastInsertId()
 	newUser := *in
 	newUser.Id = userId
-	fmt.Println(newUser)
+	log.Println(newUser)
 	return &newUser, nil
 }
 
@@ -67,7 +67,6 @@ var db *sqlx.DB
 // main.goから呼ばれるエントリーポイント
 func RunGrpc() {
 	db = connectDB()
-	fmt.Println(db)
 
 	flag.Parse()
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
@@ -76,7 +75,7 @@ func RunGrpc() {
 	}
 	s := grpc.NewServer()
 	pb.RegisterDBWriterServer(s, &server{})
-	log.Printf("server listening at %v", lis.Addr())
+	log.Printf("grpc server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
