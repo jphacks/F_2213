@@ -7,30 +7,30 @@ service TopPageClient {
   rpc fetchAudioList(Empty) returns (AudioList){}
   rpc uploadAudio(Audio) returns (Status) {}
 
-  rpc deleteTag(TagUuid) returns (Status){}
-  rpc deleteAudio(AudioUuid) returns (Status){}
+  rpc deleteTag(TagId) returns (Status){}
+  rpc deleteAudio(AudioId) returns (Status){}
 }
 
 message Empty{}
 
-message TagUuid{
-  string uuid = 1;
+message TagId{
+  int64 id = 1;
 }
-message AudioUuid{
-  string uuid = 1;
+
+message AudioId{
+  int64 id = 1;
 }
 
 message Status{
   int64 status = 1;
 }
 
-
 message AudioList{
-  repeated Audio AudioList = 1;
+  repeated Audio audioList = 1;
 }
 
 message Audio{
-  AudioUuid uuid = 1;
+  int64 id = 1;
   string audioName = 2;
   string description = 3;
   string url = 4;
@@ -38,14 +38,14 @@ message Audio{
 }
 
 message Tag{
-  TagUuid uuid = 1;
+  int64 id = 1;
   int64 startMs = 2;
   int64 endMs = 3;
   string tagName = 4;
 }
 
 message User{
-  int64 id = 1;
+  string id = 1;
   string name = 2;
   string email = 3;
 }

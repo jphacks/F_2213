@@ -16,39 +16,39 @@ export namespace Empty {
   }
 }
 
-export class TagUuid extends jspb.Message {
-  getUuid(): string;
-  setUuid(value: string): TagUuid;
+export class TagId extends jspb.Message {
+  getId(): number;
+  setId(value: number): TagId;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TagUuid.AsObject;
-  static toObject(includeInstance: boolean, msg: TagUuid): TagUuid.AsObject;
-  static serializeBinaryToWriter(message: TagUuid, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TagUuid;
-  static deserializeBinaryFromReader(message: TagUuid, reader: jspb.BinaryReader): TagUuid;
+  toObject(includeInstance?: boolean): TagId.AsObject;
+  static toObject(includeInstance: boolean, msg: TagId): TagId.AsObject;
+  static serializeBinaryToWriter(message: TagId, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TagId;
+  static deserializeBinaryFromReader(message: TagId, reader: jspb.BinaryReader): TagId;
 }
 
-export namespace TagUuid {
+export namespace TagId {
   export type AsObject = {
-    uuid: string,
+    id: number,
   }
 }
 
-export class AudioUuid extends jspb.Message {
-  getUuid(): string;
-  setUuid(value: string): AudioUuid;
+export class AudioId extends jspb.Message {
+  getId(): number;
+  setId(value: number): AudioId;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AudioUuid.AsObject;
-  static toObject(includeInstance: boolean, msg: AudioUuid): AudioUuid.AsObject;
-  static serializeBinaryToWriter(message: AudioUuid, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AudioUuid;
-  static deserializeBinaryFromReader(message: AudioUuid, reader: jspb.BinaryReader): AudioUuid;
+  toObject(includeInstance?: boolean): AudioId.AsObject;
+  static toObject(includeInstance: boolean, msg: AudioId): AudioId.AsObject;
+  static serializeBinaryToWriter(message: AudioId, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AudioId;
+  static deserializeBinaryFromReader(message: AudioId, reader: jspb.BinaryReader): AudioId;
 }
 
-export namespace AudioUuid {
+export namespace AudioId {
   export type AsObject = {
-    uuid: string,
+    id: number,
   }
 }
 
@@ -91,10 +91,8 @@ export namespace AudioList {
 }
 
 export class Audio extends jspb.Message {
-  getUuid(): AudioUuid | undefined;
-  setUuid(value?: AudioUuid): Audio;
-  hasUuid(): boolean;
-  clearUuid(): Audio;
+  getId(): number;
+  setId(value: number): Audio;
 
   getAudioname(): string;
   setAudioname(value: string): Audio;
@@ -120,7 +118,7 @@ export class Audio extends jspb.Message {
 
 export namespace Audio {
   export type AsObject = {
-    uuid?: AudioUuid.AsObject,
+    id: number,
     audioname: string,
     description: string,
     url: string,
@@ -129,10 +127,8 @@ export namespace Audio {
 }
 
 export class Tag extends jspb.Message {
-  getUuid(): TagUuid | undefined;
-  setUuid(value?: TagUuid): Tag;
-  hasUuid(): boolean;
-  clearUuid(): Tag;
+  getId(): number;
+  setId(value: number): Tag;
 
   getStartms(): number;
   setStartms(value: number): Tag;
@@ -153,7 +149,7 @@ export class Tag extends jspb.Message {
 
 export namespace Tag {
   export type AsObject = {
-    uuid?: TagUuid.AsObject,
+    id: number,
     startms: number,
     endms: number,
     tagname: string,
@@ -161,8 +157,8 @@ export namespace Tag {
 }
 
 export class User extends jspb.Message {
-  getId(): number;
-  setId(value: number): User;
+  getId(): string;
+  setId(value: string): User;
 
   getName(): string;
   setName(value: string): User;
@@ -180,7 +176,7 @@ export class User extends jspb.Message {
 
 export namespace User {
   export type AsObject = {
-    id: number,
+    id: string,
     name: string,
     email: string,
   }

@@ -130,8 +130,6 @@ func connectDB() *sqlx.DB {
 		os.Exit(1)
 	}
 
-	db.Exec("CREATE TABLE user(id int AUTO_INCREMENT PRIMARY KEY, name TEXT, email TEXT)")
-	db.Exec("CREATE TABLE data(id int AUTO_INCREMENT PRIMARY KEY, user_id int, value TEXT)")
 	return db
 }
 

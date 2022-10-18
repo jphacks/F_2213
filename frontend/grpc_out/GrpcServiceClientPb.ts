@@ -128,26 +128,26 @@ export class TopPageClientClient {
   methodDescriptordeleteTag = new grpcWeb.MethodDescriptor(
     '/prolis.TopPageClient/deleteTag',
     grpcWeb.MethodType.UNARY,
-    grpc_pb.TagUuid,
+    grpc_pb.TagId,
     grpc_pb.Status,
-    (request: grpc_pb.TagUuid) => {
+    (request: grpc_pb.TagId) => {
       return request.serializeBinary();
     },
     grpc_pb.Status.deserializeBinary
   );
 
   deleteTag(
-    request: grpc_pb.TagUuid,
+    request: grpc_pb.TagId,
     metadata: grpcWeb.Metadata | null): Promise<grpc_pb.Status>;
 
   deleteTag(
-    request: grpc_pb.TagUuid,
+    request: grpc_pb.TagId,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: grpc_pb.Status) => void): grpcWeb.ClientReadableStream<grpc_pb.Status>;
 
   deleteTag(
-    request: grpc_pb.TagUuid,
+    request: grpc_pb.TagId,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: grpc_pb.Status) => void) {
@@ -171,26 +171,26 @@ export class TopPageClientClient {
   methodDescriptordeleteAudio = new grpcWeb.MethodDescriptor(
     '/prolis.TopPageClient/deleteAudio',
     grpcWeb.MethodType.UNARY,
-    grpc_pb.AudioUuid,
+    grpc_pb.AudioId,
     grpc_pb.Status,
-    (request: grpc_pb.AudioUuid) => {
+    (request: grpc_pb.AudioId) => {
       return request.serializeBinary();
     },
     grpc_pb.Status.deserializeBinary
   );
 
   deleteAudio(
-    request: grpc_pb.AudioUuid,
+    request: grpc_pb.AudioId,
     metadata: grpcWeb.Metadata | null): Promise<grpc_pb.Status>;
 
   deleteAudio(
-    request: grpc_pb.AudioUuid,
+    request: grpc_pb.AudioId,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: grpc_pb.Status) => void): grpcWeb.ClientReadableStream<grpc_pb.Status>;
 
   deleteAudio(
-    request: grpc_pb.AudioUuid,
+    request: grpc_pb.AudioId,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: grpc_pb.Status) => void) {
