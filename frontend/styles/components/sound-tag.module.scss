@@ -1,32 +1,8 @@
 
-
-.memox {
-  margin: auto;
+.audio_bar{
   width: 500px;
-  height: 100px;
+}
 
-  position: relative;
-  margin-bottom: 0.2rem;
-  padding: 1rem;
-
-  background: #fffde7;
-  color: #795548;
-  font-weight: bold;
-  font-size: 23px;
-
-  &:before {
-    position: absolute;
-    right: 1px;
-    bottom: 10px;
-    width: 50%;
-    height: 50%;
-    box-shadow: 0 10px 15px rgb(56, 44, 44);
-    transform: rotate(4deg);
-    z-index: -1;
-    content: '';
-  }
-
-  &.red{
-  border-left: 30px solid #EF9293;
-  }
+.title{
+  margin : auto 0;
 }
