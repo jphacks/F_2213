@@ -25,6 +25,7 @@ services:
     tty: true
     ports:
       - "50051:50051"
+      - "3001:3001"
     env_file:
       - .env
 
@@ -34,8 +35,6 @@ services:
     hostname: grpc_back
     container_name: grpc_prod_back
     tty: true
-    ports:
-      - "50051:50051"
     env_file:
       - .env
     depends_on:

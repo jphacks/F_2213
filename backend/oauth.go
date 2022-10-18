@@ -49,7 +49,7 @@ func RunOAuthServer() {
 	}
 
 	// リダイレクトURL取得
-	AFTER_AUTH_REDIRECT_URL := getEnv("NEXT_PUBLIC_AFTER_AUTH_URL", "NONE")
+	AFTER_AUTH_REDIRECT_URL = getEnv("NEXT_PUBLIC_AFTER_AUTH_URL", "NONE")
 	if AFTER_AUTH_REDIRECT_URL == "NONE" {
 		log.Fatalln("NEXT_PUBLIC_AFTER_AUTH_URL環境変数が存在しません。.envが読み込まれているか確認してください")
 	}
@@ -99,6 +99,7 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	state, err := r.Cookie("STATE")
 	if state.Value == "" || err != nil || state.Value != query.Get("state") {
 		log.Printf("stateの検証に失敗しました expected: %v actual: %v \n error: %v", query.Get("state"), state, err)
+		return
 	}
 
 	// トークン取得
@@ -106,6 +107,7 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	tok, err := conf.Exchange(oauth2.NoContext, code)
 	if err != nil {
 		log.Printf("トークンの取得に失敗しました code: %v \n error: %v", code, err)
+		return
 	}
 
 	// ユーザー情報取得
@@ -113,6 +115,7 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	res, err := client.Get("https://openidconnect.googleapis.com/v1/userinfo")
 	if err != nil {
 		log.Print("ユーザー情報の取得に失敗しました", err)
+		return
 	}
 	defer res.Body.Close()
 	byteArray, _ := io.ReadAll(res.Body)
@@ -140,4 +143,5 @@ func callback(w http.ResponseWriter, r *http.Request) {
 	http.SetCookie(w, cookie)
 
 	http.Redirect(w, r, AFTER_AUTH_REDIRECT_URL, 302)
+	log.Printf("OAuth認証完了。リダイレクト %v\n", AFTER_AUTH_REDIRECT_URL)
 }
