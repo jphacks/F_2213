@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { GreeterClient } from "../../grpc_out/GrpcServiceClientPb";
-import { HelloRequest } from "../../grpc_out/grpc_pb";
+import { GreeterClient } from "../../../grpc_out/GrpcServiceClientPb";
+import { HelloRequest } from "../../../grpc_out/grpc_pb";
 
 type Data = {
   name: string;

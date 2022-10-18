@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { DBWriterClient } from "../grpc_out/GrpcServiceClientPb";
-import { User } from "../grpc_out/grpc_pb";
-import styles from "../styles/Home.module.css";
+import { DBWriterClient } from "../../grpc_out/GrpcServiceClientPb";
+import { User } from "../../grpc_out/grpc_pb";
+import styles from "../../styles/Home.module.scss";
 
 const Home: NextPage = () => {
   const handleClick = async () => {

@@ -1,0 +1,39 @@
+
+/*!
+ * "fontname" is lisenced under the SIL Open Font License 1.1  (http://scripts.sil.org/OFL)
+ * by https://github.com/Kiwi-KawagotoKajiru/Kiwi-Maru
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400&display=swap');
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url("../public/images/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  font-family: 'Kiwi Maru', serif;
+  box-sizing: border-box;
+}
+
+//  @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//     background: black;
+//   }
+// }
