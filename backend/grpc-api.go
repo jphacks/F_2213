@@ -7,6 +7,8 @@ import (
 	"net/http"
 
 	pb "github.com/jphacks/F_2213/grpc"
+	"github.com/lestrrat-go/jwx/v2/jwa"
+	"github.com/lestrrat-go/jwx/v2/jwt"
 	"google.golang.org/grpc/metadata"
 )
 
@@ -41,12 +43,57 @@ func parseJwtTokenFromCookie(ctx context.Context) (string, error) {
 	return cookie.Value, nil
 }
 
-func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioList, error) {
-	cookie, err := parseJwtTokenFromCookie(ctx)
+func jwtToUser(parsedJwt jwt.Token) (*User, error) {
+	rawEmail, ok := parsedJwt.Get("email")
+	if !ok {
+		return nil, errors.New("parse error: email")
+	}
+	rawName, ok := parsedJwt.Get("name")
+	if !ok {
+		return nil, errors.New("parse error: name")
+	}
+	rawId, ok := parsedJwt.Get("id")
+	if !ok {
+		return nil, errors.New("parse error: id")
+	}
+
+	email, ok := rawEmail.(string)
+	if !ok {
+		return nil, errors.New("cast error: email")
+	}
+	name, ok := rawName.(string)
+	if !ok {
+		return nil, errors.New("cast error: name")
+	}
+	id, ok := rawId.(string)
+	if !ok {
+		return nil, errors.New("cast error: id")
+	}
+
+	return &User{id: id, email: email, name: name}, nil
+}
+
+func fetchAuthorizedUser(ctx context.Context) (*User, error) {
+	signedJwt, err := parseJwtTokenFromCookie(ctx)
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(cookie)
+	parsedJwt, err := jwt.Parse([]byte(signedJwt), jwt.WithKey(jwa.RS256, publicKey))
+	if err != nil {
+		return nil, err
+	}
+	user, err := jwtToUser(parsedJwt)
+	if err != nil {
+		return nil, err
+	}
+	return user, nil
+}
 
+func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioList, error) {
+	user, err := fetchAuthorizedUser(ctx)
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println(user)
 	return &pb.AudioList{}, nil
 }

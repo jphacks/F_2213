@@ -37,10 +37,14 @@ TODO
 本番環境で利用する場合は、鍵を作り直してください.
 
 ```
-ssh-keygen -t rsa -m PEM
+cd backend/resource
+rm prolis_*.pem
+ssh-keygen -t rsa -m PEM -f ./prolis_private.pem -P ''
+ssh-keygen -m PEM -e -f prolis_private.pem > prolis_public.pem
+rm prolis_private.pem.pub
 ```
 
 - 公開鍵  
-  `backend/prolis_public.pem`
+  `backend/resource/prolis_public.pem`
 - 秘密鍵
-  `backend/prolis_private.pem`
+  `backend/resource/prolis_private.pem`

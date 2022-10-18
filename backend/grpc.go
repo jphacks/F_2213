@@ -2,6 +2,10 @@ package main
 
 import (
 	"context"
+	"crypto/rsa"
+	"crypto/x509"
+	_ "embed"
+	"encoding/pem"
 	"flag"
 	"fmt"
 	"log"
@@ -14,18 +18,14 @@ import (
 	"google.golang.org/grpc"
 )
 
-var (
-	port = flag.Int("port", 50051, "The server port")
-)
-
 type server struct {
 	pb.UnimplementedTopPageClientServer
 }
 
 type User struct {
-	id    int    `db:"id"`
+	id    string `db:"id"`
 	name  string `db:"name"`
-	email int    `db:"email"`
+	email string `db:"email"`
 }
 
 func (s *server) CreateNewUser(ctx context.Context, in *pb.User) (*pb.User, error) {
@@ -64,15 +64,32 @@ func connectDB() *sqlx.DB {
 
 var db *sqlx.DB
 
+//go:embed resource/prolis_public.pem
+var publicPemBytes []byte
+var publicKey *rsa.PublicKey
+
 // main.goから呼ばれるエントリーポイント
 func RunGrpc() {
+	// dbに接続する
 	db = connectDB()
 
+	// publicキーを読み込む
+	block, _ := pem.Decode(publicPemBytes)
+	var err error
+	publicKey, err = x509.ParsePKCS1PublicKey(block.Bytes)
+	if err != nil {
+		log.Fatalf("failed to parse public key: %s", err)
+	}
+
+	// tcpをlistenする
 	flag.Parse()
+	port := flag.Int("port", 50051, "The server port")
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
 		log.Fatalf("listenに失敗しました: %v", err)
 	}
+
+	// grpcサーバーを登録する
 	s := grpc.NewServer()
 	pb.RegisterTopPageClientServer(s, &server{})
 	log.Printf("grpc server listening at %v", lis.Addr())
