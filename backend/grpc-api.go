@@ -10,45 +10,39 @@ import (
 	"google.golang.org/grpc/metadata"
 )
 
-func parseCookie(ctx context.Context) (string, error) {
-
-	// リクエスト情報のMetadataを取得する
+func parseJwtTokenFromCookie(ctx context.Context) (string, error) {
+	// ctxからメタデータを取得
 	md, ok := metadata.FromIncomingContext(ctx)
 	if !ok {
 		return "", errors.New("メタデータを取得できませｎ")
 	}
 
-	// Cookie情報を取得する
+	// Cookie情報を取得
 	vs := md["cookie"]
 	if len(vs) == 0 {
 		return "", errors.New("クッキーが存在しません")
 	}
 
+	// 全Cookieの文字列
 	rawCookie := vs[0]
-
-	// Cookieがない場合
 	if len(rawCookie) == 0 {
-		// 空を返す
-		return "", nil
+		return "", errors.New("クッキーが存在しません")
+
 	}
 
 	// Cookie情報をパースする
-	parser := &http.Request{Header: http.Header{"cookie": []string{rawCookie}}}
-
-	// 指定された名前のCookieを取得する
-	cookie, err := parser.Cookie("sessionID")
-	// エラーの場合
+	parser := &http.Request{Header: http.Header{"Cookie": []string{rawCookie}}}
+	cookie, err := parser.Cookie("JWT_TOKEN")
 	if err != nil {
-		// エラーを返す
 		return "", err
 	}
 
-	// 取得したCookieのセッションIDを返す
+	// JWT_TOKENを返却
 	return cookie.Value, nil
 }
 
 func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioList, error) {
-	cookie, err := parseCookie(ctx)
+	cookie, err := parseJwtTokenFromCookie(ctx)
 	if err != nil {
 		return nil, err
 	}
