@@ -1,0 +1,55 @@
+$fcolor: #795548;
+
+.papar {
+  margin: auto;
+  position: relative;
+  width: 50%;
+  height: 800px;
+  background: #fff;
+  box-shadow: 0 0 20px #00000048;
+  .papar_line {
+    background-image: radial-gradient(#b9b9b5 1px, transparent 1px),
+      linear-gradient(180deg, #e3e3e2 1px, transparent 1px);
+    background-size: 2em 2em, 100% 2em;
+    background-position: 0px -0.9em, 0 1px;
+    line-height: 2;
+    width: 100%;
+    height: 100%;
+    .wrap {
+      padding: 50px;
+    }
+    .title {
+      font-size: 50px;
+      color: $fcolor;
+    }
+  }
+  &:before,
+  &:after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  &:before {
+    background: #fafafa;
+    box-shadow: 0 0 20px #00000048;
+    left: -5px;
+    top: 4px;
+    transform: rotate(-3deg);
+  }
+  &:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 20px #00000048;
+    right: -3px;
+    top: 1px;
+    transform: rotate(5.4deg);
+  }
+}
+
+.wrap_all {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}

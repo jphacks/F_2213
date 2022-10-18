@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.10",
     "bootstrap": "^5.2.2",
     "google-protobuf": "^3.21.1",
     "grpc-web": "^1.4.1",
