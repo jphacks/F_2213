@@ -10,7 +10,7 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
-	pb "github.com/kajikentaro/gRPC-test/grpc"
+	pb "github.com/jphacks/F_2213/grpc"
 	"google.golang.org/grpc"
 )
 
@@ -19,7 +19,7 @@ var (
 )
 
 type server struct {
-	pb.UnimplementedDBWriterServer
+	pb.UnimplementedTopPageClientServer
 }
 
 type User struct {
@@ -74,7 +74,7 @@ func RunGrpc() {
 		log.Fatalf("listenに失敗しました: %v", err)
 	}
 	s := grpc.NewServer()
-	pb.RegisterDBWriterServer(s, &server{})
+	pb.RegisterTopPageClientServer(s, &server{})
 	log.Printf("grpc server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("grpcサーバーの起動に失敗しました: %v", err)
