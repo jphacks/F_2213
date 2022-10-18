@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: grpc.proto
 
-package grpc
+package F_2213
 
 import (
 	context "context"
@@ -18,158 +18,194 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// DBWriterClient is the client API for DBWriter service.
+// TopPageClientClient is the client API for TopPageClient service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type DBWriterClient interface {
-	CreateNewUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
-	WriteDB(ctx context.Context, in *Data, opts ...grpc.CallOption) (*Data, error)
-	ReadDB(ctx context.Context, in *User, opts ...grpc.CallOption) (*DataList, error)
+type TopPageClientClient interface {
+	FetchAudioList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AudioList, error)
+	UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*Status, error)
+	DeleteTag(ctx context.Context, in *TagUuid, opts ...grpc.CallOption) (*Status, error)
+	DeleteAudio(ctx context.Context, in *AudioUuid, opts ...grpc.CallOption) (*Status, error)
 }
 
-type dBWriterClient struct {
+type topPageClientClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDBWriterClient(cc grpc.ClientConnInterface) DBWriterClient {
-	return &dBWriterClient{cc}
+func NewTopPageClientClient(cc grpc.ClientConnInterface) TopPageClientClient {
+	return &topPageClientClient{cc}
 }
 
-func (c *dBWriterClient) CreateNewUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error) {
-	out := new(User)
-	err := c.cc.Invoke(ctx, "/gRPC_test.DBWriter/CreateNewUser", in, out, opts...)
+func (c *topPageClientClient) FetchAudioList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AudioList, error) {
+	out := new(AudioList)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/fetchAudioList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dBWriterClient) WriteDB(ctx context.Context, in *Data, opts ...grpc.CallOption) (*Data, error) {
-	out := new(Data)
-	err := c.cc.Invoke(ctx, "/gRPC_test.DBWriter/WriteDB", in, out, opts...)
+func (c *topPageClientClient) UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*Status, error) {
+	out := new(Status)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/uploadAudio", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dBWriterClient) ReadDB(ctx context.Context, in *User, opts ...grpc.CallOption) (*DataList, error) {
-	out := new(DataList)
-	err := c.cc.Invoke(ctx, "/gRPC_test.DBWriter/ReadDB", in, out, opts...)
+func (c *topPageClientClient) DeleteTag(ctx context.Context, in *TagUuid, opts ...grpc.CallOption) (*Status, error) {
+	out := new(Status)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/deleteTag", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DBWriterServer is the server API for DBWriter service.
-// All implementations must embed UnimplementedDBWriterServer
+func (c *topPageClientClient) DeleteAudio(ctx context.Context, in *AudioUuid, opts ...grpc.CallOption) (*Status, error) {
+	out := new(Status)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/deleteAudio", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// TopPageClientServer is the server API for TopPageClient service.
+// All implementations must embed UnimplementedTopPageClientServer
 // for forward compatibility
-type DBWriterServer interface {
-	CreateNewUser(context.Context, *User) (*User, error)
-	WriteDB(context.Context, *Data) (*Data, error)
-	ReadDB(context.Context, *User) (*DataList, error)
-	mustEmbedUnimplementedDBWriterServer()
+type TopPageClientServer interface {
+	FetchAudioList(context.Context, *Empty) (*AudioList, error)
+	UploadAudio(context.Context, *Audio) (*Status, error)
+	DeleteTag(context.Context, *TagUuid) (*Status, error)
+	DeleteAudio(context.Context, *AudioUuid) (*Status, error)
+	mustEmbedUnimplementedTopPageClientServer()
 }
 
-// UnimplementedDBWriterServer must be embedded to have forward compatible implementations.
-type UnimplementedDBWriterServer struct {
+// UnimplementedTopPageClientServer must be embedded to have forward compatible implementations.
+type UnimplementedTopPageClientServer struct {
 }
 
-func (UnimplementedDBWriterServer) CreateNewUser(context.Context, *User) (*User, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNewUser not implemented")
+func (UnimplementedTopPageClientServer) FetchAudioList(context.Context, *Empty) (*AudioList, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FetchAudioList not implemented")
 }
-func (UnimplementedDBWriterServer) WriteDB(context.Context, *Data) (*Data, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method WriteDB not implemented")
+func (UnimplementedTopPageClientServer) UploadAudio(context.Context, *Audio) (*Status, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UploadAudio not implemented")
 }
-func (UnimplementedDBWriterServer) ReadDB(context.Context, *User) (*DataList, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReadDB not implemented")
+func (UnimplementedTopPageClientServer) DeleteTag(context.Context, *TagUuid) (*Status, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteTag not implemented")
 }
-func (UnimplementedDBWriterServer) mustEmbedUnimplementedDBWriterServer() {}
+func (UnimplementedTopPageClientServer) DeleteAudio(context.Context, *AudioUuid) (*Status, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAudio not implemented")
+}
+func (UnimplementedTopPageClientServer) mustEmbedUnimplementedTopPageClientServer() {}
 
-// UnsafeDBWriterServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DBWriterServer will
+// UnsafeTopPageClientServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to TopPageClientServer will
 // result in compilation errors.
-type UnsafeDBWriterServer interface {
-	mustEmbedUnimplementedDBWriterServer()
+type UnsafeTopPageClientServer interface {
+	mustEmbedUnimplementedTopPageClientServer()
 }
 
-func RegisterDBWriterServer(s grpc.ServiceRegistrar, srv DBWriterServer) {
-	s.RegisterService(&DBWriter_ServiceDesc, srv)
+func RegisterTopPageClientServer(s grpc.ServiceRegistrar, srv TopPageClientServer) {
+	s.RegisterService(&TopPageClient_ServiceDesc, srv)
 }
 
-func _DBWriter_CreateNewUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(User)
+func _TopPageClient_FetchAudioList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DBWriterServer).CreateNewUser(ctx, in)
+		return srv.(TopPageClientServer).FetchAudioList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gRPC_test.DBWriter/CreateNewUser",
+		FullMethod: "/prolis.TopPageClient/fetchAudioList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DBWriterServer).CreateNewUser(ctx, req.(*User))
+		return srv.(TopPageClientServer).FetchAudioList(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DBWriter_WriteDB_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Data)
+func _TopPageClient_UploadAudio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Audio)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DBWriterServer).WriteDB(ctx, in)
+		return srv.(TopPageClientServer).UploadAudio(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gRPC_test.DBWriter/WriteDB",
+		FullMethod: "/prolis.TopPageClient/uploadAudio",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DBWriterServer).WriteDB(ctx, req.(*Data))
+		return srv.(TopPageClientServer).UploadAudio(ctx, req.(*Audio))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DBWriter_ReadDB_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(User)
+func _TopPageClient_DeleteTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TagUuid)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DBWriterServer).ReadDB(ctx, in)
+		return srv.(TopPageClientServer).DeleteTag(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gRPC_test.DBWriter/ReadDB",
+		FullMethod: "/prolis.TopPageClient/deleteTag",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DBWriterServer).ReadDB(ctx, req.(*User))
+		return srv.(TopPageClientServer).DeleteTag(ctx, req.(*TagUuid))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DBWriter_ServiceDesc is the grpc.ServiceDesc for DBWriter service.
+func _TopPageClient_DeleteAudio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AudioUuid)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TopPageClientServer).DeleteAudio(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/prolis.TopPageClient/deleteAudio",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TopPageClientServer).DeleteAudio(ctx, req.(*AudioUuid))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// TopPageClient_ServiceDesc is the grpc.ServiceDesc for TopPageClient service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DBWriter_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "gRPC_test.DBWriter",
-	HandlerType: (*DBWriterServer)(nil),
+var TopPageClient_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "prolis.TopPageClient",
+	HandlerType: (*TopPageClientServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateNewUser",
-			Handler:    _DBWriter_CreateNewUser_Handler,
+			MethodName: "fetchAudioList",
+			Handler:    _TopPageClient_FetchAudioList_Handler,
 		},
 		{
-			MethodName: "WriteDB",
-			Handler:    _DBWriter_WriteDB_Handler,
+			MethodName: "uploadAudio",
+			Handler:    _TopPageClient_UploadAudio_Handler,
 		},
 		{
-			MethodName: "ReadDB",
-			Handler:    _DBWriter_ReadDB_Handler,
+			MethodName: "deleteTag",
+			Handler:    _TopPageClient_DeleteTag_Handler,
+		},
+		{
+			MethodName: "deleteAudio",
+			Handler:    _TopPageClient_DeleteAudio_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

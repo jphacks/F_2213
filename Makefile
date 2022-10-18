@@ -1,27 +1,16 @@
-PROTOC_GEN_TS_PATH="./node_modules/.bin/protoc-gen-ts"
 OUT_DIR="./grpc_out"
 
-# improbable-eng/grpc-web
-gen_grpc_front_old:
-	cd frontend && rm -rf $(OUT_DIR)
-	cd frontend && mkdir $(OUT_DIR)
-	cd frontend && protoc \
-	--plugin="protoc-gen-ts=${PROTOC_GEN_TS_PATH}" \
-	--js_out="import_style=commonjs,binary:${OUT_DIR}" \
-	--ts_out="service=grpc-web:${OUT_DIR}" \
-	--proto_path=../grpc/ \
-	../grpc/*.proto
-
-# grpc/grpc-web
 init_grpc_front:
 	cd frontend && yarn
 	cd /tmp && wget https://github.com/grpc/grpc-web/releases/download/1.4.1/protoc-gen-grpc-web-1.4.1-linux-x86_64
 	mv /tmp/protoc-gen-grpc-web-1.4.1-linux-x86_64 /usr/local/bin/protoc-gen-grpc-web
 	chmod +x /usr/local/bin/protoc-gen-grpc-web
 
+init_grpc_back:
+	go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
+	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+	export PATH="$PATH:$(go env GOPATH)/bin"
 
-
-# grpc/grpc-web
 gen_grpc_front:
 	cd frontend && rm -rf $(OUT_DIR)
 	cd frontend && mkdir $(OUT_DIR)
