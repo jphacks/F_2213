@@ -1102,6 +1102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ae69ef0192d7142acb7e895a1d6055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: C:/Users/masahiro/voiceSample/Test.mp3
 --- !u!1 &1408158702
 GameObject:
   m_ObjectHideFlags: 0

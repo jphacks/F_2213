@@ -7,19 +7,25 @@ public class SoundManager : MonoBehaviour
 {
     private AudioClip Sound;
     private AudioSource audio;
+    public string path = "C:/Users/masahiro/voiceSample/Test.mp3";
     private bool isAudioEnd;
     private float totaltime;
     private int f=0;
     private float startSpanTime = 1f;
     private float endSpanTime = 0.3f;
 
-	string VoiceName = "Test";
+	//string VoiceName = "Test";
 
 	void Start()
 	{
-        audio = GetComponent<AudioSource>();
-        audio.clip = Resources.Load<AudioClip>(VoiceName);
-        isAudioEnd = false;
+        using(WWW www = new WWW("file://" + path))
+        {
+            Sound = www.GetAudioClip(false, true);
+            audio = GetComponent<AudioSource>();
+            //audio.clip = Resources.Load<AudioClip>(VoiceName);
+            audio.clip = Sound;
+            isAudioEnd = false;
+        }
 	}
 
     void Update()
@@ -36,7 +42,7 @@ public class SoundManager : MonoBehaviour
         }
         if(!audio.isPlaying && isAudioEnd && totaltime > endSpanTime)
         {
-            EditorApplication.isPlaying = false;
+            Application.Quit();
             //終了判定
         }
     }
