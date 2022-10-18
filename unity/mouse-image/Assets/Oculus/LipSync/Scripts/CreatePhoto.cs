@@ -6,6 +6,7 @@ public class CreatePhoto : MonoBehaviour {
 
     public RenderTexture RenderTextureRef;
     public int count=1;
+    private float totaltime;
 
     // Use this for initialization
     void Start () {
@@ -14,7 +15,10 @@ public class CreatePhoto : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        savePng();
+        totaltime += Time.deltaTime;
+        if(totaltime > 1f){
+            savePng();
+        }
     }
 
     void savePng()

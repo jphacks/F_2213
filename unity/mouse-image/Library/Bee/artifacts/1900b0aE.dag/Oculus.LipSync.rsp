@@ -352,6 +352,7 @@
 "Assets/Oculus/LipSync/Scripts/OVRLipSyncContextTextureFlip.cs"
 "Assets/Oculus/LipSync/Scripts/OVRLipSyncMicInput.cs"
 "Assets/Oculus/LipSync/Scripts/OVRLipSyncSequence.cs"
+"Assets/Oculus/LipSync/Scripts/SoundManager.cs"
 -langversion:9.0
 
 /deterministic
