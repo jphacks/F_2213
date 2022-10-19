@@ -2,13 +2,20 @@ import Styles from "../../../styles/audio-upload.module.scss";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { Button, Alert } from "@mui/material";
+import { Button, Alert, LinearProgress } from "@mui/material";
 import Router from "next/router";
 
 /* 参考 : https://qiita.com/FumioNonaka/items/4ae1ccbfe609e1a10c4d */
 
 const AudioUpload = () => {
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
+  const [pValue, pValueSet] = useState<number>(33);
+
+  const routine = async () => {
+    pValueSet(66);
+    await new Promise((r) => setTimeout(r, 1000));
+    Router.push("./user-setting");
+  };
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     console.log(acceptedFiles); //デバッグ用．
@@ -25,7 +32,7 @@ const AudioUpload = () => {
         </Alert>
       );
     } else {
-      Router.push("./user-setting");
+      routine();
     }
   }, []);
 
@@ -65,6 +72,11 @@ const AudioUpload = () => {
                   Select Audio
                 </Button>
               </div>
+              <LinearProgress
+                variant="determinate"
+                value={pValue}
+                className={Styles.progress}
+              />
             </div>
           </div>
         </div>

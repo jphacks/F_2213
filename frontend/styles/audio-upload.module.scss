@@ -3,6 +3,17 @@
   box-shadow: 0 0 20px #00000048;
 }
 
+
+.progress {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%, 0);
+
+}
+
+
 .papars_wrap {
   width: 80%;
   height: 80%;
@@ -28,6 +39,7 @@
       height: 100%;
       .wrap {
         padding: 50px;
+        height: 100%;
       }
       .title {
         font-size: 50px;
