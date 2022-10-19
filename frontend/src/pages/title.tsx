@@ -9,11 +9,11 @@ const TitleLogo = () => {
 };
 
 const IntroCarousel = () => {
-  const photo_width : number = 600;
-  const photo_rate : number = 9 / 16;
+  const photo_width: number = 600;
+  const photo_rate: number = 9 / 16;
 
-  const e1 : string = "/images/examples/e1.jpg";
-  const e2 : string = "/images/examples/e2.png";
+  const e1: string = "/images/examples/e1.jpg";
+  const e2: string = "/images/examples/e2.png";
   const e3: string = "/images/examples/e3.png";
   const photo_urls = [e1, e2, e3];
   const showList = photo_urls.map((x) => (
