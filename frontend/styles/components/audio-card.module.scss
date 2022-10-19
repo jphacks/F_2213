@@ -1,0 +1,19 @@
+$fcolor: #795548;
+
+.audio_bar {
+  width: 350px;
+  height: 40px;
+  margin: 10px;
+}
+
+.title {
+  margin: auto 0;
+  font-size: 22px;
+  color : $fcolor;
+  overflow-wrap: break-all;
+}
+
+.contents_wrap{
+  display: flex;
+  justify-content: space-between;
+}
