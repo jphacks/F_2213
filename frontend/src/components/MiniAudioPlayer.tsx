@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { MouseEvent, MouseEventHandler, useMemo, useState } from "react";
 import styles from "styles/components/MiniAudioPlayer.module.scss";
 
 type PlayStatus = "playing" | "paused";
@@ -9,11 +9,25 @@ interface Props {
   endMs: number;
 }
 
+const getClickRatio = (e: MouseEvent<HTMLProgressElement>) => {
+  const clickX = e.clientX;
+  const clientRect = e.currentTarget.getBoundingClientRect();
+  const itemX = clientRect.x;
+  const width = clientRect.right - clientRect.left;
+  const ratio = (clickX - itemX) / width;
+  return ratio;
+};
+
 const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
   const [playStatus, setPlayStatus] = useState<PlayStatus>("paused");
   const [isRepeat, setIsRepeat] = useState<boolean>(false);
-  const [audioProgress, setAudioProgress] = useState<number>(0);
-  console.log("hoge", isRepeat);
+  const [audioProgress, _setAudioProgress] = useState<number>(0);
+  const [isCursorDrag, setIsCursorDrag] = useState<boolean>(false);
+
+  const setAudioProgress = (p: number) => {
+    if (isCursorDrag) return;
+    _setAudioProgress(p);
+  };
 
   const backToStart = () => {
     audio.currentTime = startMs / 1000;
@@ -32,7 +46,6 @@ const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
 
   const onEnd = () => {
     backToStart();
-    console.log("fuga", isRepeat);
     if (isRepeat) {
       audio.play();
     } else {
@@ -40,22 +53,39 @@ const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
     }
   };
 
-  const audio = useMemo<HTMLAudioElement | null>(() => {
-    if (typeof Audio === "undefined") return null;
+  const handleProgressClick: MouseEventHandler<HTMLProgressElement> = (e) => {
+    const ratio = getClickRatio(e);
+    const duration = (endMs - startMs) / 1000;
+    audio.currentTime = duration * ratio + startMs / 1000;
+  };
+
+  console.log(isCursorDrag);
+  const handleProgressDrag: MouseEventHandler<HTMLProgressElement> = (e) => {
+    if (!isCursorDrag) return;
+    const ratio = getClickRatio(e);
+    e.currentTarget.value = ratio;
+    e.preventDefault();
+  };
+
+  const audio = useMemo<HTMLAudioElement>(() => {
+    if (typeof Audio === "undefined") return undefined;
     return new Audio(source);
   }, [source]);
-  audio.ondurationchange = backToStart;
-  audio.onended = onEnd;
-  audio.ontimeupdate = () => {
-    // 終了時間を過ぎた場合
-    if (audio.currentTime * 1000 > endMs) {
-      onEnd();
-      return;
-    }
-    const duration = endMs - startMs;
-    const currentTime = audio.currentTime * 1000 - startMs;
-    setAudioProgress(currentTime / duration);
-  };
+
+  if (typeof audio !== "undefined") {
+    audio.ondurationchange = backToStart;
+    audio.onended = onEnd;
+    audio.ontimeupdate = () => {
+      // 終了時間を過ぎた場合
+      if (audio.currentTime * 1000 > endMs) {
+        onEnd();
+        return;
+      }
+      const duration = endMs - startMs;
+      const currentTime = audio.currentTime * 1000 - startMs;
+      setAudioProgress(currentTime / duration);
+    };
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -105,7 +135,17 @@ const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
           {STOP_ICON}
         </button>
       </div>
-      <progress value={audioProgress} />
+      <progress
+        value={audioProgress}
+        onClick={handleProgressClick}
+        onMouseMove={handleProgressDrag}
+        onMouseDown={() => {
+          setIsCursorDrag(true);
+        }}
+        onMouseUp={() => {
+          setIsCursorDrag(false);
+        }}
+      />
     </div>
   );
 };
