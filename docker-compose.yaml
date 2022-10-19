@@ -15,7 +15,8 @@ services:
       - .env
 
   prod_front:
-    image: node:18-alpine
+    build:
+      context: ./frontend
     container_name: grpc_prod_front
     ports:
       - "3000:3000"
