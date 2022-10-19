@@ -39,8 +39,8 @@ export class TopPageClientClient {
     this.options_ = options;
   }
 
-  methodDescriptorfetchAudioList = new grpcWeb.MethodDescriptor(
-    '/prolis.TopPageClient/fetchAudioList',
+  methodDescriptorFetchAudioList = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/FetchAudioList',
     grpcWeb.MethodType.UNARY,
     grpc_pb.Empty,
     grpc_pb.AudioList,
@@ -68,22 +68,22 @@ export class TopPageClientClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/prolis.TopPageClient/fetchAudioList',
+          '/prolis.TopPageClient/FetchAudioList',
         request,
         metadata || {},
-        this.methodDescriptorfetchAudioList,
+        this.methodDescriptorFetchAudioList,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/prolis.TopPageClient/fetchAudioList',
+      '/prolis.TopPageClient/FetchAudioList',
     request,
     metadata || {},
-    this.methodDescriptorfetchAudioList);
+    this.methodDescriptorFetchAudioList);
   }
 
-  methodDescriptorfetchUserInfo = new grpcWeb.MethodDescriptor(
-    '/prolis.TopPageClient/fetchUserInfo',
+  methodDescriptorFetchUserInfo = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/FetchUserInfo',
     grpcWeb.MethodType.UNARY,
     grpc_pb.Empty,
     grpc_pb.User,
@@ -111,22 +111,22 @@ export class TopPageClientClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/prolis.TopPageClient/fetchUserInfo',
+          '/prolis.TopPageClient/FetchUserInfo',
         request,
         metadata || {},
-        this.methodDescriptorfetchUserInfo,
+        this.methodDescriptorFetchUserInfo,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/prolis.TopPageClient/fetchUserInfo',
+      '/prolis.TopPageClient/FetchUserInfo',
     request,
     metadata || {},
-    this.methodDescriptorfetchUserInfo);
+    this.methodDescriptorFetchUserInfo);
   }
 
-  methodDescriptoruploadAudio = new grpcWeb.MethodDescriptor(
-    '/prolis.TopPageClient/uploadAudio',
+  methodDescriptorUploadAudio = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/UploadAudio',
     grpcWeb.MethodType.UNARY,
     grpc_pb.Audio,
     grpc_pb.AudioId,
@@ -154,22 +154,22 @@ export class TopPageClientClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/prolis.TopPageClient/uploadAudio',
+          '/prolis.TopPageClient/UploadAudio',
         request,
         metadata || {},
-        this.methodDescriptoruploadAudio,
+        this.methodDescriptorUploadAudio,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/prolis.TopPageClient/uploadAudio',
+      '/prolis.TopPageClient/UploadAudio',
     request,
     metadata || {},
-    this.methodDescriptoruploadAudio);
+    this.methodDescriptorUploadAudio);
   }
 
-  methodDescriptordeleteTag = new grpcWeb.MethodDescriptor(
-    '/prolis.TopPageClient/deleteTag',
+  methodDescriptorDeleteTag = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/DeleteTag',
     grpcWeb.MethodType.UNARY,
     grpc_pb.TagId,
     grpc_pb.Status,
@@ -197,22 +197,22 @@ export class TopPageClientClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/prolis.TopPageClient/deleteTag',
+          '/prolis.TopPageClient/DeleteTag',
         request,
         metadata || {},
-        this.methodDescriptordeleteTag,
+        this.methodDescriptorDeleteTag,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/prolis.TopPageClient/deleteTag',
+      '/prolis.TopPageClient/DeleteTag',
     request,
     metadata || {},
-    this.methodDescriptordeleteTag);
+    this.methodDescriptorDeleteTag);
   }
 
-  methodDescriptordeleteAudio = new grpcWeb.MethodDescriptor(
-    '/prolis.TopPageClient/deleteAudio',
+  methodDescriptorDeleteAudio = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/DeleteAudio',
     grpcWeb.MethodType.UNARY,
     grpc_pb.AudioId,
     grpc_pb.Status,
@@ -240,18 +240,18 @@ export class TopPageClientClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/prolis.TopPageClient/deleteAudio',
+          '/prolis.TopPageClient/DeleteAudio',
         request,
         metadata || {},
-        this.methodDescriptordeleteAudio,
+        this.methodDescriptorDeleteAudio,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/prolis.TopPageClient/deleteAudio',
+      '/prolis.TopPageClient/DeleteAudio',
     request,
     metadata || {},
-    this.methodDescriptordeleteAudio);
+    this.methodDescriptorDeleteAudio);
   }
 
 }

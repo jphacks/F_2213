@@ -328,7 +328,7 @@ proto.prolis.User.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string id = 1;
+ * optional string Id = 1;
  * @return {string}
  */
 proto.prolis.User.prototype.getId = function() {
@@ -346,7 +346,7 @@ proto.prolis.User.prototype.setId = function(value) {
 
 
 /**
- * optional string name = 2;
+ * optional string Name = 2;
  * @return {string}
  */
 proto.prolis.User.prototype.getName = function() {
@@ -364,7 +364,7 @@ proto.prolis.User.prototype.setName = function(value) {
 
 
 /**
- * optional string email = 3;
+ * optional string Email = 3;
  * @return {string}
  */
 proto.prolis.User.prototype.getEmail = function() {
@@ -595,7 +595,7 @@ proto.prolis.TagId.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 id = 1;
+ * optional int64 Id = 1;
  * @return {number}
  */
 proto.prolis.TagId.prototype.getId = function() {
@@ -725,7 +725,7 @@ proto.prolis.AudioId.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 id = 1;
+ * optional int64 Id = 1;
  * @return {number}
  */
 proto.prolis.AudioId.prototype.getId = function() {
@@ -855,7 +855,7 @@ proto.prolis.Status.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 affectedRowCnt = 1;
+ * optional int64 AffectedRowCnt = 1;
  * @return {number}
  */
 proto.prolis.Status.prototype.getAffectedrowcnt = function() {
@@ -911,7 +911,7 @@ proto.prolis.AudioList.prototype.toObject = function(opt_includeInstance) {
  */
 proto.prolis.AudioList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    audiolistList: jspb.Message.toObjectList(msg.getAudiolistList(),
+    audiosList: jspb.Message.toObjectList(msg.getAudiosList(),
     proto.prolis.Audio.toObject, includeInstance)
   };
 
@@ -952,7 +952,7 @@ proto.prolis.AudioList.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.prolis.Audio;
       reader.readMessage(value,proto.prolis.Audio.deserializeBinaryFromReader);
-      msg.addAudiolist(value);
+      msg.addAudios(value);
       break;
     default:
       reader.skipField();
@@ -983,7 +983,7 @@ proto.prolis.AudioList.prototype.serializeBinary = function() {
  */
 proto.prolis.AudioList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAudiolistList();
+  f = message.getAudiosList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -995,10 +995,10 @@ proto.prolis.AudioList.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * repeated Audio audioList = 1;
+ * repeated Audio Audios = 1;
  * @return {!Array<!proto.prolis.Audio>}
  */
-proto.prolis.AudioList.prototype.getAudiolistList = function() {
+proto.prolis.AudioList.prototype.getAudiosList = function() {
   return /** @type{!Array<!proto.prolis.Audio>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.prolis.Audio, 1));
 };
@@ -1008,7 +1008,7 @@ proto.prolis.AudioList.prototype.getAudiolistList = function() {
  * @param {!Array<!proto.prolis.Audio>} value
  * @return {!proto.prolis.AudioList} returns this
 */
-proto.prolis.AudioList.prototype.setAudiolistList = function(value) {
+proto.prolis.AudioList.prototype.setAudiosList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -1018,7 +1018,7 @@ proto.prolis.AudioList.prototype.setAudiolistList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.prolis.Audio}
  */
-proto.prolis.AudioList.prototype.addAudiolist = function(opt_value, opt_index) {
+proto.prolis.AudioList.prototype.addAudios = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.prolis.Audio, opt_index);
 };
 
@@ -1027,8 +1027,8 @@ proto.prolis.AudioList.prototype.addAudiolist = function(opt_value, opt_index) {
  * Clears the list making it empty but non-null.
  * @return {!proto.prolis.AudioList} returns this
  */
-proto.prolis.AudioList.prototype.clearAudiolistList = function() {
-  return this.setAudiolistList([]);
+proto.prolis.AudioList.prototype.clearAudiosList = function() {
+  return this.setAudiosList([]);
 };
 
 
@@ -1075,7 +1075,7 @@ proto.prolis.Audio.toObject = function(includeInstance, msg) {
     audioname: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     url: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    taglistList: jspb.Message.toObjectList(msg.getTaglistList(),
+    tagsList: jspb.Message.toObjectList(msg.getTagsList(),
     proto.prolis.Tag.toObject, includeInstance)
   };
 
@@ -1133,7 +1133,7 @@ proto.prolis.Audio.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = new proto.prolis.Tag;
       reader.readMessage(value,proto.prolis.Tag.deserializeBinaryFromReader);
-      msg.addTaglist(value);
+      msg.addTags(value);
       break;
     default:
       reader.skipField();
@@ -1193,7 +1193,7 @@ proto.prolis.Audio.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTaglistList();
+  f = message.getTagsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
@@ -1205,7 +1205,7 @@ proto.prolis.Audio.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional AudioId id = 1;
+ * optional AudioId Id = 1;
  * @return {?proto.prolis.AudioId}
  */
 proto.prolis.Audio.prototype.getId = function() {
@@ -1242,7 +1242,7 @@ proto.prolis.Audio.prototype.hasId = function() {
 
 
 /**
- * optional string audioName = 2;
+ * optional string AudioName = 2;
  * @return {string}
  */
 proto.prolis.Audio.prototype.getAudioname = function() {
@@ -1260,7 +1260,7 @@ proto.prolis.Audio.prototype.setAudioname = function(value) {
 
 
 /**
- * optional string description = 3;
+ * optional string Description = 3;
  * @return {string}
  */
 proto.prolis.Audio.prototype.getDescription = function() {
@@ -1278,7 +1278,7 @@ proto.prolis.Audio.prototype.setDescription = function(value) {
 
 
 /**
- * optional string url = 4;
+ * optional string Url = 4;
  * @return {string}
  */
 proto.prolis.Audio.prototype.getUrl = function() {
@@ -1296,10 +1296,10 @@ proto.prolis.Audio.prototype.setUrl = function(value) {
 
 
 /**
- * repeated Tag tagList = 5;
+ * repeated Tag Tags = 5;
  * @return {!Array<!proto.prolis.Tag>}
  */
-proto.prolis.Audio.prototype.getTaglistList = function() {
+proto.prolis.Audio.prototype.getTagsList = function() {
   return /** @type{!Array<!proto.prolis.Tag>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.prolis.Tag, 5));
 };
@@ -1309,7 +1309,7 @@ proto.prolis.Audio.prototype.getTaglistList = function() {
  * @param {!Array<!proto.prolis.Tag>} value
  * @return {!proto.prolis.Audio} returns this
 */
-proto.prolis.Audio.prototype.setTaglistList = function(value) {
+proto.prolis.Audio.prototype.setTagsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
@@ -1319,7 +1319,7 @@ proto.prolis.Audio.prototype.setTaglistList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.prolis.Tag}
  */
-proto.prolis.Audio.prototype.addTaglist = function(opt_value, opt_index) {
+proto.prolis.Audio.prototype.addTags = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.prolis.Tag, opt_index);
 };
 
@@ -1328,8 +1328,8 @@ proto.prolis.Audio.prototype.addTaglist = function(opt_value, opt_index) {
  * Clears the list making it empty but non-null.
  * @return {!proto.prolis.Audio} returns this
  */
-proto.prolis.Audio.prototype.clearTaglistList = function() {
-  return this.setTaglistList([]);
+proto.prolis.Audio.prototype.clearTagsList = function() {
+  return this.setTagsList([]);
 };
 
 
@@ -1482,7 +1482,7 @@ proto.prolis.Tag.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 id = 1;
+ * optional int64 Id = 1;
  * @return {number}
  */
 proto.prolis.Tag.prototype.getId = function() {
@@ -1500,7 +1500,7 @@ proto.prolis.Tag.prototype.setId = function(value) {
 
 
 /**
- * optional int64 startMs = 2;
+ * optional int64 StartMs = 2;
  * @return {number}
  */
 proto.prolis.Tag.prototype.getStartms = function() {
@@ -1518,7 +1518,7 @@ proto.prolis.Tag.prototype.setStartms = function(value) {
 
 
 /**
- * optional int64 endMs = 3;
+ * optional int64 EndMs = 3;
  * @return {number}
  */
 proto.prolis.Tag.prototype.getEndms = function() {
@@ -1536,7 +1536,7 @@ proto.prolis.Tag.prototype.setEndms = function(value) {
 
 
 /**
- * optional string tagName = 4;
+ * optional string TagName = 4;
  * @return {string}
  */
 proto.prolis.Tag.prototype.getTagname = function() {

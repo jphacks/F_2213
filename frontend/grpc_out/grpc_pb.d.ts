@@ -97,10 +97,10 @@ export namespace Status {
 }
 
 export class AudioList extends jspb.Message {
-  getAudiolistList(): Array<Audio>;
-  setAudiolistList(value: Array<Audio>): AudioList;
-  clearAudiolistList(): AudioList;
-  addAudiolist(value?: Audio, index?: number): Audio;
+  getAudiosList(): Array<Audio>;
+  setAudiosList(value: Array<Audio>): AudioList;
+  clearAudiosList(): AudioList;
+  addAudios(value?: Audio, index?: number): Audio;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AudioList.AsObject;
@@ -112,7 +112,7 @@ export class AudioList extends jspb.Message {
 
 export namespace AudioList {
   export type AsObject = {
-    audiolistList: Array<Audio.AsObject>,
+    audiosList: Array<Audio.AsObject>,
   }
 }
 
@@ -131,10 +131,10 @@ export class Audio extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): Audio;
 
-  getTaglistList(): Array<Tag>;
-  setTaglistList(value: Array<Tag>): Audio;
-  clearTaglistList(): Audio;
-  addTaglist(value?: Tag, index?: number): Tag;
+  getTagsList(): Array<Tag>;
+  setTagsList(value: Array<Tag>): Audio;
+  clearTagsList(): Audio;
+  addTags(value?: Tag, index?: number): Tag;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Audio.AsObject;
@@ -150,7 +150,7 @@ export namespace Audio {
     audioname: string,
     description: string,
     url: string,
-    taglistList: Array<Tag.AsObject>,
+    tagsList: Array<Tag.AsObject>,
   }
 }
 

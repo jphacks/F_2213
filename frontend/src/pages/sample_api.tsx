@@ -4,7 +4,7 @@ import { useState } from "react";
 import { TopPageClientClient } from "../../grpc_out/GrpcServiceClientPb";
 import { Audio, AudioId, Empty, Tag, TagId } from "../../grpc_out/grpc_pb";
 
-export default () => {
+const SampleApi = () => {
   const [output, setOutput] = useState<string>("Api output would be here");
   const [tagId, setTagId] = useState<number>(-1);
   const [audioId, setAudioId] = useState<number>(-1);
@@ -60,7 +60,7 @@ export default () => {
     query.setAudioname("audio name");
     query.setDescription("audio description");
     query.setUrl("https://download.samplelib.com/mp3/sample-15s.mp3");
-    query.setTaglistList([tag]);
+    query.setTagsList([tag]);
     client.uploadAudio(query, null, callback);
   };
 
@@ -139,3 +139,5 @@ export default () => {
     </div>
   );
 };
+
+export default SampleApi;

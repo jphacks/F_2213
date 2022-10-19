@@ -51,13 +51,13 @@ func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioLis
 	}
 
 	audioList := pb.AudioList{}
-	audioList.AudioList = make([]*pb.Audio, len(audioMap))
+	audioList.Audios = make([]*pb.Audio, len(audioMap))
 	i := 0
 	for _, v := range audioMap {
 		jsonBytes, _ := json.Marshal(v)
 		var pbAudio pb.Audio
 		json.Unmarshal(jsonBytes, &pbAudio)
-		audioList.AudioList[i] = &pbAudio
+		audioList.Audios[i] = &pbAudio
 		i++
 	}
 	return &audioList, nil
@@ -144,7 +144,7 @@ func (s *server) UploadAudio(ctx context.Context, in *pb.Audio) (*pb.AudioId, er
 		return nil, err
 	}
 	assignedId, _ := res.LastInsertId()
-	for _, v := range in.TagList {
+	for _, v := range in.Tags {
 		tag := Tag{UserId: user.Id, AudioId: int(assignedId), StartMs: int(v.StartMs), EndMs: int(v.EndMs), TagName: v.TagName}
 		_, err := db.NamedExec("INSERT INTO tag (user_id, audio_id, start_ms, end_ms, tag_name) VALUES(:user_id, :audio_id, :start_ms, :end_ms, :tag_name)", tag)
 		if err != nil {
