@@ -3,13 +3,12 @@
   margin: auto 0;
 }
 
-.title {
-  margin: auto 0;
-}
-
 .contents_wrap {
   position: relative;
   margin: auto;
+  user-select: none;
+
+
 
   &:before {
     content: "";
@@ -17,9 +16,9 @@
     height: 60%;
     background-color: #9d9d9d;
     position: absolute;
-    left : 30%;
-    top:45%;
+    left: 30%;
+    top: 45%;
     transform: rotate(2deg);
-    filter : blur(4px);
+    filter: blur(4px);
   }
 }

@@ -1,8 +1,9 @@
 import Audiotag from "../../components/audio-tag";
 import Editpapar from "../../components/edit-papar";
 import Styles from "../../../styles/audio-list.module.scss";
-import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
+
 
 type AudioInfo = {
   name: string;
@@ -10,8 +11,8 @@ type AudioInfo = {
   end: number;
 };
 
-class TagInfo {
-  uuid = uuidv4(); // 実装したけど今のところ使ってない．
+export class TagInfo {
+  uuid = uuidv4();
   title: string;
   memo: string;
   audioroute: string;
@@ -63,26 +64,37 @@ const demo2 = new TagInfo(
 
 const audiodemolists = [demo, demo2];
 
-/* === */
 
 export default () => {
   let display_card: TagInfo; // hoverしたときにhoverしたときのTagInfoを受け取って入れる．
 
-  const distplay_tags = audiodemolists.map((x: any, index: number) => (
-    <Audiotag key={index} audiols={x}></Audiotag>
+
+  const distplay_tags = audiodemolists.map((x: TagInfo) => (
+    <Audiotag key={x.uuid} audiols={x}></Audiotag>
   ));
 
   return (
     <div className={Styles.wrap_all}>
-      <div className={Styles.papar}>
-        <div className={Styles.papar_line}>
-          <div className={Styles.wrap}>
-            <div className={Styles.title}>List</div>
-            {distplay_tags}
+      <div className={Styles.papars_wrap}>
+        <Link href="./user-setting">
+          <div className={Styles.papar_st}>Setting</div>
+        </Link>
+        <Link href="./audio-upload">
+          <div className={Styles.papar_up}>Upload</div>
+        </Link>
+        <div className={Styles.papar_ls}>
+          <div className={Styles.papar_line}>
+            <div className={Styles.wrap}>
+              <div className={Styles.title}>List</div>
+              {distplay_tags}
+            </div>
           </div>
         </div>
       </div>
-      <Editpapar audiols={demo}></Editpapar>
+      <div className={Styles.editpapar_wrap}>
+        <Editpapar audiols={demo}></Editpapar>
+      </div>
     </div>
   );
 };
+

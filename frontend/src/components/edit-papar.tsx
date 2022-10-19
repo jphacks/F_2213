@@ -19,10 +19,9 @@ export default (props: any) => {
     <>
       <style jsx>{`
         .papar {
+          height: 100%;
+          width: 100%;
           background: ${color};
-          margin: auto;
-          height: 80%;
-          width: 40%;
           box-shadow: 0 0 10px #00000048;
         }
       `}</style>

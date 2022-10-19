@@ -1,49 +1,83 @@
 $fcolor: #795548;
 
-.papar {
-  margin: auto;
-  position: relative;
+@mixin backMenu($color) {
+  padding: 15px 20px;
+  color: $color;
+  box-shadow: 0 0 20px #00000048;
+}
+
+.editpapar_wrap {
+  height: 80%;
+  width: 35%;
+  margin: auto 50px;
+}
+.papars_wrap {
+  margin: auto 60px auto auto;
   width: 50%;
   height: 800px;
-  background: #fff;
-  box-shadow: 0 0 20px #00000048;
-  .papar_line {
-    background-image: radial-gradient(#b9b9b5 1px, transparent 1px),
-      linear-gradient(180deg, #e3e3e2 1px, transparent 1px);
-    background-size: 2em 2em, 100% 2em;
-    background-position: 0px -0.9em, 0 1px;
-    line-height: 2;
-    width: 100%;
-    height: 100%;
-    .wrap {
-      padding: 50px;
-    }
-    .title {
-      font-size: 50px;
-      color: $fcolor;
-    }
-  }
-  &:before,
-  &:after {
-    content: "";
-    height: 98%;
+  position: relative;
+
+  .papar_ls {
+    background: #fff;
     position: absolute;
+    height: 100%;
     width: 100%;
-    z-index: -1;
-  }
-  &:before {
-    background: #fafafa;
+
     box-shadow: 0 0 20px #00000048;
-    left: -5px;
-    top: 4px;
-    transform: rotate(-3deg);
+    .papar_line {
+      background-image: radial-gradient(#b9b9b5 1px, transparent 1px),
+        linear-gradient(180deg, #e3e3e2 1px, transparent 1px);
+      background-size: 2em 2em, 100% 2em;
+      background-position: 0px -0.9em, 0 1px;
+      line-height: 2;
+      width: 100%;
+      height: 100%;
+      .wrap {
+        padding: 50px;
+      }
+      .title {
+        font-size: 50px;
+        color: #ff4d4d
+      }
+    }
   }
-  &:after {
-    background: #f6f6f6;
-    box-shadow: 0 0 20px #00000048;
-    right: -3px;
-    top: 1px;
-    transform: rotate(5.4deg);
+}
+
+.papar_up,
+.papar_st {
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  user-select: none;
+
+  &:hover {
+    background: #fff;
+    color: #3ec8ff;
+    cursor: pointer;
+  }
+}
+.papar_st {
+  @include backMenu($fcolor);
+  font-size: 23px;
+  background: #edebeb;
+  left: -65px;
+  top: 4px;
+  transform: rotate(-8deg);
+
+  &:hover {
+    color: #5ad0ff;
+  }
+}
+.papar_up {
+  @include backMenu($fcolor);
+  font-size: 35px;
+  background: #f0f0f0;
+  right: -10px;
+  top: -35px;
+  transform: rotate(4deg);
+
+  &:hover {
+    color: #8bf875;
   }
 }
 

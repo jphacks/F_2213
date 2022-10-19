@@ -1,15 +1,16 @@
 $fcolor: #795548;
 
 .audio_bar {
-  width: 400px;
+  width: 350px;
   height: 40px;
   margin: 10px;
 }
 
 .title {
   margin: auto 0;
-  font-size: 24px;
+  font-size: 22px;
   color : $fcolor;
+  overflow-wrap: break-all;
 }
 
 .contents_wrap{
