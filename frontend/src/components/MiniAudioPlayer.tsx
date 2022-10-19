@@ -19,23 +19,27 @@ const getClickRatio = (e: MouseEvent<HTMLProgressElement>) => {
 };
 
 const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
-  const [playStatus, setPlayStatus] = useState<PlayStatus>("paused");
+  const [playStatus, _setPlayStatus] = useState<PlayStatus>("paused");
   const [isRepeat, setIsRepeat] = useState<boolean>(false);
   const [audioProgress, _setAudioProgress] = useState<number>(0);
   const [isCursorDrag, setIsCursorDrag] = useState<boolean>(false);
 
+  // プログレスバーの塗り具合を設定する。
   const setAudioProgress = (p: number) => {
+    // Dragしているかどうかの例外処理
     if (isCursorDrag) return;
     _setAudioProgress(p);
   };
 
+  // 曲を最初に戻す
   const backToStart = () => {
     audio.currentTime = startMs / 1000;
     setAudioProgress(0);
   };
 
+  // 曲の再生, 停止
   const changeState = (newState: PlayStatus) => {
-    setPlayStatus(newState);
+    _setPlayStatus(newState);
     if (newState === "playing") {
       audio.play();
     }
@@ -44,6 +48,7 @@ const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
     }
   };
 
+  // 最後まで再生したとき
   const onEnd = () => {
     backToStart();
     if (isRepeat) {
@@ -53,13 +58,14 @@ const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
     }
   };
 
+  // プログレスバーをクリックした(ボタンを離した)とき
   const handleProgressClick: MouseEventHandler<HTMLProgressElement> = (e) => {
     const ratio = getClickRatio(e);
     const duration = (endMs - startMs) / 1000;
     audio.currentTime = duration * ratio + startMs / 1000;
   };
 
-  console.log(isCursorDrag);
+  // プログレスバーをドラッグしたとき
   const handleProgressDrag: MouseEventHandler<HTMLProgressElement> = (e) => {
     if (!isCursorDrag) return;
     const ratio = getClickRatio(e);
@@ -67,11 +73,13 @@ const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
     e.preventDefault();
   };
 
+  // Audioクラスを生成する
   const audio = useMemo<HTMLAudioElement>(() => {
     if (typeof Audio === "undefined") return undefined;
     return new Audio(source);
   }, [source]);
 
+  // Audioクラスの各イベントを登録する
   if (typeof audio !== "undefined") {
     audio.ondurationchange = backToStart;
     audio.onended = onEnd;
