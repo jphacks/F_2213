@@ -26,14 +26,15 @@ func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioLis
 	if err != nil {
 		return nil, err
 	}
-	audioMap := map[int]*Audio{}
+	audioMap := map[int]*pb.Audio{}
 	for rows.Next() {
 		audio := Audio{}
 		err := rows.StructScan(&audio)
 		if err != nil {
 			return nil, err
 		}
-		audioMap[audio.Id] = &audio
+		pbAudio := convertInterface[pb.Audio](audio)
+		audioMap[audio.Id] = &pbAudio
 	}
 
 	rows, err = db.Queryx("Select tag.id as id, tag.user_id as user_id, audio_id, start_ms, end_ms, tag_name FROM audio JOIN tag WHERE audio.user_id=? AND audio.id = tag.audio_id", user.Id)
@@ -50,10 +51,11 @@ func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioLis
 		if !ok {
 			return nil, errors.New("オーディオIDが存在しないtagがみつかりました")
 		}
-		if audio.TagList == nil {
-			audio.TagList = []*Tag{&tag}
+		pbTag := convertInterface[pb.Tag](tag)
+		if audio.Tags == nil {
+			audio.Tags = []*pb.Tag{&pbTag}
 		} else {
-			audio.TagList = append(audioMap[tag.Id].TagList, &tag)
+			audio.Tags = append(audioMap[tag.Id].Tags, &pbTag)
 		}
 	}
 
@@ -61,8 +63,7 @@ func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioLis
 	audioList.Audios = make([]*pb.Audio, len(audioMap))
 	i := 0
 	for _, v := range audioMap {
-		audio := convertInterface[pb.Audio](v)
-		audioList.Audios[i] = &audio
+		audioList.Audios[i] = v
 		i++
 	}
 	return &audioList, nil
