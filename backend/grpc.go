@@ -27,17 +27,11 @@ type server struct {
 	pb.UnimplementedTopPageClientServer
 }
 
-type User struct {
-	id    string `db:"id"`
-	name  string `db:"name"`
-	email string `db:"email"`
-}
-
 func parseJwtTokenFromCookie(ctx context.Context) (string, error) {
 	// ctxからメタデータを取得
 	md, ok := metadata.FromIncomingContext(ctx)
 	if !ok {
-		return "", errors.New("メタデータを取得できませｎ")
+		return "", errors.New("メタデータを取得できません")
 	}
 
 	// Cookie情報を取得
@@ -92,6 +86,23 @@ func jwtToUser(parsedJwt jwt.Token) (*pb.User, error) {
 	}
 
 	return &pb.User{Id: id, Email: email, Name: name}, nil
+}
+
+func fetchAuthorizedUserHttp(r *http.Request) (*pb.User, error) {
+	cookie, err := r.Cookie("JWT_TOKEN")
+	signedJwt := cookie.Value
+	if err != nil {
+		return nil, err
+	}
+	parsedJwt, err := jwt.Parse([]byte(signedJwt), jwt.WithKey(jwa.RS256, publicKey))
+	if err != nil {
+		return nil, err
+	}
+	user, err := jwtToUser(parsedJwt)
+	if err != nil {
+		return nil, err
+	}
+	return user, nil
 }
 
 func fetchAuthorizedUser(ctx context.Context) (*pb.User, error) {

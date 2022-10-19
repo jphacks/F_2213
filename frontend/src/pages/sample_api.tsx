@@ -69,6 +69,14 @@ export default () => {
       <button onClick={handleLogout}>Logout</button>
       <button onClick={fetchUserInfo}>Fetch user info</button>
       <button onClick={fetchAudioList}>Fetch audio list</button>
+      <form
+        action="http://localhost:8080/img/upload"
+        encType="multipart/form-data"
+        method="post"
+      >
+        <input type="file" name="upload" id="upload" />
+        <input type="submit" value="Upload" />
+      </form>
     </div>
   );
 };
