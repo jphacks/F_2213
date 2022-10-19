@@ -1,11 +1,9 @@
-import Audiotag from "../../components/audio-tag";
-import Editpapar from "../../components/edit-papar";
-import Styles from "../../../styles/audio-list.module.scss";
-import{SectionInfo, AudioInfo} from "../../components/interface";
 import Link from "next/link";
 import { useState } from "react";
-
-
+import Styles from "../../../styles/audio-list.module.scss";
+import Audiotag from "../../components/audio-tag";
+import Editpapar from "../../components/edit-papar";
+import { AudioInfo, SectionInfo } from "../../components/interface";
 
 /* === */
 
@@ -36,7 +34,7 @@ const demo2 = new AudioInfo(
 
 const audiodemolists = [demo, demo2];
 
-export default () => {
+const AudioList = () => {
   const [hoveringDemo, setHoveringDemo] = useState<AudioInfo>(demo2);
   const distplay_tags = audiodemolists.map((x: AudioInfo) => (
     <Audiotag
@@ -74,3 +72,5 @@ export default () => {
     </div>
   );
 };
+
+export default AudioList;

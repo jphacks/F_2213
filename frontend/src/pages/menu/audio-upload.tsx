@@ -1,2 +1,2 @@
-export default () => {
-}
+const AudioUpload = () => {};
+export default AudioUpload;

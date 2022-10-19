@@ -1,7 +1,7 @@
 import Styles from "../../styles/components/audio-tag.module.scss";
 import { AudioInfo } from "../components/interface";
 
-export default (props: { audio_info: AudioInfo , handleHover : any}) => {
+const AudioTag = (props: { audio_info: AudioInfo; handleHover: any }) => {
   const color: string = props.audio_info.color;
   const title: string = props.audio_info.title;
   const audioroute: string = props.audio_info.audioroute;
@@ -71,3 +71,5 @@ export default (props: { audio_info: AudioInfo , handleHover : any}) => {
     </>
   );
 };
+
+export default AudioTag;

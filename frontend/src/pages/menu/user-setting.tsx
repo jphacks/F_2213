@@ -1,2 +1,2 @@
-export default () => {
-}
+const UserSetting = () => {};
+export default UserSetting;
