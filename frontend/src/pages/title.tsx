@@ -1,7 +1,7 @@
-import Styles from "../../styles/title.module.scss";
-import Carousel from "react-bootstrap/Carousel";
 import Image from "next/image";
 import Button from "react-bootstrap/Button";
+import Carousel from "react-bootstrap/Carousel";
+import Styles from "../../styles/title.module.scss";
 
 const TitleLogo = () => {
   // hoverlogo();
@@ -24,7 +24,7 @@ const IntroCarousel = () => {
   return <Carousel className={Styles.carousel}>{showList}</Carousel>;
 };
 
-export default () => {
+const Title = () => {
   return (
     <main>
       <div className={Styles.text}>
@@ -66,3 +66,5 @@ export default () => {
     </main>
   );
 };
+
+export default Title;

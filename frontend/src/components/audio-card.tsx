@@ -1,13 +1,16 @@
 import Styles from "../../styles/components/audio-card.module.scss";
-import {SectionInfo} from "../components/interface";
+import { SectionInfo } from "../components/interface";
 
-export default (props: {section_info : SectionInfo, color:string, audioroute:string}) => {
+const AudioCard = (props: {
+  section_info: SectionInfo;
+  color: string;
+  audioroute: string;
+}) => {
   const name: string = props.section_info.name;
   const start: number = props.section_info.start;
   const end: number = props.section_info.end;
   const color: string = props.color;
   const audioroute: string = `${props.audioroute}#t=${start},${end}`;
-
 
   return (
     <>
@@ -65,3 +68,5 @@ export default (props: {section_info : SectionInfo, color:string, audioroute:str
     </>
   );
 };
+
+export default AudioCard;

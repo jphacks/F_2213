@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 export const VideoPlayer = ({ a, b }) => {
   const handleTimeUpdate = (e) => {
@@ -54,4 +53,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+export default App;

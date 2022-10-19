@@ -1,13 +1,13 @@
 import Styles from "../../styles/components/edit-papar.module.scss";
 import Audiotag from "./audio-card";
-import { AudioInfo, SectionInfo} from "./interface";
+import { AudioInfo, SectionInfo } from "./interface";
 
-export default (props: { audio_info: AudioInfo }) => {
+const EditPaper = (props: { audio_info: AudioInfo }) => {
   const color: string = props.audio_info.color;
   const title: string = props.audio_info.title;
   const audioroute: string = props.audio_info.audioroute;
   const memo: string = props.audio_info.memo;
-  const audios : SectionInfo[] = props.audio_info.audios;
+  const audios: SectionInfo[] = props.audio_info.audios;
 
   const audio_components = audios.map((x: SectionInfo, idx: number) => (
     <Audiotag
@@ -30,7 +30,7 @@ export default (props: { audio_info: AudioInfo }) => {
       `}</style>
       <div className="papar">
         <div className={Styles.contents}>
-        <div className={Styles.title}>{title}</div>
+          <div className={Styles.title}>{title}</div>
           <div className={Styles.memo}>{memo}</div>
           {audio_components}
         </div>
@@ -38,3 +38,5 @@ export default (props: { audio_info: AudioInfo }) => {
     </>
   );
 };
+
+export default EditPaper;
