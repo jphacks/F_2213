@@ -1,480 +1,479 @@
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1666107167912333, "dur":7650, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107167920010, "dur":111, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
-,{ "pid":12345, "tid":0, "ts":1666107167920142, "dur":42, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
-,{ "pid":12345, "tid":0, "ts":1666107167920184, "dur":859, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
-,{ "pid":12345, "tid":0, "ts":1666107167921189, "dur":2363, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107167923552, "dur":4, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678314, "dur":333, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678647, "dur":25, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678672, "dur":7, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678679, "dur":23, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678702, "dur":5, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678707, "dur":17, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678724, "dur":5, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678729, "dur":14, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678743, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678774, "dur":4, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168678840, "dur":12275, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1666107167923620, "dur":2, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107167923622, "dur":16852, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107167940475, "dur":2109, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":1, "ts":1666107167942597, "dur":4, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107167971929, "dur":10525, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":1, "ts":1666107167982610, "dur":319, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":1, "ts":1666107167982938, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107167984578, "dur":7972, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":1, "ts":1666107167992917, "dur":416, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":1, "ts":1666107167993342, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107167993361, "dur":13506, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":1, "ts":1666107168007026, "dur":423, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":1, "ts":1666107168007457, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168007473, "dur":5846, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":1, "ts":1666107168013485, "dur":69802, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168083291, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168083407, "dur":13549, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168097038, "dur":1449, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168098492, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168098501, "dur":5065, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168103648, "dur":1207, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168104865, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168104881, "dur":5009, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168109963, "dur":3007, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168112976, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168112990, "dur":3252, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168116324, "dur":1406, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168117741, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168117755, "dur":3102, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168120940, "dur":2023, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168122973, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168122990, "dur":3172, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168126260, "dur":1186, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168127453, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168127465, "dur":2873, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168130423, "dur":855, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168131283, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168131294, "dur":3917, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168135285, "dur":1075, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168136368, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168136381, "dur":3306, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168139764, "dur":1058, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168140827, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168140837, "dur":2715, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168143630, "dur":1521, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168145157, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168145174, "dur":5008, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168150267, "dur":1339, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168151612, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168151622, "dur":2817, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168154521, "dur":1891, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168156420, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168156451, "dur":4599, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168161132, "dur":1218, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168162355, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168162365, "dur":3240, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168165687, "dur":1360, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168167056, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168167069, "dur":3191, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168170335, "dur":960, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168171303, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168171316, "dur":3198, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168174592, "dur":1512, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168176114, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168176130, "dur":6705, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168182907, "dur":4140, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168187052, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168187064, "dur":2920, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168190062, "dur":1539, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168191610, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168191625, "dur":3497, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168195215, "dur":1713, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168196937, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168196952, "dur":7172, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168204224, "dur":5755, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168209986, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168209999, "dur":4846, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168214919, "dur":1306, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Threading.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168216231, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168216243, "dur":7973, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Threading.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168224457, "dur":1092, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Networking.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168225556, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168225569, "dur":3692, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Networking.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168229335, "dur":782, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Environments.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168230123, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168230136, "dur":2678, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Environments.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168232893, "dur":707, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Configuration.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168233605, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168233649, "dur":3898, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Configuration.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168237628, "dur":20625, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168258260, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168258272, "dur":6730, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168265085, "dur":3770, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168268865, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168268881, "dur":3152, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168272117, "dur":2080, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168274202, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168274212, "dur":3315, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168277604, "dur":10189, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168287799, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168287810, "dur":6990, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168294872, "dur":3023, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168297902, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168297915, "dur":6155, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168304144, "dur":2256, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168306405, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168306415, "dur":2331, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168308829, "dur":2145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168310981, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168310993, "dur":3287, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":1, "ts":1666107168314355, "dur":402, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
-,{ "pid":12345, "tid":1, "ts":1666107168314763, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168316414, "dur":3451, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
-,{ "pid":12345, "tid":1, "ts":1666107168319937, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":1, "ts":1666107168320015, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168320167, "dur":3517, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":1, "ts":1666107168324315, "dur":106, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":1, "ts":1666107168324428, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168324440, "dur":30330, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":1, "ts":1666107168354851, "dur":333, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":1, "ts":1666107168355189, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168355199, "dur":5286, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":1, "ts":1666107168360571, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/resources.assets" }}
-,{ "pid":12345, "tid":1, "ts":1666107168360646, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168360655, "dur":4811, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/resources.assets" }}
-,{ "pid":12345, "tid":1, "ts":1666107168365536, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/level0" }}
-,{ "pid":12345, "tid":1, "ts":1666107168365602, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168365612, "dur":7777, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/level0" }}
-,{ "pid":12345, "tid":1, "ts":1666107168373466, "dur":486, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1666107168373957, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1666107168373969, "dur":3748, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1666107168377871, "dur":300446, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107167923620, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107167923621, "dur":16681, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107167940332, "dur":3, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1666107167940355, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107167945791, "dur":4367, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1666107167950171, "dur":163, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1666107167950344, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107167951560, "dur":12578, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1666107167964141, "dur":12030, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":2, "ts":1666107167976182, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107167976438, "dur":7588, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":2, "ts":1666107167984152, "dur":760, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":2, "ts":1666107167984921, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107167985119, "dur":21476, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":2, "ts":1666107168006762, "dur":314, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":2, "ts":1666107168007084, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107168007105, "dur":7612, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":2, "ts":1666107168014952, "dur":376812, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":2, "ts":1666107168391770, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1666107168391781, "dur":28205, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":2, "ts":1666107168420058, "dur":258214, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107167923690, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107167923691, "dur":16689, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107167940381, "dur":834, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":3, "ts":1666107167941223, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107167959630, "dur":6468, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":3, "ts":1666107167968730, "dur":581, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":3, "ts":1666107167969325, "dur":6, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107167969351, "dur":16306, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":3, "ts":1666107167985825, "dur":1748, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":3, "ts":1666107167987582, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107167987602, "dur":7246, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":3, "ts":1666107167995003, "dur":1862, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1666107167996879, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107167997106, "dur":4773, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1666107168002043, "dur":2022, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":3, "ts":1666107168004078, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168004105, "dur":8107, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":3, "ts":1666107168012354, "dur":8268, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168020632, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168022072, "dur":8604, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168030829, "dur":3529, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image.exe" }}
-,{ "pid":12345, "tid":3, "ts":1666107168034366, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168034384, "dur":9918, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image.exe" }}
-,{ "pid":12345, "tid":3, "ts":1666107168044458, "dur":1448, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168045919, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168046470, "dur":4464, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168051077, "dur":3554, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168054639, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168054969, "dur":7021, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168062095, "dur":2697, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168064799, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168064813, "dur":3894, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168068778, "dur":1084, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168069868, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168069912, "dur":3710, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168073715, "dur":1405, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168075126, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168075149, "dur":7894, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168083149, "dur":1111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168084266, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168084276, "dur":2608, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168086966, "dur":1150, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168088127, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168088145, "dur":4863, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168093106, "dur":2111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168095225, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168095238, "dur":2849, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168098159, "dur":1674, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UNETModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168099842, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168099858, "dur":5545, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UNETModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168105477, "dur":2938, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168108422, "dur":9, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168108442, "dur":3661, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168112188, "dur":1716, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168113911, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168113925, "dur":4049, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168118094, "dur":1079, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168119179, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168119192, "dur":2977, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168122258, "dur":2259, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168124528, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168124540, "dur":3541, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168128156, "dur":1406, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168129567, "dur":6, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168129583, "dur":3057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168132986, "dur":1055, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168134047, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168134059, "dur":3014, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168137146, "dur":867, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168138022, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168138037, "dur":3908, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168142023, "dur":1419, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168143448, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168143460, "dur":3320, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168146847, "dur":1919, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168148774, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168148786, "dur":3346, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168152217, "dur":942, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168153165, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168153177, "dur":4826, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168158152, "dur":1779, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168159940, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168159956, "dur":3348, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168163375, "dur":1098, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168164480, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168164524, "dur":2860, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168167460, "dur":971, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168168437, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168168449, "dur":3532, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168172074, "dur":1326, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168173407, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168173419, "dur":2775, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168176270, "dur":1601, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168177877, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168177889, "dur":3724, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168181681, "dur":871, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168182558, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168182570, "dur":4212, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168186849, "dur":2007, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168188864, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168188876, "dur":2781, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168191744, "dur":1122, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168192870, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168192880, "dur":4166, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168197115, "dur":2393, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168199514, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168199526, "dur":3812, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168203416, "dur":2702, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168206125, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168206138, "dur":5365, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168211587, "dur":2793, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168214398, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168214410, "dur":3860, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168218344, "dur":670, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168219020, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168219032, "dur":7967, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168227076, "dur":966, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Internal.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168228049, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168228061, "dur":2786, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Internal.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168230920, "dur":839, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168231764, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168231776, "dur":3048, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168234914, "dur":1916, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168236838, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168236853, "dur":3611, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168240548, "dur":2691, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168243246, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168243258, "dur":3436, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168246776, "dur":6919, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168253702, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168253715, "dur":4561, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168258347, "dur":1431, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168259784, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168259795, "dur":4130, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168263999, "dur":1692, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168265712, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168265728, "dur":3808, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168269605, "dur":16776, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168286386, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168286396, "dur":5656, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168292161, "dur":1420, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168293602, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168293615, "dur":10021, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168303713, "dur":3945, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Newtonsoft.Json.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168307665, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168307677, "dur":4845, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Newtonsoft.Json.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168312588, "dur":321760, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Plugins/x86_64/OVRLipSync.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168634359, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1666107168635847, "dur":42217, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Plugins/x86_64/OVRLipSync.dll" }}
-,{ "pid":12345, "tid":3, "ts":1666107168678193, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
-,{ "pid":12345, "tid":3, "ts":1666107168678200, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107167923968, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107167923970, "dur":16338, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107167940332, "dur":2523, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":4, "ts":1666107167942864, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107167957687, "dur":5802, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":4, "ts":1666107167963628, "dur":522, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":4, "ts":1666107167964204, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107167964498, "dur":19475, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":4, "ts":1666107167984101, "dur":2588, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":4, "ts":1666107167986697, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107167986716, "dur":7969, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":4, "ts":1666107167994870, "dur":482, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":4, "ts":1666107167995360, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107167996306, "dur":4939, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":4, "ts":1666107168001376, "dur":280, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":4, "ts":1666107168001663, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168001682, "dur":7274, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":4, "ts":1666107168009103, "dur":405, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":4, "ts":1666107168009521, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168009548, "dur":5685, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":4, "ts":1666107168015393, "dur":11682, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":4, "ts":1666107168027084, "dur":4, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168027100, "dur":15144, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":4, "ts":1666107168042385, "dur":313, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":4, "ts":1666107168042706, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168043322, "dur":22176, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":4, "ts":1666107168065713, "dur":2298, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168068018, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168068030, "dur":2691, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168070804, "dur":1038, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168071848, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168071862, "dur":3171, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168075121, "dur":2512, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168077640, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168077652, "dur":3000, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168080759, "dur":1454, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168082223, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168082239, "dur":2973, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168085306, "dur":866, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168086179, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168086225, "dur":2761, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168089304, "dur":1125, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168090436, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168090448, "dur":6014, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168096545, "dur":1433, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168097987, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168098003, "dur":3184, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168101291, "dur":2231, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168103529, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168103541, "dur":3839, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168107469, "dur":8595, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168116071, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168116083, "dur":7127, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168123307, "dur":1223, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168124535, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168124542, "dur":4166, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168128786, "dur":1441, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168130332, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168130344, "dur":4731, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168135144, "dur":1157, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168136309, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168136325, "dur":3060, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168139468, "dur":1111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168140589, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168140639, "dur":3219, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168143941, "dur":1133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168145080, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168145091, "dur":4723, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168149888, "dur":1348, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168151241, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168151253, "dur":3086, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168154412, "dur":2232, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168156653, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168156666, "dur":4070, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168160812, "dur":1428, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168162254, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168162271, "dur":3152, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168165503, "dur":1453, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168166965, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168166978, "dur":2920, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168169976, "dur":1127, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168171109, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168171120, "dur":3145, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168174337, "dur":7098, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168181442, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168181458, "dur":4041, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168185577, "dur":1482, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168187068, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168187081, "dur":4512, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168191670, "dur":1176, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168192852, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168192864, "dur":3962, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168196909, "dur":1044, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168197959, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168197970, "dur":4986, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168203061, "dur":5404, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168208472, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168208485, "dur":6820, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168215376, "dur":1192, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168216574, "dur":15, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168216598, "dur":3876, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168220580, "dur":1420, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Registration.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168222007, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168222040, "dur":5366, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Registration.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168227486, "dur":768, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168228259, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168228269, "dur":2978, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168231329, "dur":597, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Device.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168231934, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168231943, "dur":2817, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Device.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168234834, "dur":568, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Analytics.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168235407, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168235418, "dur":3873, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Unity.Services.Core.Analytics.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168239370, "dur":1444, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168240822, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168240837, "dur":2551, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168243492, "dur":2501, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168245999, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168246010, "dur":2644, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168248726, "dur":2776, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168251540, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168251552, "dur":4944, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168256574, "dur":2479, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168259061, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168259076, "dur":4734, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168263890, "dur":2252, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168266146, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168266155, "dur":3823, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168270061, "dur":18080, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168288148, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168288161, "dur":11822, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168300055, "dur":2371, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/Oculus.LipSync.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168302433, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168302446, "dur":3534, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/Oculus.LipSync.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168306048, "dur":30749, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168336804, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168336817, "dur":7605, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":4, "ts":1666107168344493, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":4, "ts":1666107168344595, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168344605, "dur":6899, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":4, "ts":1666107168351612, "dur":371, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":4, "ts":1666107168351988, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168351998, "dur":3447, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":4, "ts":1666107168356606, "dur":97, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/resources.resource" }}
-,{ "pid":12345, "tid":4, "ts":1666107168356710, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168356724, "dur":5282, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/resources.resource" }}
-,{ "pid":12345, "tid":4, "ts":1666107168362083, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/level0.resS" }}
-,{ "pid":12345, "tid":4, "ts":1666107168362151, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168362162, "dur":4794, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/level0.resS" }}
-,{ "pid":12345, "tid":4, "ts":1666107168367031, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":4, "ts":1666107168367106, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168367114, "dur":4157, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":4, "ts":1666107168371364, "dur":175, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/mouse-image_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":4, "ts":1666107168371545, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1666107168371558, "dur":6779, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/mouse-image_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":4, "ts":1666107168378417, "dur":299870, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1666107168713617, "dur":8677, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid":12345, "tid":0, "ts":1666161140627234, "dur":7094, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161140634357, "dur":127, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1666161140634512, "dur":52, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1666161140634564, "dur":1052, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1666161140635770, "dur":2766, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161140638537, "dur":3, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141042923, "dur":402, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043325, "dur":25, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043350, "dur":7, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043357, "dur":20, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043377, "dur":6, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043383, "dur":16, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043399, "dur":5, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043404, "dur":16, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043420, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043444, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141043459, "dur":7781, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1666161140640690, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140640692, "dur":18678, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140659371, "dur":368, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1666161140659755, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140668115, "dur":8852, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1666161140677166, "dur":402, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":1, "ts":1666161140677576, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140677597, "dur":5400, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":1, "ts":1666161140683152, "dur":321, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1666161140683488, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140684626, "dur":5079, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1666161140689828, "dur":302, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1666161140690144, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140691218, "dur":5836, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1666161140697317, "dur":314, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1666161140697639, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140697659, "dur":6269, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1666161140704096, "dur":256, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":1, "ts":1666161140704358, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140704371, "dur":8592, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":1, "ts":1666161140713127, "dur":243, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":1, "ts":1666161140713377, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140713394, "dur":40206, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":1, "ts":1666161140753777, "dur":261, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140754047, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140754767, "dur":9649, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140764524, "dur":205, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140764736, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140764891, "dur":9266, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140774250, "dur":400, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140774662, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140774682, "dur":12687, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140787444, "dur":169, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140787625, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140787641, "dur":6225, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140793941, "dur":190, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140794137, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140794152, "dur":11147, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140805403, "dur":214, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140805626, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140805637, "dur":7244, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140812982, "dur":175, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140813165, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140813181, "dur":7729, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140820985, "dur":4759, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140825754, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140825771, "dur":3246, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140829108, "dur":215, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140829328, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140829430, "dur":3353, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140832852, "dur":143, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140833000, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140833010, "dur":2818, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140835900, "dur":148, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140836057, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140836175, "dur":4646, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140840900, "dur":158, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140841067, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140841083, "dur":2907, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140844054, "dur":264, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140844323, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140844333, "dur":3452, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140847851, "dur":144, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140848001, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140848012, "dur":3815, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140851897, "dur":153, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140852056, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140852067, "dur":5331, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140857474, "dur":481, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140857964, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140857975, "dur":4271, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140862324, "dur":293, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140862623, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140862635, "dur":3390, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140866088, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140866231, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140866246, "dur":4440, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140870759, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140870908, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140870918, "dur":7102, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140878103, "dur":173, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140878281, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140878292, "dur":6001, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140884359, "dur":172, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140884537, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140884551, "dur":5130, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140889749, "dur":165, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140889919, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140889931, "dur":3173, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140893185, "dur":2346, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140895535, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140895550, "dur":2999, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140898631, "dur":813, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140899450, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140899463, "dur":2792, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140902331, "dur":762, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140903099, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140903111, "dur":3319, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140906500, "dur":533, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140907037, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140907047, "dur":3075, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140910191, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140910270, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140910281, "dur":2522, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140912880, "dur":157, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140913045, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140913061, "dur":5907, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140919049, "dur":132, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140919185, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140919194, "dur":8096, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140927363, "dur":144, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140927515, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140927528, "dur":9169, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140936773, "dur":85, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140936862, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140936873, "dur":7455, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":1, "ts":1666161140944419, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":1, "ts":1666161140944495, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140944597, "dur":16942, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":1, "ts":1666161140961618, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/resources.resource" }}
+,{ "pid":12345, "tid":1, "ts":1666161140961693, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140961705, "dur":7105, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/resources.resource" }}
+,{ "pid":12345, "tid":1, "ts":1666161140970264, "dur":89, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/level0" }}
+,{ "pid":12345, "tid":1, "ts":1666161140970360, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140970371, "dur":3212, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/level0" }}
+,{ "pid":12345, "tid":1, "ts":1666161140973654, "dur":270, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1666161140973928, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1666161140973937, "dur":2361, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1666161140976366, "dur":66530, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140639263, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140639264, "dur":20042, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140659337, "dur":3, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":2, "ts":1666161140659346, "dur":329, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140659689, "dur":6, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/app.info" }}
+,{ "pid":12345, "tid":2, "ts":1666161140659704, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140663717, "dur":13564, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/app.info" }}
+,{ "pid":12345, "tid":2, "ts":1666161140677286, "dur":331, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1666161140677624, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140677643, "dur":5369, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1666161140683195, "dur":371, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1666161140683573, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140684225, "dur":5366, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1666161140689727, "dur":338, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":2, "ts":1666161140690079, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140690107, "dur":6359, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":2, "ts":1666161140696596, "dur":297, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1666161140696906, "dur":5, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140696933, "dur":6772, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1666161140703815, "dur":242, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":2, "ts":1666161140704063, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140704080, "dur":6199, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":2, "ts":1666161140710435, "dur":251, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140710692, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140710703, "dur":116561, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140827346, "dur":198, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140827548, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140827556, "dur":4098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140831727, "dur":171, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140831904, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140831938, "dur":3961, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140835969, "dur":125, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140836170, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140836180, "dur":3131, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140839382, "dur":152, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140839540, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140839551, "dur":4225, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140843848, "dur":161, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140844109, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140844150, "dur":2861, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140847100, "dur":167, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140847273, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140847282, "dur":7540, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140854894, "dur":166, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140855065, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140855075, "dur":3609, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140858752, "dur":154, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140858915, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140858959, "dur":3978, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140863017, "dur":137, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140863159, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140863169, "dur":2926, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140866156, "dur":117, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140866281, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140866327, "dur":4026, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140870418, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140870555, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140870567, "dur":10668, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140881310, "dur":158, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140881473, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140881485, "dur":4016, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140885573, "dur":159, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140885740, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140885755, "dur":3400, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140889232, "dur":2755, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140891997, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140892014, "dur":3515, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140895600, "dur":809, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140896417, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140896433, "dur":3168, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140899672, "dur":1014, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140900693, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140900705, "dur":2920, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140903700, "dur":1653, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140905363, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140905380, "dur":3201, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140908646, "dur":77, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140908727, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140908736, "dur":5609, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140914425, "dur":149, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140914583, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140914599, "dur":3799, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140918471, "dur":147, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140918623, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140918635, "dur":5704, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140924411, "dur":144, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140924560, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140924572, "dur":9677, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140934368, "dur":157, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140934530, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140934542, "dur":8366, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":2, "ts":1666161140942979, "dur":1578, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":2, "ts":1666161140944566, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140944867, "dur":3216, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":2, "ts":1666161140948159, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":2, "ts":1666161140948253, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140948267, "dur":9487, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":2, "ts":1666161140957834, "dur":366, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":2, "ts":1666161140958204, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140958215, "dur":2555, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":2, "ts":1666161140961085, "dur":477, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":2, "ts":1666161140961570, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140961585, "dur":3612, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":2, "ts":1666161140965283, "dur":83, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/resources.assets" }}
+,{ "pid":12345, "tid":2, "ts":1666161140965371, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140965382, "dur":2256, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/resources.assets" }}
+,{ "pid":12345, "tid":2, "ts":1666161140967716, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/level0.resS" }}
+,{ "pid":12345, "tid":2, "ts":1666161140967790, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140967800, "dur":2794, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/level0.resS" }}
+,{ "pid":12345, "tid":2, "ts":1666161140970681, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":2, "ts":1666161140970761, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140970769, "dur":2504, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":2, "ts":1666161140973356, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":2, "ts":1666161140973429, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1666161140973455, "dur":2241, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":2, "ts":1666161140975763, "dur":67150, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140640495, "dur":2, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140640498, "dur":19021, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140659520, "dur":308, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1666161140659841, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140668559, "dur":18948, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1666161140689015, "dur":411, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":3, "ts":1666161140689443, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140689467, "dur":6400, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":3, "ts":1666161140696052, "dur":302, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1666161140696361, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140696998, "dur":12216, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1666161140709334, "dur":537, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140709884, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140710049, "dur":70811, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140780947, "dur":224, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140781177, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140781189, "dur":7221, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140788540, "dur":170, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140788716, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140788728, "dur":3548, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140792353, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140792504, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140792515, "dur":3890, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140796483, "dur":142, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140796630, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140796654, "dur":8575, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140805337, "dur":190, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140805536, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140805549, "dur":7583, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140813213, "dur":161, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140813382, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140813395, "dur":6589, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140820114, "dur":161, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140820280, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140820292, "dur":6891, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140827259, "dur":142, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140827405, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140827416, "dur":4683, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140832169, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140832348, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140832360, "dur":3570, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140836007, "dur":154, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140836166, "dur":111, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140836290, "dur":5273, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140841656, "dur":146, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140841807, "dur":7, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140841824, "dur":4922, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140846832, "dur":163, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140847001, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140847015, "dur":3378, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140850494, "dur":152, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140850651, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140850662, "dur":9321, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140860254, "dur":5038, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140865300, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140865312, "dur":10130, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140875505, "dur":182, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140875692, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140875704, "dur":7109, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140882890, "dur":148, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140883043, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140883055, "dur":4286, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140887424, "dur":862, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140888292, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140888304, "dur":2739, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140891126, "dur":1165, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140892309, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140892319, "dur":3905, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140896302, "dur":822, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140897132, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140897145, "dur":2873, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140900091, "dur":963, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140901062, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140901074, "dur":3501, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140904664, "dur":911, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140905579, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140905622, "dur":2559, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140908256, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140908339, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140908352, "dur":8493, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140916929, "dur":153, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140917091, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140917108, "dur":3071, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140920631, "dur":86, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140920723, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140920734, "dur":6802, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140927645, "dur":152, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140927802, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140927810, "dur":4861, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140932735, "dur":3042, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Oculus.LipSync.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140935813, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140935828, "dur":4550, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Oculus.LipSync.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140940449, "dur":158, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140940612, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140940624, "dur":6310, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1666161140947002, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":3, "ts":1666161140947074, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1666161140947086, "dur":29218, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":3, "ts":1666161140976368, "dur":66520, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140640754, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140640755, "dur":18613, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140659369, "dur":575, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":4, "ts":1666161140659950, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140671047, "dur":8321, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":4, "ts":1666161140679521, "dur":310, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":4, "ts":1666161140679840, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140679860, "dur":6593, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":4, "ts":1666161140686607, "dur":342, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1666161140686957, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140687143, "dur":8547, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1666161140695925, "dur":372, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":4, "ts":1666161140696312, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140696480, "dur":8843, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":4, "ts":1666161140705448, "dur":242, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140705701, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140706147, "dur":8811, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140715083, "dur":123, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image.exe" }}
+,{ "pid":12345, "tid":4, "ts":1666161140715212, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140715222, "dur":5416, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image.exe" }}
+,{ "pid":12345, "tid":4, "ts":1666161140720726, "dur":221, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":4, "ts":1666161140720954, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140721553, "dur":57670, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":4, "ts":1666161140779332, "dur":510, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140779853, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140779869, "dur":8120, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140788076, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140788225, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140788236, "dur":3382, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140791689, "dur":173, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140791870, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140791887, "dur":4213, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140796180, "dur":156, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140796342, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140796354, "dur":9677, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140806105, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140806254, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140806264, "dur":8505, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140814926, "dur":444, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140815376, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140815390, "dur":5138, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140820601, "dur":138, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140820744, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140820753, "dur":12462, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140833723, "dur":434, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140834164, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140834175, "dur":8730, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140842968, "dur":134, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140843107, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140843119, "dur":4499, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140847702, "dur":143, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140847850, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140847860, "dur":3353, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140851297, "dur":148, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140851450, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140851461, "dur":5261, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140856807, "dur":398, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140857211, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140857222, "dur":2554, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140859848, "dur":142, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140859998, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140860014, "dur":3266, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140863453, "dur":131, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140863589, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140863599, "dur":4859, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140868547, "dur":158, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140868710, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140868723, "dur":3349, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140872146, "dur":152, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140872303, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140872315, "dur":5037, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140877457, "dur":142, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140877604, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140877615, "dur":7142, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140884834, "dur":144, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140884983, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140884993, "dur":2802, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140887867, "dur":2213, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140890088, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140890102, "dur":7069, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140897247, "dur":1094, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140898348, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140898361, "dur":3279, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140901711, "dur":711, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140902427, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140902439, "dur":3531, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140906044, "dur":878, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140906929, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140906941, "dur":2497, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140909516, "dur":77, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140909597, "dur":8, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140909614, "dur":2655, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140912339, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140912408, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140912419, "dur":2597, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140915087, "dur":151, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140915276, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140915289, "dur":3620, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140918988, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140919128, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140919142, "dur":5623, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140924846, "dur":160, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140925015, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140925029, "dur":4723, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140929829, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140929979, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140929991, "dur":5141, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140935199, "dur":128, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140935331, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140935342, "dur":6392, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140941806, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Plugins/x86_64/OVRLipSync.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161140941892, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1666161140943638, "dur":99098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/masahiro/Documents/unity-mouse/mouse-image_Data/Plugins/x86_64/OVRLipSync.dll" }}
+,{ "pid":12345, "tid":4, "ts":1666161141042861, "dur":3, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":4, "ts":1666161141042864, "dur":1, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1666161141057805, "dur":4924, "ph":"X", "name": "ProfilerWriteOutput" }
 ,

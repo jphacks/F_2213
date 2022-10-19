@@ -7,22 +7,20 @@ public class SoundManager : MonoBehaviour
 {
     private AudioClip Sound;
     private AudioSource audio;
-    public string path = "C:/Users/masahiro/voiceSample/Test.mp3";
+    //public string path = "C:/Users/masahiro/voiceSample/Test.mp3";
     private bool isAudioEnd;
     private float totaltime;
     private int f=0;
     private float startSpanTime = 1f;
     private float endSpanTime = 0.3f;
 
-	//string VoiceName = "Test";
-
 	void Start()
 	{
-        using(WWW www = new WWW("file://" + path))
+        var args = System.Environment.GetCommandLineArgs();
+        using(WWW www = new WWW("file://" + args[1]))
         {
             Sound = www.GetAudioClip(false, true);
             audio = GetComponent<AudioSource>();
-            //audio.clip = Resources.Load<AudioClip>(VoiceName);
             audio.clip = Sound;
             isAudioEnd = false;
         }
