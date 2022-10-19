@@ -38,7 +38,7 @@ message AudioList{
 }
 
 message Audio{
-  AudioId Id = 1;
+  int64 Id = 1;
   string AudioName = 2;
   string Description = 3;
   string Url = 4;

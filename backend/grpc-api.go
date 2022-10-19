@@ -9,6 +9,13 @@ import (
 	pb "github.com/jphacks/F_2213/backend/grpc_out"
 )
 
+func convertInterface[T any](in interface{}) T {
+	jsonBytes, _ := json.Marshal(in)
+	var out T
+	json.Unmarshal(jsonBytes, &out)
+	return out
+}
+
 func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioList, error) {
 	user, err := fetchAuthorizedUser(ctx)
 	if err != nil {
@@ -54,10 +61,8 @@ func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioLis
 	audioList.Audios = make([]*pb.Audio, len(audioMap))
 	i := 0
 	for _, v := range audioMap {
-		jsonBytes, _ := json.Marshal(v)
-		var pbAudio pb.Audio
-		json.Unmarshal(jsonBytes, &pbAudio)
-		audioList.Audios[i] = &pbAudio
+		audio := convertInterface[pb.Audio](v)
+		audioList.Audios[i] = &audio
 		i++
 	}
 	return &audioList, nil

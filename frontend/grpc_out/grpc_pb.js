@@ -1071,7 +1071,7 @@ proto.prolis.Audio.prototype.toObject = function(opt_includeInstance) {
  */
 proto.prolis.Audio.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && proto.prolis.AudioId.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     audioname: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     url: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -1114,8 +1114,7 @@ proto.prolis.Audio.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.prolis.AudioId;
-      reader.readMessage(value,proto.prolis.AudioId.deserializeBinaryFromReader);
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setId(value);
       break;
     case 2:
@@ -1165,11 +1164,10 @@ proto.prolis.Audio.prototype.serializeBinary = function() {
 proto.prolis.Audio.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
-      f,
-      proto.prolis.AudioId.serializeBinaryToWriter
+      f
     );
   }
   f = message.getAudioname();
@@ -1205,39 +1203,20 @@ proto.prolis.Audio.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional AudioId Id = 1;
- * @return {?proto.prolis.AudioId}
+ * optional int64 Id = 1;
+ * @return {number}
  */
 proto.prolis.Audio.prototype.getId = function() {
-  return /** @type{?proto.prolis.AudioId} */ (
-    jspb.Message.getWrapperField(this, proto.prolis.AudioId, 1));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {?proto.prolis.AudioId|undefined} value
+ * @param {number} value
  * @return {!proto.prolis.Audio} returns this
-*/
+ */
 proto.prolis.Audio.prototype.setId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.prolis.Audio} returns this
- */
-proto.prolis.Audio.prototype.clearId = function() {
-  return this.setId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.prolis.Audio.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
