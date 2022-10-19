@@ -129,28 +129,28 @@ export class TopPageClientClient {
     '/prolis.TopPageClient/uploadAudio',
     grpcWeb.MethodType.UNARY,
     grpc_pb.Audio,
-    grpc_pb.Status,
+    grpc_pb.AudioId,
     (request: grpc_pb.Audio) => {
       return request.serializeBinary();
     },
-    grpc_pb.Status.deserializeBinary
+    grpc_pb.AudioId.deserializeBinary
   );
 
   uploadAudio(
     request: grpc_pb.Audio,
-    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.Status>;
+    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.AudioId>;
 
   uploadAudio(
     request: grpc_pb.Audio,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: grpc_pb.Status) => void): grpcWeb.ClientReadableStream<grpc_pb.Status>;
+               response: grpc_pb.AudioId) => void): grpcWeb.ClientReadableStream<grpc_pb.AudioId>;
 
   uploadAudio(
     request: grpc_pb.Audio,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: grpc_pb.Status) => void) {
+               response: grpc_pb.AudioId) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

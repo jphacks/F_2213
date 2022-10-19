@@ -23,10 +23,6 @@ import (
 	"google.golang.org/grpc/metadata"
 )
 
-type server struct {
-	pb.UnimplementedTopPageClientServer
-}
-
 func parseJwtTokenFromCookie(ctx context.Context) (string, error) {
 	// ctxからメタデータを取得
 	md, ok := metadata.FromIncomingContext(ctx)
@@ -149,6 +145,10 @@ var db *sqlx.DB
 //go:embed resource/prolis_public.pem
 var publicPemBytes []byte
 var publicKey *rsa.PublicKey
+
+type server struct {
+	pb.UnimplementedTopPageClientServer
+}
 
 // main.goから呼ばれるエントリーポイント
 func RunGrpc() {

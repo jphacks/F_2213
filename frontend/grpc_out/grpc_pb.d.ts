@@ -117,8 +117,10 @@ export namespace AudioList {
 }
 
 export class Audio extends jspb.Message {
-  getId(): number;
-  setId(value: number): Audio;
+  getId(): AudioId | undefined;
+  setId(value?: AudioId): Audio;
+  hasId(): boolean;
+  clearId(): Audio;
 
   getAudioname(): string;
   setAudioname(value: string): Audio;
@@ -144,7 +146,7 @@ export class Audio extends jspb.Message {
 
 export namespace Audio {
   export type AsObject = {
-    id: number,
+    id?: AudioId.AsObject,
     audioname: string,
     description: string,
     url: string,

@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type TopPageClientClient interface {
 	FetchAudioList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AudioList, error)
 	FetchUserInfo(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*User, error)
-	UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*Status, error)
+	UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*AudioId, error)
 	DeleteTag(ctx context.Context, in *TagId, opts ...grpc.CallOption) (*Status, error)
 	DeleteAudio(ctx context.Context, in *AudioId, opts ...grpc.CallOption) (*Status, error)
 }
@@ -55,8 +55,8 @@ func (c *topPageClientClient) FetchUserInfo(ctx context.Context, in *Empty, opts
 	return out, nil
 }
 
-func (c *topPageClientClient) UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*Status, error) {
-	out := new(Status)
+func (c *topPageClientClient) UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*AudioId, error) {
+	out := new(AudioId)
 	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/uploadAudio", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -88,7 +88,7 @@ func (c *topPageClientClient) DeleteAudio(ctx context.Context, in *AudioId, opts
 type TopPageClientServer interface {
 	FetchAudioList(context.Context, *Empty) (*AudioList, error)
 	FetchUserInfo(context.Context, *Empty) (*User, error)
-	UploadAudio(context.Context, *Audio) (*Status, error)
+	UploadAudio(context.Context, *Audio) (*AudioId, error)
 	DeleteTag(context.Context, *TagId) (*Status, error)
 	DeleteAudio(context.Context, *AudioId) (*Status, error)
 	mustEmbedUnimplementedTopPageClientServer()
@@ -104,7 +104,7 @@ func (UnimplementedTopPageClientServer) FetchAudioList(context.Context, *Empty) 
 func (UnimplementedTopPageClientServer) FetchUserInfo(context.Context, *Empty) (*User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchUserInfo not implemented")
 }
-func (UnimplementedTopPageClientServer) UploadAudio(context.Context, *Audio) (*Status, error) {
+func (UnimplementedTopPageClientServer) UploadAudio(context.Context, *Audio) (*AudioId, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadAudio not implemented")
 }
 func (UnimplementedTopPageClientServer) DeleteTag(context.Context, *TagId) (*Status, error) {

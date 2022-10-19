@@ -6,7 +6,7 @@ package prolis;
 service TopPageClient {
   rpc fetchAudioList(Empty) returns (AudioList){}
   rpc fetchUserInfo(Empty) returns (User){}
-  rpc uploadAudio(Audio) returns (Status) {}
+  rpc uploadAudio(Audio) returns (AudioId) {}
 
   rpc deleteTag(TagId) returns (Status){}
   rpc deleteAudio(AudioId) returns (Status){}
@@ -38,7 +38,7 @@ message AudioList{
 }
 
 message Audio{
-  int64 id = 1;
+  AudioId id = 1;
   string audioName = 2;
   string description = 3;
   string url = 4;
