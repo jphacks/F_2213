@@ -774,7 +774,7 @@ proto.prolis.Status.prototype.toObject = function(opt_includeInstance) {
  */
 proto.prolis.Status.toObject = function(includeInstance, msg) {
   var f, obj = {
-    status: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    affectedrowcnt: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -813,7 +813,7 @@ proto.prolis.Status.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setStatus(value);
+      msg.setAffectedrowcnt(value);
       break;
     default:
       reader.skipField();
@@ -844,7 +844,7 @@ proto.prolis.Status.prototype.serializeBinary = function() {
  */
 proto.prolis.Status.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getStatus();
+  f = message.getAffectedrowcnt();
   if (f !== 0) {
     writer.writeInt64(
       1,
@@ -855,10 +855,10 @@ proto.prolis.Status.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 status = 1;
+ * optional int64 affectedRowCnt = 1;
  * @return {number}
  */
-proto.prolis.Status.prototype.getStatus = function() {
+proto.prolis.Status.prototype.getAffectedrowcnt = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -867,7 +867,7 @@ proto.prolis.Status.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.prolis.Status} returns this
  */
-proto.prolis.Status.prototype.setStatus = function(value) {
+proto.prolis.Status.prototype.setAffectedrowcnt = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 

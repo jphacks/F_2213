@@ -79,8 +79,8 @@ export namespace AudioId {
 }
 
 export class Status extends jspb.Message {
-  getStatus(): number;
-  setStatus(value: number): Status;
+  getAffectedrowcnt(): number;
+  setAffectedrowcnt(value: number): Status;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Status.AsObject;
@@ -92,7 +92,7 @@ export class Status extends jspb.Message {
 
 export namespace Status {
   export type AsObject = {
-    status: number,
+    affectedrowcnt: number,
   }
 }
 

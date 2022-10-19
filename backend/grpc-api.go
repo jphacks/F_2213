@@ -72,6 +72,24 @@ func (s *server) FetchUserInfo(ctx context.Context, in *pb.Empty) (*pb.User, err
 	return user, nil
 }
 
+func (s *server) DeleteTag(ctx context.Context, in *pb.TagId) (*pb.Status, error) {
+	user, err := fetchAuthorizedUser(ctx)
+	if err != nil {
+		return nil, err
+	}
+	res, err := db.Exec("DELETE FROM tag WHERE user_id=? AND id=?", user.Id, in.Id)
+	if err != nil {
+		return nil, err
+	}
+
+	status := pb.Status{}
+	status.AffectedRowCnt, err = res.RowsAffected()
+	if err != nil {
+		return nil, err
+	}
+	return &status, nil
+}
+
 type Audio struct {
 	Id          int    `db:"id"`
 	UserId      string `db:"user_id"`

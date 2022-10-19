@@ -2,10 +2,11 @@ import * as jspb from "google-protobuf";
 import { RpcError } from "grpc-web";
 import { useState } from "react";
 import { TopPageClientClient } from "../../grpc_out/GrpcServiceClientPb";
-import { Audio, Empty, Tag } from "../../grpc_out/grpc_pb";
+import { Audio, Empty, Tag, TagId } from "../../grpc_out/grpc_pb";
 
 export default () => {
   const [output, setOutput] = useState<string>("Api output would be here");
+  const [tagId, setTagId] = useState<number>(-1);
 
   const handleTestLogin = () => {
     window.location.href = "http://localhost:8080/auth/test-login";
@@ -62,6 +63,15 @@ export default () => {
     client.uploadAudio(query, null, callback);
   };
 
+  const deleteTag = () => {
+    const client = new TopPageClientClient("http://localhost:8080", null, {
+      withCredentials: true,
+    });
+    const query = new TagId();
+    query.setId(tagId);
+    client.deleteTag(query, null, callback);
+  };
+
   return (
     <div
       style={{
@@ -91,10 +101,21 @@ export default () => {
         action="http://localhost:8080/img/upload"
         encType="multipart/form-data"
         method="post"
+        style={{ border: "2px solid #000", padding: "1rem" }}
       >
         <input type="file" name="upload" id="upload" />
         <input type="submit" value="Upload" />
       </form>
+      <div style={{ border: "2px solid #000", padding: "1rem" }}>
+        <input
+          value={tagId}
+          type="number"
+          onChange={(e) => {
+            setTagId(Number(e.currentTarget.value));
+          }}
+        />
+        <button onClick={deleteTag}>Delete Tag</button>
+      </div>
     </div>
   );
 };
