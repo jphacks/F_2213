@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TopPageClientClient interface {
 	FetchAudioList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AudioList, error)
+	FetchUserInfo(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*User, error)
 	UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*Status, error)
 	DeleteTag(ctx context.Context, in *TagId, opts ...grpc.CallOption) (*Status, error)
 	DeleteAudio(ctx context.Context, in *AudioId, opts ...grpc.CallOption) (*Status, error)
@@ -39,6 +40,15 @@ func NewTopPageClientClient(cc grpc.ClientConnInterface) TopPageClientClient {
 func (c *topPageClientClient) FetchAudioList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AudioList, error) {
 	out := new(AudioList)
 	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/fetchAudioList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *topPageClientClient) FetchUserInfo(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*User, error) {
+	out := new(User)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/fetchUserInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,6 +87,7 @@ func (c *topPageClientClient) DeleteAudio(ctx context.Context, in *AudioId, opts
 // for forward compatibility
 type TopPageClientServer interface {
 	FetchAudioList(context.Context, *Empty) (*AudioList, error)
+	FetchUserInfo(context.Context, *Empty) (*User, error)
 	UploadAudio(context.Context, *Audio) (*Status, error)
 	DeleteTag(context.Context, *TagId) (*Status, error)
 	DeleteAudio(context.Context, *AudioId) (*Status, error)
@@ -89,6 +100,9 @@ type UnimplementedTopPageClientServer struct {
 
 func (UnimplementedTopPageClientServer) FetchAudioList(context.Context, *Empty) (*AudioList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchAudioList not implemented")
+}
+func (UnimplementedTopPageClientServer) FetchUserInfo(context.Context, *Empty) (*User, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FetchUserInfo not implemented")
 }
 func (UnimplementedTopPageClientServer) UploadAudio(context.Context, *Audio) (*Status, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadAudio not implemented")
@@ -126,6 +140,24 @@ func _TopPageClient_FetchAudioList_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TopPageClientServer).FetchAudioList(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TopPageClient_FetchUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TopPageClientServer).FetchUserInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/prolis.TopPageClient/fetchUserInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TopPageClientServer).FetchUserInfo(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,6 +226,10 @@ var TopPageClient_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "fetchAudioList",
 			Handler:    _TopPageClient_FetchAudioList_Handler,
+		},
+		{
+			MethodName: "fetchUserInfo",
+			Handler:    _TopPageClient_FetchUserInfo_Handler,
 		},
 		{
 			MethodName: "uploadAudio",

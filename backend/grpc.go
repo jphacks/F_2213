@@ -16,7 +16,7 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
-	pb "github.com/jphacks/F_2213/grpc"
+	pb "github.com/jphacks/F_2213/backend/grpc_out"
 	"github.com/lestrrat-go/jwx/v2/jwa"
 	"github.com/lestrrat-go/jwx/v2/jwt"
 	"google.golang.org/grpc"
@@ -64,7 +64,7 @@ func parseJwtTokenFromCookie(ctx context.Context) (string, error) {
 	return cookie.Value, nil
 }
 
-func jwtToUser(parsedJwt jwt.Token) (*User, error) {
+func jwtToUser(parsedJwt jwt.Token) (*pb.User, error) {
 	rawEmail, ok := parsedJwt.Get("email")
 	if !ok {
 		return nil, errors.New("parse error: email")
@@ -91,10 +91,10 @@ func jwtToUser(parsedJwt jwt.Token) (*User, error) {
 		return nil, errors.New("cast error: id")
 	}
 
-	return &User{id: id, email: email, name: name}, nil
+	return &pb.User{Id: id, Email: email, Name: name}, nil
 }
 
-func fetchAuthorizedUser(ctx context.Context) (*User, error) {
+func fetchAuthorizedUser(ctx context.Context) (*pb.User, error) {
 	signedJwt, err := parseJwtTokenFromCookie(ctx)
 	if err != nil {
 		return nil, err

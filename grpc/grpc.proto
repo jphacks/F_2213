@@ -5,10 +5,18 @@ package prolis;
 
 service TopPageClient {
   rpc fetchAudioList(Empty) returns (AudioList){}
+  rpc fetchUserInfo(Empty) returns (User){}
   rpc uploadAudio(Audio) returns (Status) {}
 
   rpc deleteTag(TagId) returns (Status){}
   rpc deleteAudio(AudioId) returns (Status){}
+}
+
+
+message User{
+  string id = 1;
+  string name = 2;
+  string email = 3;
 }
 
 message Empty{}
@@ -42,10 +50,4 @@ message Tag{
   int64 startMs = 2;
   int64 endMs = 3;
   string tagName = 4;
-}
-
-message User{
-  string id = 1;
-  string name = 2;
-  string email = 3;
 }

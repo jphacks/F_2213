@@ -82,6 +82,49 @@ export class TopPageClientClient {
     this.methodDescriptorfetchAudioList);
   }
 
+  methodDescriptorfetchUserInfo = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/fetchUserInfo',
+    grpcWeb.MethodType.UNARY,
+    grpc_pb.Empty,
+    grpc_pb.User,
+    (request: grpc_pb.Empty) => {
+      return request.serializeBinary();
+    },
+    grpc_pb.User.deserializeBinary
+  );
+
+  fetchUserInfo(
+    request: grpc_pb.Empty,
+    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.User>;
+
+  fetchUserInfo(
+    request: grpc_pb.Empty,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: grpc_pb.User) => void): grpcWeb.ClientReadableStream<grpc_pb.User>;
+
+  fetchUserInfo(
+    request: grpc_pb.Empty,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: grpc_pb.User) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/prolis.TopPageClient/fetchUserInfo',
+        request,
+        metadata || {},
+        this.methodDescriptorfetchUserInfo,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/prolis.TopPageClient/fetchUserInfo',
+    request,
+    metadata || {},
+    this.methodDescriptorfetchUserInfo);
+  }
+
   methodDescriptoruploadAudio = new grpcWeb.MethodDescriptor(
     '/prolis.TopPageClient/uploadAudio',
     grpcWeb.MethodType.UNARY,
