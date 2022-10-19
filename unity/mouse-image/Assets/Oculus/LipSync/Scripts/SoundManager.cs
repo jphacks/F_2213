@@ -7,12 +7,16 @@ public class SoundManager : MonoBehaviour
 {
     private AudioClip Sound;
     private AudioSource audio;
-    //public string path = "C:/Users/masahiro/voiceSample/Test.mp3";
     private bool isAudioEnd;
     private float totaltime;
     private int f=0;
     private float startSpanTime = 1f;
     private float endSpanTime = 0.3f;
+
+    void awake()
+    {
+        Application.targetFrameRate = 60;
+    }
 
 	void Start()
 	{
