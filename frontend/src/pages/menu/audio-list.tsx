@@ -1,76 +1,53 @@
 import Audiotag from "../../components/audio-tag";
 import Editpapar from "../../components/edit-papar";
 import Styles from "../../../styles/audio-list.module.scss";
-import { v4 as uuidv4 } from "uuid";
+import{SectionInfo, AudioInfo} from "../../components/interface";
 import Link from "next/link";
+import { useState } from "react";
 
 
-type AudioInfo = {
-  name: string;
-  start: number;
-  end: number;
-};
-
-export class TagInfo {
-  uuid = uuidv4();
-  title: string;
-  memo: string;
-  audioroute: string;
-  color: string;
-  audios: AudioInfo[];
-
-  constructor(
-    title: string,
-    audioroute: string,
-    color: string,
-    memo: string,
-    audios: AudioInfo[]
-  ) {
-    this.title = title;
-    this.audioroute = audioroute;
-    this.color = color;
-    this.memo = memo;
-    this.audios = audios;
-    this.audios.sort((a, b) => a.start - b.start);
-  }
-}
 
 /* === */
 
-const demolist: AudioInfo[] = [
-  { name: "zzz", start: 1, end: 10 },
-  { name: "aaa", start: 15, end: 20 },
+const demolist: SectionInfo[] = [
+  { name: "zzz", start: 2, end: 3 },
+  { name: "aaa", start: 1, end: 2 },
 ];
-const demo = new TagInfo(
+const demo = new AudioInfo(
   "タイトル1",
-  "../../../public/sm1.mp3",
+  "/sm1.mp3",
   "#b2f1a3",
   "テストです....",
   demolist
 );
 
-const demolist2: AudioInfo[] = [
+const demolist2: SectionInfo[] = [
   { name: "あああ", start: 1, end: 20 },
   { name: "ががが", start: 1, end: 10 },
 ];
 module;
-const demo2 = new TagInfo(
+const demo2 = new AudioInfo(
   "タイトル2",
-  "../../../public/sm1.mp3",
-  "red",
-  "テストです....",
+  "/sm2.mp3",
+  "#fff",
+  "テストですよ！",
   demolist2
 );
 
 const audiodemolists = [demo, demo2];
 
-
 export default () => {
-  let display_card: TagInfo; // hoverしたときにhoverしたときのTagInfoを受け取って入れる．
-
-
-  const distplay_tags = audiodemolists.map((x: TagInfo) => (
-    <Audiotag key={x.uuid} audiols={x}></Audiotag>
+  const [hoveringDemo, setHoveringDemo] = useState<AudioInfo>(demo2);
+  const distplay_tags = audiodemolists.map((x: AudioInfo) => (
+    <Audiotag
+      key={x.uuid}
+      audio_info={x}
+      handleHover={() => {
+        if (hoveringDemo !== x) {
+          setHoveringDemo(x);
+        }
+      }}
+    ></Audiotag>
   ));
 
   return (
@@ -92,9 +69,8 @@ export default () => {
         </div>
       </div>
       <div className={Styles.editpapar_wrap}>
-        <Editpapar audiols={demo}></Editpapar>
+        <Editpapar audio_info={hoveringDemo}></Editpapar>
       </div>
     </div>
   );
 };
-

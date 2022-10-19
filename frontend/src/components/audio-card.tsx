@@ -1,11 +1,12 @@
 import Styles from "../../styles/components/audio-card.module.scss";
+import {SectionInfo} from "../components/interface";
 
-export default (props: any) => {
-  const name: string = props.audioinfo.name;
-  const start: number = props.audioinfo.start;
-  const end: number = props.audioinfo.end;
-  const color: string = props.audioinfo.color;
-  const audioroute: string = `${props.audioinfo.audioroute}#=${start},${end}`; //数値 -> 時間の処理をする？
+export default (props: {section_info : SectionInfo, color:string, audioroute:string}) => {
+  const name: string = props.section_info.name;
+  const start: number = props.section_info.start;
+  const end: number = props.section_info.end;
+  const color: string = props.color;
+  const audioroute: string = `${props.audioroute}#t=${start},${end}`;
 
 
   return (

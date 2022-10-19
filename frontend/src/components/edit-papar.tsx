@@ -1,19 +1,22 @@
 import Styles from "../../styles/components/edit-papar.module.scss";
 import Audiotag from "./audio-card";
+import { AudioInfo, SectionInfo} from "./interface";
 
-export default (props: any) => {
-  const color: string = props.audiols.color;
-  const title: string = props.audiols.title;
-  const audioroute: string = props.audiols.audioroute;
-  const memo: string = props.audiols.memo;
-  const audios = props.audiols.audios;
-  let audio_components = [];
+export default (props: { audio_info: AudioInfo }) => {
+  const color: string = props.audio_info.color;
+  const title: string = props.audio_info.title;
+  const audioroute: string = props.audio_info.audioroute;
+  const memo: string = props.audio_info.memo;
+  const audios : SectionInfo[] = props.audio_info.audios;
 
-  audios.map((x: any, index: number) => {
-    x["color"] = color;
-    x["audioroute"] = audioroute;
-    audio_components.push(<Audiotag key={index} audioinfo={x}></Audiotag>);
-  });
+  const audio_components = audios.map((x: SectionInfo, idx: number) => (
+    <Audiotag
+      key={idx}
+      color={color}
+      audioroute={audioroute}
+      section_info={x}
+    ></Audiotag>
+  ));
 
   return (
     <>
@@ -28,9 +31,9 @@ export default (props: any) => {
       <div className="papar">
         <div className={Styles.contents}>
         <div className={Styles.title}>{title}</div>
-        <div className={Styles.memo}>{memo}</div>
-        {audio_components}
-      </div>
+          <div className={Styles.memo}>{memo}</div>
+          {audio_components}
+        </div>
       </div>
     </>
   );
