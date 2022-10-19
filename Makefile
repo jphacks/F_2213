@@ -9,7 +9,7 @@ init_grpc_front:
 init_grpc_back:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
 	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
-	export PATH="$PATH:$(go env GOPATH)/bin"
+	apk add protoc
 
 gen_grpc_front:
 	cd frontend && rm -rf $(OUT_DIR)
@@ -21,11 +21,14 @@ gen_grpc_front:
 		--js_out=import_style=commonjs,binary:$(OUT_DIR)
 
 gen_grpc_back:
-	cd grpc && protoc \
-		*.proto \
-		--go_out=. \
+	cd backend && rm -rf $(OUT_DIR)
+	cd backend && mkdir $(OUT_DIR)
+	cd backend && protoc \
+		-I=../grpc \
+		../grpc/*.proto \
+		--go_out=$(OUT_DIR) \
 		--go_opt=paths=source_relative \
-		--go-grpc_out=. \
+		--go-grpc_out=$(OUT_DIR) \
 		--go-grpc_opt=paths=source_relative
 
 start_dev_init:

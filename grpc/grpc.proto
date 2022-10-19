@@ -4,48 +4,50 @@ option go_package = "github.com/jphacks/F_2213";
 package prolis;
 
 service TopPageClient {
-  rpc fetchAudioList(Empty) returns (AudioList){}
-  rpc uploadAudio(Audio) returns (Status) {}
+  rpc FetchAudioList(Empty) returns (AudioList){}
+  rpc FetchUserInfo(Empty) returns (User){}
+  rpc UploadAudio(Audio) returns (AudioId) {}
 
-  rpc deleteTag(TagUuid) returns (Status){}
-  rpc deleteAudio(AudioUuid) returns (Status){}
+  rpc DeleteTag(TagId) returns (Status){}
+  rpc DeleteAudio(AudioId) returns (Status){}
+}
+
+
+message User{
+  string Id = 1;
+  string Name = 2;
+  string Email = 3;
 }
 
 message Empty{}
 
-message TagUuid{
-  string uuid = 1;
+message TagId{
+  int64 Id = 1;
 }
-message AudioUuid{
-  string uuid = 1;
+
+message AudioId{
+  int64 Id = 1;
 }
 
 message Status{
-  int64 status = 1;
+  int64 AffectedRowCnt = 1;
 }
 
-
 message AudioList{
-  repeated Audio AudioList = 1;
+  repeated Audio Audios = 1;
 }
 
 message Audio{
-  AudioUuid uuid = 1;
-  string audioName = 2;
-  string description = 3;
-  string url = 4;
-  repeated Tag tagList = 5; 
+  int64 Id = 1;
+  string AudioName = 2;
+  string Description = 3;
+  string Url = 4;
+  repeated Tag Tags = 5; 
 }
 
 message Tag{
-  TagUuid uuid = 1;
-  int64 startMs = 2;
-  int64 endMs = 3;
-  string tagName = 4;
-}
-
-message User{
-  int64 id = 1;
-  string name = 2;
-  string email = 3;
+  int64 Id = 1;
+  int64 StartMs = 2;
+  int64 EndMs = 3;
+  string TagName = 4;
 }

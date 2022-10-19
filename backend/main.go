@@ -6,7 +6,7 @@ import (
 
 func main() {
 	var wg sync.WaitGroup
-	wg.Add(2)
+	wg.Add(3)
 	go func() {
 		defer wg.Done()
 		RunGrpc()
@@ -14,6 +14,10 @@ func main() {
 	go func() {
 		defer wg.Done()
 		RunOAuthServer()
+	}()
+	go func() {
+		defer wg.Done()
+		RunImageServer()
 	}()
 	wg.Wait()
 }

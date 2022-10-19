@@ -1,24 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { DBWriterClient } from "../../grpc_out/GrpcServiceClientPb";
-import { User } from "../../grpc_out/grpc_pb";
 import styles from "../../styles/Home.module.scss";
 
 const Home: NextPage = () => {
-  const handleClick = async () => {
-    const client = new DBWriterClient("http://localhost:8080");
-    const query = new User();
-    query.setName("Sato Taro");
-    query.setEmail("hoge@fjewiofjoiewa.com");
-    client.createNewUser(query, null, (err, response) => {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log(response);
-      }
-    });
-  };
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +13,6 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <button onClick={handleClick}>say hello</button>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>

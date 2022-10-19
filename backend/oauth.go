@@ -57,6 +57,8 @@ func RunOAuthServer() {
 	// サーバー起動
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/callback", callback)
+	http.HandleFunc("/test-login", testLogin)
+	http.HandleFunc("/logout", logout)
 	log.Printf("auth server listening at %v", ":3001")
 	err = http.ListenAndServe(":3001", nil)
 	if err != nil {
@@ -68,6 +70,45 @@ func genRandomStr() string {
 	b := make([]byte, 128)
 	rand.Read(b)
 	return base64.URLEncoding.EncodeToString(b)
+}
+
+func logout(w http.ResponseWriter, r *http.Request) {
+	// JWTをクッキーにセット
+	cookie := &http.Cookie{
+		Name:     "JWT_TOKEN",
+		Value:    "",
+		Path:     "/",
+		HttpOnly: true,
+	}
+	http.SetCookie(w, cookie)
+
+	http.Redirect(w, r, AFTER_AUTH_REDIRECT_URL, 302)
+	log.Printf("ログアウト。リダイレクト %v\n", AFTER_AUTH_REDIRECT_URL)
+}
+
+func testLogin(w http.ResponseWriter, r *http.Request) {
+	// ユーザー情報からJWTを生成
+	token := jwt.New()
+	token.Set("id", "test-user-id")
+	token.Set("name", "test user")
+	token.Set("email", "test-user@example.com")
+	signed, err := jwt.Sign(token, jwt.WithKey(jwa.RS256, privateKey))
+	if err != nil {
+		log.Printf("error jwt.Sign: %v", err)
+		return
+	}
+
+	// JWTをクッキーにセット
+	cookie := &http.Cookie{
+		Name:     "JWT_TOKEN",
+		Value:    fmt.Sprintf("%s", signed),
+		Path:     "/",
+		HttpOnly: true,
+	}
+	http.SetCookie(w, cookie)
+
+	http.Redirect(w, r, AFTER_AUTH_REDIRECT_URL, 302)
+	log.Printf("テストユーザーのログイン完了。リダイレクト %v\n", AFTER_AUTH_REDIRECT_URL)
 }
 
 func login(w http.ResponseWriter, r *http.Request) {

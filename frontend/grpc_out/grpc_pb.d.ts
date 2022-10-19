@@ -3,8 +3,8 @@ import * as jspb from 'google-protobuf'
 
 
 export class User extends jspb.Message {
-  getId(): number;
-  setId(value: number): User;
+  getId(): string;
+  setId(value: string): User;
 
   getName(): string;
   setName(value: string): User;
@@ -22,55 +22,163 @@ export class User extends jspb.Message {
 
 export namespace User {
   export type AsObject = {
-    id: number,
+    id: string,
     name: string,
     email: string,
   }
 }
 
-export class Data extends jspb.Message {
-  getId(): number;
-  setId(value: number): Data;
-
-  getUserId(): number;
-  setUserId(value: number): Data;
-
-  getValue(): string;
-  setValue(value: string): Data;
-
+export class Empty extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Data.AsObject;
-  static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
-  static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Data;
-  static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  toObject(includeInstance?: boolean): Empty.AsObject;
+  static toObject(includeInstance: boolean, msg: Empty): Empty.AsObject;
+  static serializeBinaryToWriter(message: Empty, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Empty;
+  static deserializeBinaryFromReader(message: Empty, reader: jspb.BinaryReader): Empty;
 }
 
-export namespace Data {
+export namespace Empty {
   export type AsObject = {
-    id: number,
-    userId: number,
-    value: string,
   }
 }
 
-export class DataList extends jspb.Message {
-  getDatalistList(): Array<Data>;
-  setDatalistList(value: Array<Data>): DataList;
-  clearDatalistList(): DataList;
-  addDatalist(value?: Data, index?: number): Data;
+export class TagId extends jspb.Message {
+  getId(): number;
+  setId(value: number): TagId;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataList.AsObject;
-  static toObject(includeInstance: boolean, msg: DataList): DataList.AsObject;
-  static serializeBinaryToWriter(message: DataList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataList;
-  static deserializeBinaryFromReader(message: DataList, reader: jspb.BinaryReader): DataList;
+  toObject(includeInstance?: boolean): TagId.AsObject;
+  static toObject(includeInstance: boolean, msg: TagId): TagId.AsObject;
+  static serializeBinaryToWriter(message: TagId, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TagId;
+  static deserializeBinaryFromReader(message: TagId, reader: jspb.BinaryReader): TagId;
 }
 
-export namespace DataList {
+export namespace TagId {
   export type AsObject = {
-    datalistList: Array<Data.AsObject>,
+    id: number,
+  }
+}
+
+export class AudioId extends jspb.Message {
+  getId(): number;
+  setId(value: number): AudioId;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AudioId.AsObject;
+  static toObject(includeInstance: boolean, msg: AudioId): AudioId.AsObject;
+  static serializeBinaryToWriter(message: AudioId, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AudioId;
+  static deserializeBinaryFromReader(message: AudioId, reader: jspb.BinaryReader): AudioId;
+}
+
+export namespace AudioId {
+  export type AsObject = {
+    id: number,
+  }
+}
+
+export class Status extends jspb.Message {
+  getAffectedrowcnt(): number;
+  setAffectedrowcnt(value: number): Status;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Status.AsObject;
+  static toObject(includeInstance: boolean, msg: Status): Status.AsObject;
+  static serializeBinaryToWriter(message: Status, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Status;
+  static deserializeBinaryFromReader(message: Status, reader: jspb.BinaryReader): Status;
+}
+
+export namespace Status {
+  export type AsObject = {
+    affectedrowcnt: number,
+  }
+}
+
+export class AudioList extends jspb.Message {
+  getAudiosList(): Array<Audio>;
+  setAudiosList(value: Array<Audio>): AudioList;
+  clearAudiosList(): AudioList;
+  addAudios(value?: Audio, index?: number): Audio;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AudioList.AsObject;
+  static toObject(includeInstance: boolean, msg: AudioList): AudioList.AsObject;
+  static serializeBinaryToWriter(message: AudioList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AudioList;
+  static deserializeBinaryFromReader(message: AudioList, reader: jspb.BinaryReader): AudioList;
+}
+
+export namespace AudioList {
+  export type AsObject = {
+    audiosList: Array<Audio.AsObject>,
+  }
+}
+
+export class Audio extends jspb.Message {
+  getId(): number;
+  setId(value: number): Audio;
+
+  getAudioname(): string;
+  setAudioname(value: string): Audio;
+
+  getDescription(): string;
+  setDescription(value: string): Audio;
+
+  getUrl(): string;
+  setUrl(value: string): Audio;
+
+  getTagsList(): Array<Tag>;
+  setTagsList(value: Array<Tag>): Audio;
+  clearTagsList(): Audio;
+  addTags(value?: Tag, index?: number): Tag;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Audio.AsObject;
+  static toObject(includeInstance: boolean, msg: Audio): Audio.AsObject;
+  static serializeBinaryToWriter(message: Audio, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Audio;
+  static deserializeBinaryFromReader(message: Audio, reader: jspb.BinaryReader): Audio;
+}
+
+export namespace Audio {
+  export type AsObject = {
+    id: number,
+    audioname: string,
+    description: string,
+    url: string,
+    tagsList: Array<Tag.AsObject>,
+  }
+}
+
+export class Tag extends jspb.Message {
+  getId(): number;
+  setId(value: number): Tag;
+
+  getStartms(): number;
+  setStartms(value: number): Tag;
+
+  getEndms(): number;
+  setEndms(value: number): Tag;
+
+  getTagname(): string;
+  setTagname(value: string): Tag;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Tag.AsObject;
+  static toObject(includeInstance: boolean, msg: Tag): Tag.AsObject;
+  static serializeBinaryToWriter(message: Tag, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Tag;
+  static deserializeBinaryFromReader(message: Tag, reader: jspb.BinaryReader): Tag;
+}
+
+export namespace Tag {
+  export type AsObject = {
+    id: number,
+    startms: number,
+    endms: number,
+    tagname: string,
   }
 }
 

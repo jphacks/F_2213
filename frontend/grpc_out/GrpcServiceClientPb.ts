@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for gRPC_test
+ * @fileoverview gRPC-Web generated client stub for prolis
  * @enhanceable
  * @public
  */
@@ -20,7 +20,7 @@ import * as grpcWeb from 'grpc-web';
 import * as grpc_pb from './grpc_pb';
 
 
-export class DBWriterClient {
+export class TopPageClientClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
@@ -39,133 +39,219 @@ export class DBWriterClient {
     this.options_ = options;
   }
 
-  methodDescriptorCreateNewUser = new grpcWeb.MethodDescriptor(
-    '/gRPC_test.DBWriter/CreateNewUser',
+  methodDescriptorFetchAudioList = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/FetchAudioList',
     grpcWeb.MethodType.UNARY,
+    grpc_pb.Empty,
+    grpc_pb.AudioList,
+    (request: grpc_pb.Empty) => {
+      return request.serializeBinary();
+    },
+    grpc_pb.AudioList.deserializeBinary
+  );
+
+  fetchAudioList(
+    request: grpc_pb.Empty,
+    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.AudioList>;
+
+  fetchAudioList(
+    request: grpc_pb.Empty,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: grpc_pb.AudioList) => void): grpcWeb.ClientReadableStream<grpc_pb.AudioList>;
+
+  fetchAudioList(
+    request: grpc_pb.Empty,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: grpc_pb.AudioList) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/prolis.TopPageClient/FetchAudioList',
+        request,
+        metadata || {},
+        this.methodDescriptorFetchAudioList,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/prolis.TopPageClient/FetchAudioList',
+    request,
+    metadata || {},
+    this.methodDescriptorFetchAudioList);
+  }
+
+  methodDescriptorFetchUserInfo = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/FetchUserInfo',
+    grpcWeb.MethodType.UNARY,
+    grpc_pb.Empty,
     grpc_pb.User,
-    grpc_pb.User,
-    (request: grpc_pb.User) => {
+    (request: grpc_pb.Empty) => {
       return request.serializeBinary();
     },
     grpc_pb.User.deserializeBinary
   );
 
-  createNewUser(
-    request: grpc_pb.User,
+  fetchUserInfo(
+    request: grpc_pb.Empty,
     metadata: grpcWeb.Metadata | null): Promise<grpc_pb.User>;
 
-  createNewUser(
-    request: grpc_pb.User,
+  fetchUserInfo(
+    request: grpc_pb.Empty,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: grpc_pb.User) => void): grpcWeb.ClientReadableStream<grpc_pb.User>;
 
-  createNewUser(
-    request: grpc_pb.User,
+  fetchUserInfo(
+    request: grpc_pb.Empty,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: grpc_pb.User) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/gRPC_test.DBWriter/CreateNewUser',
+          '/prolis.TopPageClient/FetchUserInfo',
         request,
         metadata || {},
-        this.methodDescriptorCreateNewUser,
+        this.methodDescriptorFetchUserInfo,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/gRPC_test.DBWriter/CreateNewUser',
+      '/prolis.TopPageClient/FetchUserInfo',
     request,
     metadata || {},
-    this.methodDescriptorCreateNewUser);
+    this.methodDescriptorFetchUserInfo);
   }
 
-  methodDescriptorWriteDB = new grpcWeb.MethodDescriptor(
-    '/gRPC_test.DBWriter/WriteDB',
+  methodDescriptorUploadAudio = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/UploadAudio',
     grpcWeb.MethodType.UNARY,
-    grpc_pb.Data,
-    grpc_pb.Data,
-    (request: grpc_pb.Data) => {
+    grpc_pb.Audio,
+    grpc_pb.AudioId,
+    (request: grpc_pb.Audio) => {
       return request.serializeBinary();
     },
-    grpc_pb.Data.deserializeBinary
+    grpc_pb.AudioId.deserializeBinary
   );
 
-  writeDB(
-    request: grpc_pb.Data,
-    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.Data>;
+  uploadAudio(
+    request: grpc_pb.Audio,
+    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.AudioId>;
 
-  writeDB(
-    request: grpc_pb.Data,
+  uploadAudio(
+    request: grpc_pb.Audio,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: grpc_pb.Data) => void): grpcWeb.ClientReadableStream<grpc_pb.Data>;
+               response: grpc_pb.AudioId) => void): grpcWeb.ClientReadableStream<grpc_pb.AudioId>;
 
-  writeDB(
-    request: grpc_pb.Data,
+  uploadAudio(
+    request: grpc_pb.Audio,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: grpc_pb.Data) => void) {
+               response: grpc_pb.AudioId) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/gRPC_test.DBWriter/WriteDB',
+          '/prolis.TopPageClient/UploadAudio',
         request,
         metadata || {},
-        this.methodDescriptorWriteDB,
+        this.methodDescriptorUploadAudio,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/gRPC_test.DBWriter/WriteDB',
+      '/prolis.TopPageClient/UploadAudio',
     request,
     metadata || {},
-    this.methodDescriptorWriteDB);
+    this.methodDescriptorUploadAudio);
   }
 
-  methodDescriptorReadDB = new grpcWeb.MethodDescriptor(
-    '/gRPC_test.DBWriter/ReadDB',
+  methodDescriptorDeleteTag = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/DeleteTag',
     grpcWeb.MethodType.UNARY,
-    grpc_pb.User,
-    grpc_pb.DataList,
-    (request: grpc_pb.User) => {
+    grpc_pb.TagId,
+    grpc_pb.Status,
+    (request: grpc_pb.TagId) => {
       return request.serializeBinary();
     },
-    grpc_pb.DataList.deserializeBinary
+    grpc_pb.Status.deserializeBinary
   );
 
-  readDB(
-    request: grpc_pb.User,
-    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.DataList>;
+  deleteTag(
+    request: grpc_pb.TagId,
+    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.Status>;
 
-  readDB(
-    request: grpc_pb.User,
+  deleteTag(
+    request: grpc_pb.TagId,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: grpc_pb.DataList) => void): grpcWeb.ClientReadableStream<grpc_pb.DataList>;
+               response: grpc_pb.Status) => void): grpcWeb.ClientReadableStream<grpc_pb.Status>;
 
-  readDB(
-    request: grpc_pb.User,
+  deleteTag(
+    request: grpc_pb.TagId,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: grpc_pb.DataList) => void) {
+               response: grpc_pb.Status) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/gRPC_test.DBWriter/ReadDB',
+          '/prolis.TopPageClient/DeleteTag',
         request,
         metadata || {},
-        this.methodDescriptorReadDB,
+        this.methodDescriptorDeleteTag,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/gRPC_test.DBWriter/ReadDB',
+      '/prolis.TopPageClient/DeleteTag',
     request,
     metadata || {},
-    this.methodDescriptorReadDB);
+    this.methodDescriptorDeleteTag);
+  }
+
+  methodDescriptorDeleteAudio = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/DeleteAudio',
+    grpcWeb.MethodType.UNARY,
+    grpc_pb.AudioId,
+    grpc_pb.Status,
+    (request: grpc_pb.AudioId) => {
+      return request.serializeBinary();
+    },
+    grpc_pb.Status.deserializeBinary
+  );
+
+  deleteAudio(
+    request: grpc_pb.AudioId,
+    metadata: grpcWeb.Metadata | null): Promise<grpc_pb.Status>;
+
+  deleteAudio(
+    request: grpc_pb.AudioId,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: grpc_pb.Status) => void): grpcWeb.ClientReadableStream<grpc_pb.Status>;
+
+  deleteAudio(
+    request: grpc_pb.AudioId,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: grpc_pb.Status) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/prolis.TopPageClient/DeleteAudio',
+        request,
+        metadata || {},
+        this.methodDescriptorDeleteAudio,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/prolis.TopPageClient/DeleteAudio',
+    request,
+    metadata || {},
+    this.methodDescriptorDeleteAudio);
   }
 
 }

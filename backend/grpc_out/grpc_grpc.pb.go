@@ -23,9 +23,10 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TopPageClientClient interface {
 	FetchAudioList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AudioList, error)
-	UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*Status, error)
-	DeleteTag(ctx context.Context, in *TagUuid, opts ...grpc.CallOption) (*Status, error)
-	DeleteAudio(ctx context.Context, in *AudioUuid, opts ...grpc.CallOption) (*Status, error)
+	FetchUserInfo(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*User, error)
+	UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*AudioId, error)
+	DeleteTag(ctx context.Context, in *TagId, opts ...grpc.CallOption) (*Status, error)
+	DeleteAudio(ctx context.Context, in *AudioId, opts ...grpc.CallOption) (*Status, error)
 }
 
 type topPageClientClient struct {
@@ -38,34 +39,43 @@ func NewTopPageClientClient(cc grpc.ClientConnInterface) TopPageClientClient {
 
 func (c *topPageClientClient) FetchAudioList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AudioList, error) {
 	out := new(AudioList)
-	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/fetchAudioList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/FetchAudioList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *topPageClientClient) UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*Status, error) {
-	out := new(Status)
-	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/uploadAudio", in, out, opts...)
+func (c *topPageClientClient) FetchUserInfo(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*User, error) {
+	out := new(User)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/FetchUserInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *topPageClientClient) DeleteTag(ctx context.Context, in *TagUuid, opts ...grpc.CallOption) (*Status, error) {
-	out := new(Status)
-	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/deleteTag", in, out, opts...)
+func (c *topPageClientClient) UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*AudioId, error) {
+	out := new(AudioId)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/UploadAudio", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *topPageClientClient) DeleteAudio(ctx context.Context, in *AudioUuid, opts ...grpc.CallOption) (*Status, error) {
+func (c *topPageClientClient) DeleteTag(ctx context.Context, in *TagId, opts ...grpc.CallOption) (*Status, error) {
 	out := new(Status)
-	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/deleteAudio", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/DeleteTag", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *topPageClientClient) DeleteAudio(ctx context.Context, in *AudioId, opts ...grpc.CallOption) (*Status, error) {
+	out := new(Status)
+	err := c.cc.Invoke(ctx, "/prolis.TopPageClient/DeleteAudio", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,9 +87,10 @@ func (c *topPageClientClient) DeleteAudio(ctx context.Context, in *AudioUuid, op
 // for forward compatibility
 type TopPageClientServer interface {
 	FetchAudioList(context.Context, *Empty) (*AudioList, error)
-	UploadAudio(context.Context, *Audio) (*Status, error)
-	DeleteTag(context.Context, *TagUuid) (*Status, error)
-	DeleteAudio(context.Context, *AudioUuid) (*Status, error)
+	FetchUserInfo(context.Context, *Empty) (*User, error)
+	UploadAudio(context.Context, *Audio) (*AudioId, error)
+	DeleteTag(context.Context, *TagId) (*Status, error)
+	DeleteAudio(context.Context, *AudioId) (*Status, error)
 	mustEmbedUnimplementedTopPageClientServer()
 }
 
@@ -90,13 +101,16 @@ type UnimplementedTopPageClientServer struct {
 func (UnimplementedTopPageClientServer) FetchAudioList(context.Context, *Empty) (*AudioList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchAudioList not implemented")
 }
-func (UnimplementedTopPageClientServer) UploadAudio(context.Context, *Audio) (*Status, error) {
+func (UnimplementedTopPageClientServer) FetchUserInfo(context.Context, *Empty) (*User, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FetchUserInfo not implemented")
+}
+func (UnimplementedTopPageClientServer) UploadAudio(context.Context, *Audio) (*AudioId, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadAudio not implemented")
 }
-func (UnimplementedTopPageClientServer) DeleteTag(context.Context, *TagUuid) (*Status, error) {
+func (UnimplementedTopPageClientServer) DeleteTag(context.Context, *TagId) (*Status, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTag not implemented")
 }
-func (UnimplementedTopPageClientServer) DeleteAudio(context.Context, *AudioUuid) (*Status, error) {
+func (UnimplementedTopPageClientServer) DeleteAudio(context.Context, *AudioId) (*Status, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAudio not implemented")
 }
 func (UnimplementedTopPageClientServer) mustEmbedUnimplementedTopPageClientServer() {}
@@ -122,10 +136,28 @@ func _TopPageClient_FetchAudioList_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/prolis.TopPageClient/fetchAudioList",
+		FullMethod: "/prolis.TopPageClient/FetchAudioList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TopPageClientServer).FetchAudioList(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TopPageClient_FetchUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TopPageClientServer).FetchUserInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/prolis.TopPageClient/FetchUserInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TopPageClientServer).FetchUserInfo(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -140,7 +172,7 @@ func _TopPageClient_UploadAudio_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/prolis.TopPageClient/uploadAudio",
+		FullMethod: "/prolis.TopPageClient/UploadAudio",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TopPageClientServer).UploadAudio(ctx, req.(*Audio))
@@ -149,7 +181,7 @@ func _TopPageClient_UploadAudio_Handler(srv interface{}, ctx context.Context, de
 }
 
 func _TopPageClient_DeleteTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TagUuid)
+	in := new(TagId)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -158,16 +190,16 @@ func _TopPageClient_DeleteTag_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/prolis.TopPageClient/deleteTag",
+		FullMethod: "/prolis.TopPageClient/DeleteTag",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TopPageClientServer).DeleteTag(ctx, req.(*TagUuid))
+		return srv.(TopPageClientServer).DeleteTag(ctx, req.(*TagId))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _TopPageClient_DeleteAudio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AudioUuid)
+	in := new(AudioId)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -176,10 +208,10 @@ func _TopPageClient_DeleteAudio_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/prolis.TopPageClient/deleteAudio",
+		FullMethod: "/prolis.TopPageClient/DeleteAudio",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TopPageClientServer).DeleteAudio(ctx, req.(*AudioUuid))
+		return srv.(TopPageClientServer).DeleteAudio(ctx, req.(*AudioId))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -192,19 +224,23 @@ var TopPageClient_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*TopPageClientServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "fetchAudioList",
+			MethodName: "FetchAudioList",
 			Handler:    _TopPageClient_FetchAudioList_Handler,
 		},
 		{
-			MethodName: "uploadAudio",
+			MethodName: "FetchUserInfo",
+			Handler:    _TopPageClient_FetchUserInfo_Handler,
+		},
+		{
+			MethodName: "UploadAudio",
 			Handler:    _TopPageClient_UploadAudio_Handler,
 		},
 		{
-			MethodName: "deleteTag",
+			MethodName: "DeleteTag",
 			Handler:    _TopPageClient_DeleteTag_Handler,
 		},
 		{
-			MethodName: "deleteAudio",
+			MethodName: "DeleteAudio",
 			Handler:    _TopPageClient_DeleteAudio_Handler,
 		},
 	},

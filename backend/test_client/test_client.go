@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	pb "github.com/kajikentaro/gRPC-test/grpc"
+	pb "github.com/jphacks/F_2213/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
@@ -20,7 +20,7 @@ var (
 	name = flag.String("name", defaultName, "Name to greet")
 )
 
-func RunTestClient() {
+func main() {
 	flag.Parse()
 	// Set up a connection to the server.
 	conn, err := grpc.Dial(*addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
@@ -28,12 +28,12 @@ func RunTestClient() {
 		log.Fatalf("did not connect: %v", err)
 	}
 	defer conn.Close()
-	c := pb.NewDBWriterClient(conn)
+	c := pb.NewTopPageClientClient(conn)
 
 	// Contact the server and print out its response.
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r, err := c.CreateNewUser(ctx, &pb.User{Name: "Sato Taro", Email: "example@example.com"})
+	r, err := c.FetchAudioList(ctx, &pb.Empty{})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
