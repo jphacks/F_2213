@@ -48,3 +48,14 @@ rm prolis_private.pem.pub
   `backend/resource/prolis_public.pem`
 - 秘密鍵
   `backend/resource/prolis_private.pem`
+
+## CI/CD について
+
+このアプリケーションは GitHub Actions を用いて CD/CD を実現しています。  
+`このリポジトリ > Settings > Environments`へ以下の値を設定してください
+
+- `SSH_PRIVATE_KEY`  
+  本番サーバーに ssh ログインするための秘密鍵
+- `ENV_FILE_BASE64`  
+  本番環境の`.env` ファイルを base64 エンコードしたもの  
+  `base64 -i .env | tr -d '\n'`コマンドで作成してください
