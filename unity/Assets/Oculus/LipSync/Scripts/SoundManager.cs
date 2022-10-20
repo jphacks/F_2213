@@ -8,14 +8,10 @@ public class SoundManager : MonoBehaviour
     private AudioClip Sound;
     private AudioSource audio;
     private bool isAudioEnd;
-    private float totaltime;
-    private int f=0;
-    private float startSpanTime = 1f;
-    private float endSpanTime = 0.3f;
 
     void awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 30;
     }
 
 	void Start()
@@ -28,24 +24,13 @@ public class SoundManager : MonoBehaviour
             audio.clip = Sound;
             isAudioEnd = false;
         }
+        audio.Play();
 	}
 
     void Update()
-    {
-        totaltime += Time.deltaTime;
-        if(totaltime > startSpanTime && f==0){
-            audio.Play();
-            isAudioEnd = true;
-            f=1;
-        }
-        if(!audio.isPlaying && f==1){
-            totaltime = 0;
-            f=2;
-        }
-        if(!audio.isPlaying && isAudioEnd && totaltime > endSpanTime)
-        {
+    { 
+        if(!audio.isPlaying){
             Application.Quit();
-            //終了判定
         }
     }
 }

@@ -8,6 +8,10 @@ public class CreatePhoto : MonoBehaviour {
     public int count=1;
     private float totaltime;
 
+    void awake()
+    {
+        Application.targetFrameRate = 30;
+    }
     // Use this for initialization
     void Start () {
         RenderTexture RenderTextureRef = this.gameObject.GetComponent<Camera>().activeTexture;
@@ -16,8 +20,9 @@ public class CreatePhoto : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         totaltime += Time.deltaTime;
-        if(totaltime > 1f){
+        if(totaltime > 0.025f){
             savePng();
+            totaltime -= 0.025f;
         }
     }
 
