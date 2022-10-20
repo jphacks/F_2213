@@ -20,4 +20,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cat fuga > /tmp/fuga
+            cd ~
+            ls F_2213 || git clone https://github.com/jphacks/F_2213 --depth 1
+            cd F_2213
+            git pull origin master
+            echo ${{ secrets.PRODUCTION_ENV }} > .env
+            docker compose up --build prod_back prod_front
+
