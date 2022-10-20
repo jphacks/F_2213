@@ -1,7 +1,7 @@
 import Styles from "../../../../styles/edit-audio.module.scss";
 import { Alert, LinearProgress, TextField, Button } from "@mui/material";
 import Editpapar from "../../../components/edit-papar";
-import { useState, useRef, MouseEvent } from "react";
+import { useState, useRef } from "react";
 import { AudioInfo, SectionInfo } from "../../../components/interface";
 import { timeExpetion } from "../../../components/function";
 import Router from "next/router";
@@ -100,7 +100,7 @@ const EditAudio = () => {
       );
       return;
     }
-    sessionStorage.setItem("prolis_info", JSON.stringify(my_audio_infos));
+    sessionStorage.setItem("prolis_info", JSON.stringify("my_audio_info"));
     asyncAction();
   };
 
