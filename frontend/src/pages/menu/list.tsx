@@ -23,7 +23,7 @@ const demolist2: SectionInfo[] = [
   { name: "あああ", start: 2000, end: 3000 },
   { name: "ががが", start: 5000, end: 20000 },
 ];
-module;
+
 const demo2 = new AudioInfo(
   "タイトル2",
   "/FTampa_EDM_Sux.mp3",
@@ -34,7 +34,7 @@ const demo2 = new AudioInfo(
 
 const audiodemolists = [demo, demo2];
 
-const AudioList = () => {
+const List = () => {
   const [hoveringDemo, setHoveringDemo] = useState<AudioInfo>(demo2);
   const distplay_tags = audiodemolists.map((x: AudioInfo) => (
     <Audiotag
@@ -51,10 +51,10 @@ const AudioList = () => {
   return (
     <div className={Styles.wrap_all}>
       <div className={Styles.papars_wrap}>
-        <Link href="./user-setting">
+        <Link href="./setting">
           <div className={Styles.papar_third}>Setting</div>
         </Link>
-        <Link href="./audio-upload">
+        <Link href="./upload">
           <div className={Styles.papar_second}>Upload</div>
         </Link>
         <div className={Styles.papar_main}>
@@ -73,4 +73,4 @@ const AudioList = () => {
   );
 };
 
-export default AudioList;
+export default List;

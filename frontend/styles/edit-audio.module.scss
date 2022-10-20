@@ -1,0 +1,87 @@
+@mixin backMenu {
+  padding: 15px 20px;
+  box-shadow: 0 0 20px #00000048;
+}
+
+.progress {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%, 0);
+}
+
+.editpapar_wrap {
+  height: 80%;
+  width: 35%;
+  margin: auto 50px;
+}
+
+.papars_wrap {
+  margin: 4% 60px auto auto;
+  width: 50%;
+  height: 80%;
+  position: relative;
+
+  .papar_main {
+    background: #fff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    box-shadow: 0 0 20px #00000048;
+    .papar_line {
+      background-image: radial-gradient(#b9b9b5 1px, transparent 1px),
+        linear-gradient(180deg, #e3e3e2 1px, transparent 1px);
+      background-size: 2em 2em, 100% 2em;
+      background-position: 0px -0.9em, 0 1px;
+      line-height: 2;
+      width: 100%;
+      height: 100%;
+      .wrap {
+        padding: 50px;
+        height: 100%;
+      }
+      .title {
+        font-size: 50px;
+        color: #5ad0ff;
+      }
+      .descriotion {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.papar_second,
+.papar_third {
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  user-select: none;
+}
+
+.papar_third {
+  @include backMenu;
+  font-size: 23px;
+  background: #edebeb;
+  right: 80px;
+  top: -10px;
+  transform: rotate(-5deg);
+}
+
+.papar_second {
+  @include backMenu;
+  font-size: 35px;
+  background: #f0f0f0;
+  right: 50px;
+  top: -10px;
+  transform: rotate(-2deg);
+}
+
+.wrap_all {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}

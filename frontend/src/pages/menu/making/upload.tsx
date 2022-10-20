@@ -5,14 +5,14 @@ import { useDropzone } from "react-dropzone";
 import { Button, Alert, LinearProgress } from "@mui/material";
 import Router from "next/router";
 
-const AudioUpload = () => {
+const Upload = () => {
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
   const [pValue, pValueSet] = useState<number>(0);
 
-  const routine = async () => {
+  const  asyncAction = async () => {
     pValueSet(33);
     await new Promise((r) => setTimeout(r, 1000));
-    Router.push("./user-setting");
+    Router.push("./edit-audio");
   };
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -30,7 +30,10 @@ const AudioUpload = () => {
         </Alert>
       );
     } else {
-      routine();
+      const file = acceptedFiles[0];
+      const url : string = URL.createObjectURL(file);
+      sessionStorage.setItem('prolis', url);
+      asyncAction();
     }
   }, []);
 
@@ -41,10 +44,10 @@ const AudioUpload = () => {
 
   return (
     <div className={Styles.papars_wrap}>
-      <Link href="./user-setting">
+      <Link href="../setting">
         <div className={Styles.papar_third}>Setting</div>
       </Link>
-      <Link href="./audio-list">
+      <Link href="../list">
         <div className={Styles.papar_second}>List</div>
       </Link>
       <div {...getRootProps()}>
@@ -83,4 +86,4 @@ const AudioUpload = () => {
   );
 };
 
-export default AudioUpload;
+export default Upload;
