@@ -1,0 +1,20 @@
+name: frontend_build_check
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: test echo 1
+        shell: bash
+        run: echo ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: test echo 2
+        shell: bash
+        run: echo ${{ secrets.DEVELOPMENT_ENV_FILE }}
