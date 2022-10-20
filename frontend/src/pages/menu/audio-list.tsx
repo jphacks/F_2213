@@ -20,13 +20,13 @@ const demo = new AudioInfo(
 );
 
 const demolist2: SectionInfo[] = [
-  { name: "あああ", start: 1, end: 20 },
-  { name: "ががが", start: 1, end: 10 },
+  { name: "あああ", start: 2000, end: 3000 },
+  { name: "ががが", start: 5000, end: 20000 },
 ];
 module;
 const demo2 = new AudioInfo(
   "タイトル2",
-  "/sm2.mp3",
+  "/FTampa_EDM_Sux.mp3",
   "#fff",
   "テストですよ！",
   demolist2
