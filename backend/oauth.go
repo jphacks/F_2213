@@ -41,6 +41,7 @@ func RunOAuthServer() {
 
 	// OAuth設定
 	conf, err = google.ConfigFromJSON(configOAuth, "openid", "email", "profile")
+	conf.RedirectURL = BACKEND_ORIGIN + "/auth/callback"
 	if err != nil {
 		log.Fatalln("backend/oauth_config.jsonが存在しません")
 	}
