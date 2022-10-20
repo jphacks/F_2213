@@ -8,7 +8,8 @@
 
 
 html,
-body {
+body,
+#__next {
   padding: 0;
   margin: 0;
   background-image: url("../public/images/background.jpg");
@@ -19,6 +20,7 @@ body {
   height: 100%;
   width: 100%;
   z-index: -100;
+  color : #795548;
 }
 
 
