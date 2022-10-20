@@ -7,25 +7,16 @@ import { timeExpetion } from "../../../components/function";
 import Router from "next/router";
 
 const EditAudio = () => {
-  /* */
   let my_audio_list: SectionInfo[] = [];
+  const [myAudioList, myAudioListSet] = useState<SectionInfo[]>(my_audio_list);
 
-  const demotmpstring: string = "null"; // sessionStorage.getItem("prolis");
+  const demotmpstring: string = "null"; // sessionStorage.getItem("prolis_route");
   const my_audio_infos = new AudioInfo(
-    "", // ファイル名
+    "", // ファイル名．
     demotmpstring,
     "#b2f1a3",
-    "",
-    my_audio_list
-  );
-  /* */
-
-  const my_audio_infos22 = new AudioInfo(
-    "", // ファイル名
-    demotmpstring,
-    "#b2f1a3",
-    "",
-    my_audio_list
+    "", // メモは未記入なので空白．
+    myAudioList
   );
 
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
@@ -34,11 +25,24 @@ const EditAudio = () => {
   const timeref_st = [useRef(null), useRef(null)];
   const timeref_ed = [useRef(null), useRef(null)];
 
+  const tunits: string[] = ["分", "秒"];
   const textfield_st = timeref_st.map((x: any, idx: number) => (
-    <TextField key={idx} inputRef={x} defaultValue="開始" />
+    <TextField
+      className={Styles.timebox}
+      key={idx}
+      inputRef={x}
+      label={tunits[idx]}
+      variant="standard"
+    />
   ));
   const textfield_ed = timeref_ed.map((x: any, idx: number) => (
-    <TextField key={idx} inputRef={x} defaultValue="終了" />
+    <TextField
+      className={Styles.timebox}
+      key={idx}
+      inputRef={x}
+      label={tunits[idx]}
+      variant="standard"
+    />
   ));
 
   const handleClick = () => {
@@ -54,13 +58,12 @@ const EditAudio = () => {
 
     if (error_messages.length !== 0) {
       alertPopSet(
-        <Alert severity="error">
+        <Alert severity="error" className={Styles.error}>
           {error_messages.map((x: string, idx: number) => (
             <p key={idx}> {x} </p>
           ))}
         </Alert>
       );
-
       return;
     }
     const audiosection: SectionInfo = {
@@ -69,13 +72,15 @@ const EditAudio = () => {
       end: ed_min * 60 + ed_second,
     };
 
-
-    my_audio_infos.audios.push(audiosection);
-
+    my_audio_list.push(audiosection);
+    myAudioListSet(my_audio_list);
     console.log(my_audio_list);
 
-    const tmp = my_audio_infos;
-    myAudioInfosSet(tmp); // 再レンダリングされない．
+    myAudioInfosSet(my_audio_infos); // 再レンダリングされない．
+
+    timeref_st[0].current.value = timeref_st[1].current.value = null;
+    timeref_ed[0].current.value = timeref_ed[1].current.value = null;
+    nameref.current.value = null;
   };
 
   const [pValue, pValueSet] = useState<number>(33);
@@ -87,7 +92,15 @@ const EditAudio = () => {
   };
 
   const handleNextPage = () => {
-    sessionStorage.setItem("prolis_audio_info", JSON.stringify(my_audio_infos));
+    if (my_audio_infos.audios.length === 0) {
+      alertPopSet(
+        <Alert severity="error" className={Styles.error}>
+          タグを追加してください．
+        </Alert>
+      );
+      return;
+    }
+    sessionStorage.setItem("prolis_info", JSON.stringify(my_audio_infos));
     asyncAction();
   };
 
@@ -99,30 +112,52 @@ const EditAudio = () => {
         <div className={Styles.papar_main}>
           <div className={Styles.papar_line}>
             <div className={Styles.wrap}>
-              <div className={Styles.title}>音声にメモを追加しよう</div>
+              <div className={Styles.title}>音声にタグを追加しよう</div>
               <div className={Styles.descriotion}>
-                音声にもう一度聴きたい区間をメモとして保存しましょう．数字を入力して区間を決めて追加してください．
+                音声にもう一度聴きたい区間をタグとして保存しましょう．数字を入力して区間を決めて追加してください．
               </div>
-              <TextField inputRef={nameref} defaultValue="タイトル名" />
-              {textfield_st}
-              {textfield_ed}
-              <Button
-                variant="contained"
-                onClick={() => handleClick()}
-                className={Styles.button}
-              >
-                付箋を追加する
-              </Button>
+              {alertPop}
 
+              <div className={Styles.audioplay_warp}>
+                <audio
+                  className={Styles.audio_bar}
+                  controls
+                  controlsList="nodownload"
+                >
+                  <source src={my_audio_infos.audioroute} type="audio/mp3" />
+                </audio>
+
+                <div className={Styles.input_box}>
+                  <TextField
+                    inputRef={nameref}
+                    className={Styles.titlebox}
+                    label="タグ名"
+                    variant="outlined"
+                  />
+                  <span>start</span> {textfield_st}
+                  <span>end </span>
+                  {textfield_ed}
+                  <Button
+                    variant="contained"
+                    color="success"
+                    onClick={() => handleClick()}
+                    className={Styles.button}
+                  >
+                    タグを追加する
+                  </Button>
+                </div>
+
+                <div className={Styles.descriotion}>
+                  タグをすべてつけ終わったら次へを押してください。
+                </div>
+              </div>
               <Button
                 variant="contained"
                 onClick={() => handleNextPage()}
-                className={Styles.button}
+                className={Styles.nbutton}
               >
                 次へ
               </Button>
-              {alertPop}
-
               <LinearProgress
                 variant="determinate"
                 value={pValue}

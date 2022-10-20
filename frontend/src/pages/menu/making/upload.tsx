@@ -16,7 +16,6 @@ const Upload = () => {
   };
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
-    console.log(acceptedFiles); //デバッグ用．
     if (acceptedFiles.length !== 1) {
       alertPopSet(
         <Alert severity="error" className={Styles.error}>
@@ -32,7 +31,7 @@ const Upload = () => {
     } else {
       const file = acceptedFiles[0];
       const url : string = URL.createObjectURL(file);
-      sessionStorage.setItem('prolis', url);
+      sessionStorage.setItem('prolis_route', url);
       asyncAction();
     }
   }, []);

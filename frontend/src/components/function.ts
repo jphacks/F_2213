@@ -22,13 +22,13 @@ export const timeExpetion = (input_time: number[]) => {
   const ed_second: number = input_time[3];
 
   if (
-    !(0 < st_second && st_second < 60) ||
-    !(0 < ed_second && ed_second < 60)
+    !(0 <= st_second && st_second < 60) ||
+    !(0 <= ed_second && ed_second < 60)
   ) {
     error_messages.push("不正な秒数が入力されています。");
   }
 
-  if (!Number.isInteger(st_min) || !Number.isInteger(ed_min)) { // いつかはボックスのonChangeで対処する．
+  if (!Number.isInteger(st_min) || !Number.isInteger(ed_min)) {
     error_messages.push("分は整数値をしてください。");
   }
 

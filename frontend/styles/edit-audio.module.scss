@@ -11,6 +11,13 @@
   transform: translate(-50%, 0);
 }
 
+.nbutton {
+  font-size: 25px;
+  position: absolute;
+  left: 85%;
+  bottom: 50px;
+}
+
 .editpapar_wrap {
   height: 80%;
   width: 35%;
@@ -46,11 +53,13 @@
         font-size: 50px;
         color: #5ad0ff;
       }
-      .descriotion {
-        font-size: 24px;
-      }
     }
   }
+}
+
+.descriotion {
+  font-size: 24px;
+  line-height: 1.7;
 }
 
 .papar_second,
@@ -84,4 +93,56 @@
   width: 100vw;
   display: flex;
   justify-content: space-between;
+}
+
+.timebox,
+.timebox label,
+.button,
+.nbutton,
+.titlebox label {
+  font-family: "Kiwi Maru", serif;
+}
+
+.error {
+  font-size: 18px;
+  border-radius: 20px;
+  p {
+    margin: auto 1.5rem;
+  }
+  svg {
+    margin: auto;
+  }
+}
+
+.timebox {
+  width: 50px;
+  margin: 0 10px;
+}
+
+.audioplay_warp {
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  .audio_bar {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+
+  .input_box {
+    margin-bottom: 10px;
+    span {
+      font-size: 18px;
+      margin-left: 30px;
+    }
+
+    .titlebox {
+      width: 230px;
+    }
+
+    .button {
+      font-size: 20px;
+      height: 56px;
+      margin-left: 25px;
+    }
+  }
 }
