@@ -13,8 +13,10 @@ jobs:
 
       - name: test echo 1
         shell: bash
-        run: echo ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: test echo 2
-        shell: bash
-        run: echo ${{ secrets.DEVELOPMENT_ENV_FILE }}
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh/id_rsa
+          ssh -i ~/.ssh/id_rsa ubuntu@prolis.tech 'echo hoge >> /tmp/hoge.txt'
