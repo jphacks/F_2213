@@ -27,6 +27,6 @@ jobs:
             ls F_2213 || git clone https://github.com/jphacks/F_2213 --depth 1
             cd F_2213
             git pull origin master
-            echo $ENV_FILE_BASE64 > .env
+            echo $ENV_FILE_BASE64 | base 64 --decode -i > .env
             docker compose up --build prod_back prod_front -d
 
