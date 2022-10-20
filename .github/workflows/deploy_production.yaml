@@ -30,4 +30,3 @@ jobs:
             git pull origin master
             echo $ENV_FILE_BASE64 | base64 --decode -i > .env
             docker compose up --build prod_back prod_front -d
-
