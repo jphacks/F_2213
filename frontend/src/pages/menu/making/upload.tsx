@@ -7,10 +7,10 @@ import Router from "next/router";
 
 const AudioUpload = () => {
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
-  const [pValue, pValueSet] = useState<number>(33);
+  const [pValue, pValueSet] = useState<number>(0);
 
   const routine = async () => {
-    pValueSet(66);
+    pValueSet(33);
     await new Promise((r) => setTimeout(r, 1000));
     Router.push("./user-setting");
   };
