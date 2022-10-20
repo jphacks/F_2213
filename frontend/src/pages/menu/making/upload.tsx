@@ -1,4 +1,4 @@
-import Styles from "../../../styles/upload.module.scss";
+import Styles from "../../../../styles/upload.module.scss";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
