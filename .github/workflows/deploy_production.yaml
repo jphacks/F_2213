@@ -3,21 +3,19 @@ name: frontend_build_check
 on:
   push:
     branches:
+      - feature/cicd
       - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
       - name: test echo 1
-        shell: bash
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-          :> ~/.ssh/known_hosts
-          chmod 700 ~/.ssh/id_rsa
-          ssh -i ~/.ssh/id_rsa ubuntu@prolis.tech 'echo hoge >> /tmp/hoge.txt'
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: prolis.tech
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cat fuga > /tmp/fuga
