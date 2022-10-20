@@ -14,16 +14,19 @@ jobs:
     steps:
       - name: test echo 1
         uses: appleboy/ssh-action@v0.1.5
+        env:
+          ENV_FILE_BASE64: ${{ secrets.ENV_FILE_BASE64 }}
         with:
           host: prolis.tech
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
+          envs: ENV_FILE_BASE64
           script: |
             cd ~
             ls F_2213 || git clone https://github.com/jphacks/F_2213 --depth 1
             cd F_2213
             git pull origin master
-            echo ${{ secrets.PRODUCTION_ENV }} > .env
-            docker compose up --build prod_back prod_front
+            echo $ENV_FILE_BASE64 > .env
+            docker compose up --build prod_back prod_front -d
 
