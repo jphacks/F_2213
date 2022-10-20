@@ -4,25 +4,30 @@ import { useState } from "react";
 import { TopPageClientClient } from "../../grpc_out/GrpcServiceClientPb";
 import { Audio, AudioId, Empty, Tag, TagId } from "../../grpc_out/grpc_pb";
 
+const BACKEND_ORIGIN = process.env.NEXT_PUBLIC_BACKEND_ORIGIN;
+if (!BACKEND_ORIGIN) {
+  throw new Error("NEXT_PUBLIC_BACKEND_ORIGIN環境変数が読み込まれていません");
+}
+
 const SampleApi = () => {
   const [output, setOutput] = useState<string>("Api output would be here");
   const [tagId, setTagId] = useState<number>(-1);
   const [audioId, setAudioId] = useState<number>(-1);
 
   const handleTestLogin = () => {
-    window.location.href = "http://localhost:8080/auth/test-login";
+    window.location.href = BACKEND_ORIGIN + "/auth/test-login";
   };
 
   const handleLogin = () => {
-    window.location.href = "http://localhost:8080/auth/login";
+    window.location.href = BACKEND_ORIGIN + "/auth/login";
   };
 
   const handleLogout = () => {
-    window.location.href = "http://localhost:8080/auth/logout";
+    window.location.href = BACKEND_ORIGIN + "/auth/logout";
   };
 
   const fetchUserInfo = () => {
-    const client = new TopPageClientClient("http://localhost:8080", null, {
+    const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
       withCredentials: true,
     });
     const query = new Empty();
@@ -30,7 +35,7 @@ const SampleApi = () => {
   };
 
   const fetchAudioList = () => {
-    const client = new TopPageClientClient("http://localhost:8080", null, {
+    const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
       withCredentials: true,
     });
     const query = new Empty();
@@ -48,7 +53,7 @@ const SampleApi = () => {
   };
 
   const uploadAudio = () => {
-    const client = new TopPageClientClient("http://localhost:8080", null, {
+    const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
       withCredentials: true,
     });
     const tag = new Tag();
@@ -65,7 +70,7 @@ const SampleApi = () => {
   };
 
   const deleteTag = () => {
-    const client = new TopPageClientClient("http://localhost:8080", null, {
+    const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
       withCredentials: true,
     });
     const query = new TagId();
@@ -74,7 +79,7 @@ const SampleApi = () => {
   };
 
   const deleteAudio = () => {
-    const client = new TopPageClientClient("http://localhost:8080", null, {
+    const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
       withCredentials: true,
     });
     const query = new AudioId();
@@ -108,7 +113,7 @@ const SampleApi = () => {
       <button onClick={fetchAudioList}>Fetch audio list</button>
       <button onClick={uploadAudio}>Upload Audio</button>
       <form
-        action="http://localhost:8080/img/upload"
+        action={BACKEND_ORIGIN + "/img/upload"}
         encType="multipart/form-data"
         method="post"
         style={{ border: "2px solid #000", padding: "1rem" }}

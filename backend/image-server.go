@@ -9,8 +9,15 @@ import (
 	"path/filepath"
 )
 
+var BACKEND_ORIGIN string
+
 // main.goから呼ばれるエントリーポイント
 func RunImageServer() {
+	BACKEND_ORIGIN = getEnv("NEXT_PUBLIC_BACKEND_ORIGIN", "")
+	if BACKEND_ORIGIN == "" {
+		log.Fatalln("NEXT_PUBLIC_BACKEND_ORIGIN環境変数が見つかりません")
+	}
+
 	// サーバー起動
 	http.HandleFunc("/upload", upload)
 
@@ -61,5 +68,5 @@ func upload(w http.ResponseWriter, r *http.Request) {
 
 	io.Copy(f, file)
 	// TODO 環境変数にする
-	w.Write([]byte("http://localhost:8080/img/show/" + filename))
+	w.Write([]byte(BACKEND_ORIGIN + "/img/show/" + filename))
 }

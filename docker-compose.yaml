@@ -17,6 +17,8 @@ services:
   prod_front:
     build:
       context: ./frontend
+      args:
+        - NEXT_PUBLIC_BACKEND_ORIGIN=$NEXT_PUBLIC_BACKEND_ORIGIN
     container_name: grpc_prod_front
     ports:
       - "3000:3000"
