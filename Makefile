@@ -33,7 +33,7 @@ gen_grpc_back:
 
 start_dev_init:
 	docker exec -it grpc_dev_front sh -c 'apk add git openssh-client'
-	docker exec -it grpc_dev_front sh -c 'cd /root/ && git clone https://github.com/kajikentaro/gRPC-test /root/app'
+	docker exec -it grpc_dev_front sh -c 'cd /root/ && git clone https://github.com/jphacks/F_2213 /root/app'
 
 start_dev_front:
 	docker exec -itd grpc_dev_front sh -c 'cd /root/app/frontend && yarn && yarn dev'
