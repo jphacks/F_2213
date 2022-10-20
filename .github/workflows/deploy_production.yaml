@@ -3,21 +3,30 @@ name: frontend_build_check
 on:
   push:
     branches:
+      - feature/cicd
       - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: production environments
     steps:
-      - uses: actions/checkout@v2
-
       - name: test echo 1
-        shell: bash
+        uses: appleboy/ssh-action@v0.1.5
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-          :> ~/.ssh/known_hosts
-          chmod 700 ~/.ssh/id_rsa
-          ssh -i ~/.ssh/id_rsa ubuntu@prolis.tech 'echo hoge >> /tmp/hoge.txt'
+          ENV_FILE_BASE64: ${{ secrets.ENV_FILE_BASE64 }}
+        with:
+          host: prolis.tech
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script_stop: true
+          envs: ENV_FILE_BASE64,HOO
+          script: |
+            cd ~
+            ls F_2213 || git clone https://github.com/jphacks/F_2213 --depth 1
+            cd F_2213
+            git pull origin master
+            echo $ENV_FILE_BASE64 | base64 --decode -i > .env
+            docker compose up --build prod_back prod_front -d
