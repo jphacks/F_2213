@@ -13,10 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: copy .env file
-        shell: bash
-        run: cp .env.template .env
-
       - name: build the docker image
         shell: bash
-        run: docker-compose up -d prod_front
+        run: cp .env.template .env && docker-compose up -d prod_front
