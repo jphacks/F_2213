@@ -1,11 +1,9 @@
-import Styles from "../../../styles/audio-upload.module.scss";
+import Styles from "../../../styles/upload.module.scss";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { Button, Alert, LinearProgress } from "@mui/material";
 import Router from "next/router";
-
-/* 参考 : https://qiita.com/FumioNonaka/items/4ae1ccbfe609e1a10c4d */
 
 const AudioUpload = () => {
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);

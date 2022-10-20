@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import Styles from "../../../styles/audio-list.module.scss";
+import Styles from "../../../styles/list.module.scss";
 import Audiotag from "../../components/audio-tag";
 import Editpapar from "../../components/edit-papar";
 import { AudioInfo, SectionInfo } from "../../components/interface";
