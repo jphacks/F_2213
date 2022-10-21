@@ -7,6 +7,7 @@ import (
 	"log"
 	"net"
 	"os"
+	"os/exec"
 	"path/filepath"
 
 	pb "github.com/jphacks/F_2213/mouse/grpc_out"
@@ -28,6 +29,7 @@ func main() {
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("grpcサーバーの起動に失敗しました: %v", err)
 	}
+
 }
 
 type server struct {
@@ -61,8 +63,13 @@ func (s *server) UploadAudioFile(stream pb.Mouse_UploadAudioFileServer) error {
 	}
 	log.Println("received")
 
+	runUnity()
+	log.Println("ran unity")
+	runImgToMp4()
+	log.Println("converted to mp4")
+
 	// 送信
-	sendFile, _ := os.Open("./hoge.mp3")
+	sendFile, _ := os.Open("./Sample/tmp.mp4")
 	defer sendFile.Close()
 	buf := make([]byte, 1024)
 
@@ -81,4 +88,36 @@ func (s *server) UploadAudioFile(stream pb.Mouse_UploadAudioFileServer) error {
 	}
 	log.Println("send")
 	return nil
+}
+
+func runUnity() {
+	currentDir, _ := os.Getwd()
+	inputAudio := currentDir + "/Sample/tmp.mp3"
+	fmt.Println(inputAudio)
+	_, err := exec.Command("./UnityBuild/build.x86_64", inputAudio).Output()
+	if err != nil {
+		log.Println(err)
+	}
+}
+
+func runImgToMp4() {
+	options := []string{
+		"-framerate",
+		"40",
+		"-i",
+		"./UnityBuild/SaveMouse/SavedMouse%d.png",
+		"-vcodec",
+		"libx264",
+		"-pix_fmt",
+		"yuv420p",
+		"-r",
+		"40",
+		"./Sample/hoge.mp4",
+	}
+	out, err := exec.Command("ffmpeg", options...).Output()
+	if err != nil {
+		log.Println(out)
+		log.Println(err)
+	}
+	log.Println(out)
 }
