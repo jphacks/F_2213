@@ -12,6 +12,7 @@ export interface SectionSource{
   source: string;
   startMs: number;
   endMs: number;
+  tagNumber:number;
 }
 
 export class AudioInfo {

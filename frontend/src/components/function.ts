@@ -37,7 +37,6 @@ export const timeExpetion = (input_time: number[]) => {
   return error_messages;
 };
 
-
 export const getClickRatio = (e: MouseEvent<HTMLProgressElement>) => {
   const clickX = e.clientX;
   const clientRect = e.currentTarget.getBoundingClientRect();
