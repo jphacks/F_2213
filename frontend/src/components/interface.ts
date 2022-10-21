@@ -26,6 +26,6 @@ export class AudioInfo {
     this.color = color;
     this.memo = memo;
     this.audios = audios;
-    this.audios.sort((a, b) => a.start - b.start);
+    this.audios.sort((a : SectionInfo, b : SectionInfo) => a.start - b.start);
   }
 }
