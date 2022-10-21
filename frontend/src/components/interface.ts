@@ -6,6 +6,15 @@ export type SectionInfo = {
   end: number;
 };
 
+export type PlayStatus = "playing" | "paused";
+
+export interface SectionSource{
+  source: string;
+  startMs: number;
+  endMs: number;
+  tagNumber:number;
+}
+
 export class AudioInfo {
   uuid = uuidv4();
   title: string;
