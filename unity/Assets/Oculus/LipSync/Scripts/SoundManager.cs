@@ -9,11 +9,6 @@ public class SoundManager : MonoBehaviour
     private AudioSource audio;
     private bool isAudioEnd;
 
-    void awake()
-    {
-        Application.targetFrameRate = 30;
-    }
-
 	void Start()
 	{
         var args = System.Environment.GetCommandLineArgs();

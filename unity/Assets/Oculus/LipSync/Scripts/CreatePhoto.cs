@@ -10,7 +10,7 @@ public class CreatePhoto : MonoBehaviour {
 
     void awake()
     {
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 40;
     }
     // Use this for initialization
     void Start () {
