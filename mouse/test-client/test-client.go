@@ -12,11 +12,14 @@ import (
 )
 
 func main() {
-	connect, _ := grpc.Dial("localhost:50052", grpc.WithInsecure())
+	connect, _ := grpc.Dial("kajikentaro.clear-net.jp:50052", grpc.WithInsecure())
 
 	defer connect.Close()
 	uploadhalder := pb.NewMouseClient(connect)
 	stream, err := uploadhalder.UploadAudioFile(context.Background())
+	if err != nil {
+		fmt.Println(err)
+	}
 	err = Upload(stream)
 	if err != nil {
 		fmt.Println(err)
