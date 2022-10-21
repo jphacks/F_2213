@@ -18,7 +18,7 @@ import (
 func main() {
 	// tcpをlistenする
 	flag.Parse()
-	port := flag.Int("port", 50052, "The server port")
+	port := flag.Int("port", 20768, "The server port")
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
 		log.Fatalf("listenに失敗しました: %v", err)

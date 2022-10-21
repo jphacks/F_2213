@@ -158,7 +158,7 @@ func RunGrpc() {
 	db = connectDB()
 
 	// 動画生成サービスに接続
-	connect, _ := grpc.Dial("kajikentaro.clear-net.jp:50052", grpc.WithInsecure())
+	connect, _ := grpc.Dial("kajikentaro.clear-net.jp:20768", grpc.WithInsecure())
 	defer connect.Close()
 	uploadhalder = pb.NewMouseClient(connect)
 
