@@ -86,10 +86,10 @@ func jwtToUser(parsedJwt jwt.Token) (*pb.User, error) {
 
 func fetchAuthorizedUserHttp(r *http.Request) (*pb.User, error) {
 	cookie, err := r.Cookie("JWT_TOKEN")
-	signedJwt := cookie.Value
 	if err != nil {
 		return nil, err
 	}
+	signedJwt := cookie.Value
 	parsedJwt, err := jwt.Parse([]byte(signedJwt), jwt.WithKey(jwa.RS256, publicKey))
 	if err != nil {
 		return nil, err
