@@ -5,6 +5,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
+	"os"
+	"path/filepath"
 
 	pb "github.com/jphacks/F_2213/backend/grpc_out"
 )
@@ -158,4 +161,74 @@ func (s *server) UploadAudio(ctx context.Context, in *pb.Audio) (*pb.AudioId, er
 		}
 	}
 	return &pb.AudioId{Id: assignedId}, nil
+}
+
+func generateMovieMicroService(audioPath string) (string, error) {
+	stream, err := uploadhalder.UploadAudioFile(context.Background())
+	if err != nil {
+		return "", err
+	}
+
+	// 送信用ファイル取得
+	file, _ := os.Open(audioPath)
+	defer file.Close()
+	buf := make([]byte, 1024)
+
+	// 送信
+	for {
+		_, err := file.Read(buf)
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return "", err
+		}
+		err = stream.Send(&pb.AudioFile{Data: buf})
+		if err != nil {
+			return "", err
+		}
+	}
+	stream.CloseSend()
+
+	// 受信用ファイル生成
+	if err != nil {
+		return "", err
+	}
+	generatedVideoName := genRandomStr() + ".mp4"
+	generatedVideoPath := filepath.Join("/root/static", generatedVideoName)
+	receivedFile, err := os.Create(generatedVideoPath)
+	defer receivedFile.Close()
+	if err != nil {
+		return "", err
+	}
+
+	// 受信
+	for {
+		resp, err := stream.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return "", err
+		}
+		_, err = receivedFile.Write(resp.Data)
+		if err != nil {
+			return "", err
+		}
+	}
+	return generatedVideoName, nil
+}
+
+func (s *server) GenerateMovie(in *pb.AudioUrl, stream pb.TopPageClient_GenerateMovieServer) error {
+	// TODO ユーザーがログインかどうか確かめていない
+	audioName := filepath.Base(in.Url)
+	audioPath := filepath.Join("/root/static", audioName)
+
+	videoPath, err := generateMovieMicroService(audioPath)
+	if err != nil {
+		return err
+	}
+
+	stream.Send(&pb.MovieUrl{Url: BACKEND_ORIGIN + "/img/show/" + videoPath})
+	return nil
 }

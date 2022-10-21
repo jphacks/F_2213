@@ -2,7 +2,14 @@ import * as jspb from "google-protobuf";
 import { RpcError } from "grpc-web";
 import { useState } from "react";
 import { TopPageClientClient } from "../../grpc_out/GrpcServiceClientPb";
-import { Audio, AudioId, Empty, Tag, TagId } from "../../grpc_out/grpc_pb";
+import {
+  Audio,
+  AudioId,
+  AudioUrl,
+  Empty,
+  Tag,
+  TagId,
+} from "../../grpc_out/grpc_pb";
 
 const BACKEND_ORIGIN = process.env.NEXT_PUBLIC_BACKEND_ORIGIN;
 if (!BACKEND_ORIGIN) {
@@ -13,6 +20,7 @@ const SampleApi = () => {
   const [output, setOutput] = useState<string>("Api output would be here");
   const [tagId, setTagId] = useState<number>(-1);
   const [audioId, setAudioId] = useState<number>(-1);
+  const [audioUrl, setAudioUrl] = useState<string>("");
 
   const handleTestLogin = () => {
     window.location.href = BACKEND_ORIGIN + "/auth/test-login";
@@ -87,6 +95,29 @@ const SampleApi = () => {
     client.deleteAudio(query, null, callback);
   };
 
+  const generateMovie = () => {
+    const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
+      withCredentials: true,
+    });
+    const query = new AudioUrl();
+    query.setUrl(audioUrl);
+    const stream = client.generateMovie(query);
+
+    setOutput("生成中. . .");
+    stream.on("data", (response) => {
+      setOutput("生成完了: " + response.getUrl());
+      window.open(response.getUrl());
+    });
+    stream.on("status", (status) => {
+      console.log(status.code);
+      console.log(status.details);
+      console.log(status.metadata);
+    });
+    stream.on("end", () => {
+      console.log("end");
+    });
+  };
+
   return (
     <div
       style={{
@@ -140,6 +171,15 @@ const SampleApi = () => {
           }}
         />
         <button onClick={deleteAudio}>Delete Audio</button>
+      </div>
+      <div style={{ border: "2px solid #000", padding: "1rem" }}>
+        <input
+          value={audioUrl}
+          onChange={(e) => {
+            setAudioUrl(e.currentTarget.value);
+          }}
+        />
+        <button onClick={generateMovie}>GenerateMovie</button>
       </div>
     </div>
   );
