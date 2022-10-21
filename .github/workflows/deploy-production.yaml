@@ -1,4 +1,4 @@
-name: frontend_build_check
+name: deploy_production
 
 on:
   push:
