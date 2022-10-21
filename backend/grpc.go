@@ -150,10 +150,17 @@ type server struct {
 	pb.UnimplementedTopPageClientServer
 }
 
+var uploadhalder pb.MouseClient
+
 // main.goから呼ばれるエントリーポイント
 func RunGrpc() {
 	// dbに接続する
 	db = connectDB()
+
+	// 動画生成サービスに接続
+	connect, _ := grpc.Dial("kajikentaro.clear-net.jp:50052", grpc.WithInsecure())
+	defer connect.Close()
+	uploadhalder = pb.NewMouseClient(connect)
 
 	// publicキーを読み込む
 	block, _ := pem.Decode(publicPemBytes)

@@ -67,6 +67,5 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	defer f.Close()
 
 	io.Copy(f, file)
-	// TODO 環境変数にする
 	w.Write([]byte(BACKEND_ORIGIN + "/img/show/" + filename))
 }
