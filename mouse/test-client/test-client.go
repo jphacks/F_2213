@@ -47,7 +47,7 @@ func Upload(stream pb.Mouse_UploadAudioFileClient) error {
 	if err != nil {
 		return err
 	}
-	receivedFile, err := os.Create(filepath.Join("Sample", "tmp.mp3"))
+	receivedFile, err := os.Create(filepath.Join("Sample", "tmp.mp4"))
 	defer receivedFile.Close()
 	if err != nil {
 		return err

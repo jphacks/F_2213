@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"flag"
 	"fmt"
 	"io"
@@ -36,12 +37,33 @@ type server struct {
 	pb.UnimplementedMouseServer
 }
 
+var uniqueNumber = 0
+
+func getUniqueStr() string {
+	uniqueNumber++
+	return "auto_gen_" + fmt.Sprint(uniqueNumber) + "_"
+}
+
+func deleteFileWithWildCard(target string) {
+	// 再帰なし
+	files, _ := filepath.Glob(target)
+	for _, f := range files {
+		os.Remove(f)
+	}
+}
+
 func (s *server) UploadAudioFile(stream pb.Mouse_UploadAudioFileServer) error {
-	err := os.MkdirAll("Sample", 0777)
+	uniqueStr := getUniqueStr()
+	defer deleteFileWithWildCard(filepath.Join("Tmp", uniqueStr+".mp3"))
+	defer deleteFileWithWildCard("./UnityBuild/SaveMouse/" + uniqueStr + "*.png")
+	defer deleteFileWithWildCard("./Tmp/" + uniqueStr + ".mp4")
+	defer deleteFileWithWildCard("./Tmp/" + uniqueStr + "out.mp4")
+
+	err := os.MkdirAll("Tmp", 0777)
 	if err != nil {
 		return err
 	}
-	receivedFile, err := os.Create(filepath.Join("Sample", "tmp.mp3"))
+	receivedFile, err := os.Create(filepath.Join("Tmp", uniqueStr+".mp3"))
 	defer receivedFile.Close()
 	if err != nil {
 		return err
@@ -61,15 +83,22 @@ func (s *server) UploadAudioFile(stream pb.Mouse_UploadAudioFileServer) error {
 			return err
 		}
 	}
-	log.Println("received")
 
-	runUnity()
-	log.Println("ran unity")
-	runImgToMp4()
-	log.Println("converted to mp4")
+	err = runUnity(uniqueStr)
+	if err != nil {
+		return err
+	}
+	err = runImgToMp4(uniqueStr)
+	if err != nil {
+		return err
+	}
+	err = combineMp4AndMp3(uniqueStr)
+	if err != nil {
+		return err
+	}
 
 	// 送信
-	sendFile, _ := os.Open("./Sample/tmp.mp4")
+	sendFile, _ := os.Open("./Tmp/" + uniqueStr + "out.mp4")
 	defer sendFile.Close()
 	buf := make([]byte, 1024)
 
@@ -90,34 +119,51 @@ func (s *server) UploadAudioFile(stream pb.Mouse_UploadAudioFileServer) error {
 	return nil
 }
 
-func runUnity() {
+func runUnity(uniqueStr string) error {
 	currentDir, _ := os.Getwd()
-	inputAudio := currentDir + "/Sample/tmp.mp3"
+	inputAudio := currentDir + "/Tmp/" + uniqueStr + ".mp3"
 	fmt.Println(inputAudio)
-	_, err := exec.Command("./UnityBuild/build.x86_64", inputAudio).Output()
+	_, err := exec.Command("./UnityBuild/mouse-image.exe", inputAudio, uniqueStr).Output()
 	if err != nil {
-		log.Println(err)
+		return errors.New("unity の実行に失敗しました")
 	}
+	return nil
 }
 
-func runImgToMp4() {
+func runImgToMp4(uniqueStr string) error {
 	options := []string{
 		"-framerate",
 		"40",
 		"-i",
-		"./UnityBuild/SaveMouse/SavedMouse%d.png",
+		"./UnityBuild/SaveMouse/" + uniqueStr + "%d.png",
 		"-vcodec",
 		"libx264",
 		"-pix_fmt",
 		"yuv420p",
 		"-r",
 		"40",
-		"./Sample/hoge.mp4",
+		"./Tmp/" + uniqueStr + ".mp4",
 	}
-	out, err := exec.Command("ffmpeg", options...).Output()
+	_, err := exec.Command("ffmpeg", options...).Output()
 	if err != nil {
-		log.Println(out)
-		log.Println(err)
+		return errors.New("png -> mp4の変換に失敗しました")
 	}
-	log.Println(out)
+	return nil
+}
+
+func combineMp4AndMp3(uniqueStr string) error {
+	options := []string{
+		"-i",
+		"./Tmp/" + uniqueStr + ".mp4",
+		"-i",
+		filepath.Join("Tmp", uniqueStr+".mp3"),
+		"-c:v",
+		"copy",
+		"./Tmp/" + uniqueStr + "out.mp4",
+	}
+	_, err := exec.Command("ffmpeg", options...).Output()
+	if err != nil {
+		return errors.New("mp4の音声追加に失敗しました")
+	}
+	return nil
 }
