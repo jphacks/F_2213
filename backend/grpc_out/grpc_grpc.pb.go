@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type TopPageClientClient interface {
 	FetchAudioList(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AudioList, error)
 	FetchUserInfo(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*User, error)
+	GenerateMovie(ctx context.Context, in *AudioUrl, opts ...grpc.CallOption) (TopPageClient_GenerateMovieClient, error)
 	UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*AudioId, error)
 	DeleteTag(ctx context.Context, in *TagId, opts ...grpc.CallOption) (*Status, error)
 	DeleteAudio(ctx context.Context, in *AudioId, opts ...grpc.CallOption) (*Status, error)
@@ -53,6 +54,38 @@ func (c *topPageClientClient) FetchUserInfo(ctx context.Context, in *Empty, opts
 		return nil, err
 	}
 	return out, nil
+}
+
+func (c *topPageClientClient) GenerateMovie(ctx context.Context, in *AudioUrl, opts ...grpc.CallOption) (TopPageClient_GenerateMovieClient, error) {
+	stream, err := c.cc.NewStream(ctx, &TopPageClient_ServiceDesc.Streams[0], "/prolis.TopPageClient/GenerateMovie", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &topPageClientGenerateMovieClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type TopPageClient_GenerateMovieClient interface {
+	Recv() (*MovieUrl, error)
+	grpc.ClientStream
+}
+
+type topPageClientGenerateMovieClient struct {
+	grpc.ClientStream
+}
+
+func (x *topPageClientGenerateMovieClient) Recv() (*MovieUrl, error) {
+	m := new(MovieUrl)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
 }
 
 func (c *topPageClientClient) UploadAudio(ctx context.Context, in *Audio, opts ...grpc.CallOption) (*AudioId, error) {
@@ -88,6 +121,7 @@ func (c *topPageClientClient) DeleteAudio(ctx context.Context, in *AudioId, opts
 type TopPageClientServer interface {
 	FetchAudioList(context.Context, *Empty) (*AudioList, error)
 	FetchUserInfo(context.Context, *Empty) (*User, error)
+	GenerateMovie(*AudioUrl, TopPageClient_GenerateMovieServer) error
 	UploadAudio(context.Context, *Audio) (*AudioId, error)
 	DeleteTag(context.Context, *TagId) (*Status, error)
 	DeleteAudio(context.Context, *AudioId) (*Status, error)
@@ -103,6 +137,9 @@ func (UnimplementedTopPageClientServer) FetchAudioList(context.Context, *Empty) 
 }
 func (UnimplementedTopPageClientServer) FetchUserInfo(context.Context, *Empty) (*User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchUserInfo not implemented")
+}
+func (UnimplementedTopPageClientServer) GenerateMovie(*AudioUrl, TopPageClient_GenerateMovieServer) error {
+	return status.Errorf(codes.Unimplemented, "method GenerateMovie not implemented")
 }
 func (UnimplementedTopPageClientServer) UploadAudio(context.Context, *Audio) (*AudioId, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadAudio not implemented")
@@ -160,6 +197,27 @@ func _TopPageClient_FetchUserInfo_Handler(srv interface{}, ctx context.Context, 
 		return srv.(TopPageClientServer).FetchUserInfo(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
+}
+
+func _TopPageClient_GenerateMovie_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(AudioUrl)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(TopPageClientServer).GenerateMovie(m, &topPageClientGenerateMovieServer{stream})
+}
+
+type TopPageClient_GenerateMovieServer interface {
+	Send(*MovieUrl) error
+	grpc.ServerStream
+}
+
+type topPageClientGenerateMovieServer struct {
+	grpc.ServerStream
+}
+
+func (x *topPageClientGenerateMovieServer) Send(m *MovieUrl) error {
+	return x.ServerStream.SendMsg(m)
 }
 
 func _TopPageClient_UploadAudio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -244,6 +302,130 @@ var TopPageClient_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _TopPageClient_DeleteAudio_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "GenerateMovie",
+			Handler:       _TopPageClient_GenerateMovie_Handler,
+			ServerStreams: true,
+		},
+	},
+	Metadata: "grpc.proto",
+}
+
+// MouseClient is the client API for Mouse service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type MouseClient interface {
+	UploadAudioFile(ctx context.Context, opts ...grpc.CallOption) (Mouse_UploadAudioFileClient, error)
+}
+
+type mouseClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewMouseClient(cc grpc.ClientConnInterface) MouseClient {
+	return &mouseClient{cc}
+}
+
+func (c *mouseClient) UploadAudioFile(ctx context.Context, opts ...grpc.CallOption) (Mouse_UploadAudioFileClient, error) {
+	stream, err := c.cc.NewStream(ctx, &Mouse_ServiceDesc.Streams[0], "/prolis.Mouse/UploadAudioFile", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &mouseUploadAudioFileClient{stream}
+	return x, nil
+}
+
+type Mouse_UploadAudioFileClient interface {
+	Send(*AudioFile) error
+	Recv() (*VideoFile, error)
+	grpc.ClientStream
+}
+
+type mouseUploadAudioFileClient struct {
+	grpc.ClientStream
+}
+
+func (x *mouseUploadAudioFileClient) Send(m *AudioFile) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *mouseUploadAudioFileClient) Recv() (*VideoFile, error) {
+	m := new(VideoFile)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+// MouseServer is the server API for Mouse service.
+// All implementations must embed UnimplementedMouseServer
+// for forward compatibility
+type MouseServer interface {
+	UploadAudioFile(Mouse_UploadAudioFileServer) error
+	mustEmbedUnimplementedMouseServer()
+}
+
+// UnimplementedMouseServer must be embedded to have forward compatible implementations.
+type UnimplementedMouseServer struct {
+}
+
+func (UnimplementedMouseServer) UploadAudioFile(Mouse_UploadAudioFileServer) error {
+	return status.Errorf(codes.Unimplemented, "method UploadAudioFile not implemented")
+}
+func (UnimplementedMouseServer) mustEmbedUnimplementedMouseServer() {}
+
+// UnsafeMouseServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MouseServer will
+// result in compilation errors.
+type UnsafeMouseServer interface {
+	mustEmbedUnimplementedMouseServer()
+}
+
+func RegisterMouseServer(s grpc.ServiceRegistrar, srv MouseServer) {
+	s.RegisterService(&Mouse_ServiceDesc, srv)
+}
+
+func _Mouse_UploadAudioFile_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(MouseServer).UploadAudioFile(&mouseUploadAudioFileServer{stream})
+}
+
+type Mouse_UploadAudioFileServer interface {
+	Send(*VideoFile) error
+	Recv() (*AudioFile, error)
+	grpc.ServerStream
+}
+
+type mouseUploadAudioFileServer struct {
+	grpc.ServerStream
+}
+
+func (x *mouseUploadAudioFileServer) Send(m *VideoFile) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *mouseUploadAudioFileServer) Recv() (*AudioFile, error) {
+	m := new(AudioFile)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+// Mouse_ServiceDesc is the grpc.ServiceDesc for Mouse service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var Mouse_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "prolis.Mouse",
+	HandlerType: (*MouseServer)(nil),
+	Methods:     []grpc.MethodDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "UploadAudioFile",
+			Handler:       _Mouse_UploadAudioFile_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "grpc.proto",
 }

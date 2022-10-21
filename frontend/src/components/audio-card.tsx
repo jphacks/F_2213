@@ -57,7 +57,7 @@ const AudioCard = (props: {
       <div className="cards">
         <div className={Styles.contents_wrap}>
           <div className={Styles.title}>{name}</div>
-          <MiniAudioPlayer source={audioroute} startMs={start} endMs={end} />
+          <MiniAudioPlayer source={audioroute} startMs={start} endMs={end} tagNumber={0}/>
         </div>
       </div>
     </>

@@ -6,12 +6,20 @@ package prolis;
 service TopPageClient {
   rpc FetchAudioList(Empty) returns (AudioList){}
   rpc FetchUserInfo(Empty) returns (User){}
+  rpc GenerateMovie(AudioUrl) returns (stream MovieUrl){}
   rpc UploadAudio(Audio) returns (AudioId) {}
 
   rpc DeleteTag(TagId) returns (Status){}
   rpc DeleteAudio(AudioId) returns (Status){}
 }
 
+message AudioUrl{
+  string url = 1;
+}
+
+message MovieUrl{
+  string url = 1;
+}
 
 message User{
   string Id = 1;
@@ -51,3 +59,13 @@ message Tag{
   int64 EndMs = 3;
   string TagName = 4;
 }
+
+// mouseサーバー : backend間
+service Mouse {
+  rpc UploadAudioFile(stream AudioFile) returns (stream VideoFile) {};
+}
+
+message AudioFile { bytes Data = 1; }
+
+message VideoFile { bytes Data = 1; }
+

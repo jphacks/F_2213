@@ -2,6 +2,42 @@ import * as jspb from 'google-protobuf'
 
 
 
+export class AudioUrl extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): AudioUrl;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AudioUrl.AsObject;
+  static toObject(includeInstance: boolean, msg: AudioUrl): AudioUrl.AsObject;
+  static serializeBinaryToWriter(message: AudioUrl, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AudioUrl;
+  static deserializeBinaryFromReader(message: AudioUrl, reader: jspb.BinaryReader): AudioUrl;
+}
+
+export namespace AudioUrl {
+  export type AsObject = {
+    url: string,
+  }
+}
+
+export class MovieUrl extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): MovieUrl;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MovieUrl.AsObject;
+  static toObject(includeInstance: boolean, msg: MovieUrl): MovieUrl.AsObject;
+  static serializeBinaryToWriter(message: MovieUrl, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MovieUrl;
+  static deserializeBinaryFromReader(message: MovieUrl, reader: jspb.BinaryReader): MovieUrl;
+}
+
+export namespace MovieUrl {
+  export type AsObject = {
+    url: string,
+  }
+}
+
 export class User extends jspb.Message {
   getId(): string;
   setId(value: string): User;
@@ -179,6 +215,46 @@ export namespace Tag {
     startms: number,
     endms: number,
     tagname: string,
+  }
+}
+
+export class AudioFile extends jspb.Message {
+  getData(): Uint8Array | string;
+  getData_asU8(): Uint8Array;
+  getData_asB64(): string;
+  setData(value: Uint8Array | string): AudioFile;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AudioFile.AsObject;
+  static toObject(includeInstance: boolean, msg: AudioFile): AudioFile.AsObject;
+  static serializeBinaryToWriter(message: AudioFile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AudioFile;
+  static deserializeBinaryFromReader(message: AudioFile, reader: jspb.BinaryReader): AudioFile;
+}
+
+export namespace AudioFile {
+  export type AsObject = {
+    data: Uint8Array | string,
+  }
+}
+
+export class VideoFile extends jspb.Message {
+  getData(): Uint8Array | string;
+  getData_asU8(): Uint8Array;
+  getData_asB64(): string;
+  setData(value: Uint8Array | string): VideoFile;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VideoFile.AsObject;
+  static toObject(includeInstance: boolean, msg: VideoFile): VideoFile.AsObject;
+  static serializeBinaryToWriter(message: VideoFile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VideoFile;
+  static deserializeBinaryFromReader(message: VideoFile, reader: jspb.BinaryReader): VideoFile;
+}
+
+export namespace VideoFile {
+  export type AsObject = {
+    data: Uint8Array | string,
   }
 }
 

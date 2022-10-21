@@ -1,24 +1,9 @@
 import { MouseEvent, MouseEventHandler, useMemo, useState } from "react";
 import styles from "styles/components/MiniAudioPlayer.module.scss";
+import { getClickRatio } from "./function";
+import { SectionSource, PlayStatus } from "./interface";
 
-type PlayStatus = "playing" | "paused";
-
-interface Props {
-  source: string;
-  startMs: number;
-  endMs: number;
-}
-
-const getClickRatio = (e: MouseEvent<HTMLProgressElement>) => {
-  const clickX = e.clientX;
-  const clientRect = e.currentTarget.getBoundingClientRect();
-  const itemX = clientRect.x;
-  const width = clientRect.right - clientRect.left;
-  const ratio = (clickX - itemX) / width;
-  return ratio;
-};
-
-const MiniAudioPlayer = ({ source, startMs, endMs }: Props) => {
+const MiniAudioPlayer = ({ source, startMs, endMs }: SectionSource) => {
   const [playStatus, _setPlayStatus] = useState<PlayStatus>("paused");
   const [isRepeat, setIsRepeat] = useState<boolean>(false);
   const [audioProgress, _setAudioProgress] = useState<number>(0);

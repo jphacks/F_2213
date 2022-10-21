@@ -5,6 +5,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
+	"os"
+	"path/filepath"
 
 	pb "github.com/jphacks/F_2213/backend/grpc_out"
 )
@@ -84,7 +87,13 @@ func (s *server) DeleteAudio(ctx context.Context, in *pb.AudioId) (*pb.Status, e
 		return nil, err
 	}
 
-	res, err := db.Exec("DELETE FROM audio WHERE user_id=? AND id=?", user.Id, in.Id)
+	tx, err := db.BeginTxx(ctx, nil)
+	defer tx.Rollback()
+	if err != nil {
+		return nil, err
+	}
+
+	res, err := tx.Exec("DELETE FROM audio WHERE user_id=? AND id=?", user.Id, in.Id)
 	if err != nil {
 		return nil, err
 	}
@@ -94,11 +103,12 @@ func (s *server) DeleteAudio(ctx context.Context, in *pb.AudioId) (*pb.Status, e
 		return nil, err
 	}
 
-	_, err = db.Exec("DELETE FROM tag WHERE user_id=? AND audio_id=?", user.Id, in.Id)
+	_, err = tx.Exec("DELETE FROM tag WHERE user_id=? AND audio_id=?", user.Id, in.Id)
 	if err != nil {
 		return nil, err
 	}
 
+	tx.Commit()
 	return &status, nil
 }
 
@@ -143,19 +153,97 @@ func (s *server) UploadAudio(ctx context.Context, in *pb.Audio) (*pb.AudioId, er
 		return nil, err
 	}
 
+	tx, err := db.BeginTxx(ctx, nil)
+	defer tx.Rollback()
+	if err != nil {
+		return nil, err
+	}
+
 	audio := Audio{UserId: user.Id, AudioName: in.AudioName, Description: in.Description, Url: in.Url}
 	fmt.Printf("%v\n", audio)
-	res, err := db.NamedExec("INSERT INTO audio (user_id, audio_name, description, url) VALUES(:user_id, :audio_name, :description, :url)", audio)
+	res, err := tx.NamedExec("INSERT INTO audio (user_id, audio_name, description, url) VALUES(:user_id, :audio_name, :description, :url)", audio)
 	if err != nil {
 		return nil, err
 	}
 	assignedId, _ := res.LastInsertId()
 	for _, v := range in.Tags {
 		tag := Tag{UserId: user.Id, AudioId: int(assignedId), StartMs: int(v.StartMs), EndMs: int(v.EndMs), TagName: v.TagName}
-		_, err := db.NamedExec("INSERT INTO tag (user_id, audio_id, start_ms, end_ms, tag_name) VALUES(:user_id, :audio_id, :start_ms, :end_ms, :tag_name)", tag)
+		_, err := tx.NamedExec("INSERT INTO tag (user_id, audio_id, start_ms, end_ms, tag_name) VALUES(:user_id, :audio_id, :start_ms, :end_ms, :tag_name)", tag)
 		if err != nil {
 			return nil, err
 		}
 	}
+
+	tx.Commit()
 	return &pb.AudioId{Id: assignedId}, nil
+}
+
+func generateMovieMicroService(audioPath string) (string, error) {
+	stream, err := uploadhalder.UploadAudioFile(context.Background())
+	if err != nil {
+		return "", err
+	}
+
+	// 送信用ファイル取得
+	file, _ := os.Open(audioPath)
+	defer file.Close()
+	buf := make([]byte, 1024)
+
+	// 送信
+	for {
+		_, err := file.Read(buf)
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return "", err
+		}
+		err = stream.Send(&pb.AudioFile{Data: buf})
+		if err != nil {
+			return "", err
+		}
+	}
+	stream.CloseSend()
+
+	// 受信用ファイル生成
+	if err != nil {
+		return "", err
+	}
+	generatedVideoName := genRandomStr() + ".mp4"
+	generatedVideoPath := filepath.Join("/root/static", generatedVideoName)
+	receivedFile, err := os.Create(generatedVideoPath)
+	defer receivedFile.Close()
+	if err != nil {
+		return "", err
+	}
+
+	// 受信
+	for {
+		resp, err := stream.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return "", err
+		}
+		_, err = receivedFile.Write(resp.Data)
+		if err != nil {
+			return "", err
+		}
+	}
+	return generatedVideoName, nil
+}
+
+func (s *server) GenerateMovie(in *pb.AudioUrl, stream pb.TopPageClient_GenerateMovieServer) error {
+	// TODO ユーザーがログインかどうか確かめていない
+	audioName := filepath.Base(in.Url)
+	audioPath := filepath.Join("/root/static", audioName)
+
+	videoPath, err := generateMovieMicroService(audioPath)
+	if err != nil {
+		return err
+	}
+
+	stream.Send(&pb.MovieUrl{Url: BACKEND_ORIGIN + "/img/show/" + videoPath})
+	return nil
 }

@@ -1,0 +1,32 @@
+name: deploy_production
+
+on:
+  push:
+    branches:
+      - feature/cicd
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: production environments
+    steps:
+      - name: test echo 1
+        uses: appleboy/ssh-action@v0.1.5
+        env:
+          ENV_FILE_BASE64: ${{ secrets.ENV_FILE_BASE64 }}
+        with:
+          host: prolis.tech
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script_stop: true
+          envs: ENV_FILE_BASE64,HOO
+          script: |
+            cd ~
+            ls F_2213 || git clone https://github.com/jphacks/F_2213 --depth 1
+            cd F_2213
+            git pull origin master
+            echo $ENV_FILE_BASE64 | base64 --decode -i > .env
+            docker compose up --build prod_back prod_front -d

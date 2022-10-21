@@ -86,10 +86,10 @@ func jwtToUser(parsedJwt jwt.Token) (*pb.User, error) {
 
 func fetchAuthorizedUserHttp(r *http.Request) (*pb.User, error) {
 	cookie, err := r.Cookie("JWT_TOKEN")
-	signedJwt := cookie.Value
 	if err != nil {
 		return nil, err
 	}
+	signedJwt := cookie.Value
 	parsedJwt, err := jwt.Parse([]byte(signedJwt), jwt.WithKey(jwa.RS256, publicKey))
 	if err != nil {
 		return nil, err
@@ -150,10 +150,17 @@ type server struct {
 	pb.UnimplementedTopPageClientServer
 }
 
+var uploadhalder pb.MouseClient
+
 // main.goから呼ばれるエントリーポイント
 func RunGrpc() {
 	// dbに接続する
 	db = connectDB()
+
+	// 動画生成サービスに接続
+	connect, _ := grpc.Dial("kajikentaro.clear-net.jp:20768", grpc.WithInsecure())
+	defer connect.Close()
+	uploadhalder = pb.NewMouseClient(connect)
 
 	// publicキーを読み込む
 	block, _ := pem.Decode(publicPemBytes)

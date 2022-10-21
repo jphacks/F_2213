@@ -125,6 +125,28 @@ export class TopPageClientClient {
     this.methodDescriptorFetchUserInfo);
   }
 
+  methodDescriptorGenerateMovie = new grpcWeb.MethodDescriptor(
+    '/prolis.TopPageClient/GenerateMovie',
+    grpcWeb.MethodType.SERVER_STREAMING,
+    grpc_pb.AudioUrl,
+    grpc_pb.MovieUrl,
+    (request: grpc_pb.AudioUrl) => {
+      return request.serializeBinary();
+    },
+    grpc_pb.MovieUrl.deserializeBinary
+  );
+
+  generateMovie(
+    request: grpc_pb.AudioUrl,
+    metadata?: grpcWeb.Metadata): grpcWeb.ClientReadableStream<grpc_pb.MovieUrl> {
+    return this.client_.serverStreaming(
+      this.hostname_ +
+        '/prolis.TopPageClient/GenerateMovie',
+      request,
+      metadata || {},
+      this.methodDescriptorGenerateMovie);
+  }
+
   methodDescriptorUploadAudio = new grpcWeb.MethodDescriptor(
     '/prolis.TopPageClient/UploadAudio',
     grpcWeb.MethodType.UNARY,
@@ -252,6 +274,27 @@ export class TopPageClientClient {
     request,
     metadata || {},
     this.methodDescriptorDeleteAudio);
+  }
+
+}
+
+export class MouseClient {
+  client_: grpcWeb.AbstractClientBase;
+  hostname_: string;
+  credentials_: null | { [index: string]: string; };
+  options_: null | { [index: string]: any; };
+
+  constructor (hostname: string,
+               credentials?: null | { [index: string]: string; },
+               options?: null | { [index: string]: any; }) {
+    if (!options) options = {};
+    if (!credentials) credentials = {};
+    options['format'] = 'text';
+
+    this.client_ = new grpcWeb.GrpcWebClientBase(options);
+    this.hostname_ = hostname.replace(/\/+$/, '');
+    this.credentials_ = credentials;
+    this.options_ = options;
   }
 
 }

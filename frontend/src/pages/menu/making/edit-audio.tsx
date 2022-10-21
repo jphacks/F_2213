@@ -1,26 +1,26 @@
+import { Alert, Button, LinearProgress, TextField } from "@mui/material";
+import Router from "next/router";
+import { useRef, useState } from "react";
 import Styles from "../../../../styles/edit-audio.module.scss";
-import { Alert, LinearProgress, TextField, Button } from "@mui/material";
 import Editpapar from "../../../components/edit-papar";
 import { useState, useRef } from "react";
 import { AudioInfo, SectionInfo } from "../../../components/interface";
 import { timeExpetion } from "../../../components/function";
-import Router from "next/router";
+import { AudioInfo, SectionInfo } from "../../../components/interface";
 
 const EditAudio = () => {
   let my_audio_list: SectionInfo[] = [];
-  const [myAudioList, myAudioListSet] = useState<SectionInfo[]>(my_audio_list);
-
   const demotmpstring: string = "null"; // sessionStorage.getItem("prolis_route");
-  const my_audio_infos = new AudioInfo(
-    "", // ファイル名．
-    demotmpstring,
-    "#b2f1a3",
-    "", // メモは未記入なので空白．
-    myAudioList
-  );
-
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
-  const [myAudioInfos, myAudioInfosSet] = useState<AudioInfo>(my_audio_infos);
+  const [myAudioInfos, myAudioInfosSet] = useState<AudioInfo>(
+    new AudioInfo(
+      "", // ファイル名．
+      demotmpstring,
+      "#b2f1a3",
+      "", // メモは未記入なので空白．
+      []
+    )
+  );
   const nameref = useRef(null);
   const timeref_st = [useRef(null), useRef(null)];
   const timeref_ed = [useRef(null), useRef(null)];
@@ -72,11 +72,8 @@ const EditAudio = () => {
       end: ed_min * 60 + ed_second,
     };
 
-    my_audio_list.push(audiosection);
-    myAudioListSet(my_audio_list);
-    console.log(my_audio_list);
-
-    myAudioInfosSet(my_audio_infos); // 再レンダリングされない．
+    myAudioInfos.audios.push(audiosection);
+    myAudioInfosSet({ ...myAudioInfos }); // 再レンダリングされない．
 
     timeref_st[0].current.value = timeref_st[1].current.value = null;
     timeref_ed[0].current.value = timeref_ed[1].current.value = null;
@@ -92,7 +89,7 @@ const EditAudio = () => {
   };
 
   const handleNextPage = () => {
-    if (my_audio_infos.audios.length === 0) {
+    if (myAudioInfos.audios.length === 0) {
       alertPopSet(
         <Alert severity="error" className={Styles.error}>
           タグを追加してください．
@@ -100,7 +97,7 @@ const EditAudio = () => {
       );
       return;
     }
-    sessionStorage.setItem("prolis_info", JSON.stringify("my_audio_info"));
+    sessionStorage.setItem("prolis_info", JSON.stringify(myAudioInfos));
     asyncAction();
   };
 
@@ -124,7 +121,7 @@ const EditAudio = () => {
                   controls
                   controlsList="nodownload"
                 >
-                  <source src={my_audio_infos.audioroute} type="audio/mp3" />
+                  <source src={myAudioInfos.audioroute} type="audio/mp3" />
                 </audio>
 
                 <div className={Styles.input_box}>
