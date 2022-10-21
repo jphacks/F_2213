@@ -3,9 +3,9 @@ import { RpcError } from "grpc-web";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { TopPageClientClient } from "../../../../grpc_out/GrpcServiceClientPb";
-import { Audio, AudioList, Empty } from "../../../../grpc_out/grpc_pb";
+import { Audio, AudioList, Empty, Tag } from "../../../../grpc_out/grpc_pb";
+import Styles from "../../../../styles/playing.module.scss";
 import MovieAudioPlayer from "../../../components/MovieAudioPlayer";
-import Styles from "../../../styles/playing.module.scss";
 import { BACKEND_ORIGIN } from "../../sample_api";
 
 const Playing = () => {
@@ -45,7 +45,9 @@ const Playing = () => {
       return false;
     };
   }
-  const playingTag = my_audio_infos.getTagsList()[indList]
+  // TODO: 見つかりませんなどのメッセージを出す
+  console.log(my_audio_infos)
+  const playingTag = my_audio_infos.getTagsList()[indList] || new Tag()
 
   return (
     <div className={Styles.papars_wrap}>
