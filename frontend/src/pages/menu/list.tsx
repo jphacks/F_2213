@@ -1,9 +1,9 @@
 import { RpcError } from "grpc-web";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Styles from "../../../../styles/playing.module.scss";
 import { TopPageClientClient } from "../../../grpc_out/GrpcServiceClientPb";
 import { AudioList, Empty } from "../../../grpc_out/grpc_pb";
+import Styles from "../../../styles/playing.module.scss";
 import Audiotag from "../../components/audio-tag";
 import Editpapar from "../../components/edit-papar";
 import { AudioInfo } from "../../components/interface";

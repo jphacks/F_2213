@@ -23,6 +23,7 @@ const MiniVideoPlayer = ({ source, startMs, endMs, tagNumber }: SectionSource) =
     // 次のタグに移動したときに呼ばれる
     changeState("paused");
     backToStart();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[tagNumber])
 
   const setVideoProgress = (p: number) => {
