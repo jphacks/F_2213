@@ -1,17 +1,13 @@
-$fcolor: #795548;
-
 .contents {
   padding: 40px;
   .title {
     margin: auto;
     padding-bottom: 10px;
     font-size: 30px;
-    border-bottom: dashed 2px $fcolor;
-    color: $fcolor;
+    border-bottom: dashed 2px #795548;
   }
   .memo {
     padding-top: 10px;
     font-size: 20px;
-    color: $fcolor;
   }
 }

@@ -1,8 +1,5 @@
-$fcolor: #795548;
-
-@mixin backMenu($color) {
+@mixin backMenu {
   padding: 15px 20px;
-  color: $color;
   box-shadow: 0 0 20px #00000048;
 }
 
@@ -12,12 +9,12 @@ $fcolor: #795548;
   margin: auto 50px;
 }
 .papars_wrap {
-  margin: auto 60px auto auto;
+  margin: 4% 60px auto auto;
   width: 50%;
-  height: 800px;
+  height: 80%;
   position: relative;
 
-  .papar_ls {
+  .papar_main {
     background: #fff;
     position: absolute;
     height: 100%;
@@ -43,8 +40,8 @@ $fcolor: #795548;
   }
 }
 
-.papar_up,
-.papar_st {
+.papar_second,
+.papar_third {
   height: 98%;
   position: absolute;
   width: 100%;
@@ -56,8 +53,8 @@ $fcolor: #795548;
     cursor: pointer;
   }
 }
-.papar_st {
-  @include backMenu($fcolor);
+.papar_third {
+  @include backMenu;
   font-size: 23px;
   background: #edebeb;
   left: -65px;
@@ -68,8 +65,8 @@ $fcolor: #795548;
     color: #5ad0ff;
   }
 }
-.papar_up {
-  @include backMenu($fcolor);
+.papar_second {
+  @include backMenu;
   font-size: 35px;
   background: #f0f0f0;
   right: -10px;

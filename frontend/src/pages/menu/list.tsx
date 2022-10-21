@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { useState } from "react";
-import Styles from "../../../styles/audio-list.module.scss";
+import Styles from "../../../styles/list.module.scss";
 import Audiotag from "../../components/audio-tag";
 import Editpapar from "../../components/edit-papar";
 import { AudioInfo, SectionInfo } from "../../components/interface";
 
-/* === */
+/* example */
 
 const demolist: SectionInfo[] = [
   { name: "zzz", start: 2, end: 3 },
@@ -20,13 +20,13 @@ const demo = new AudioInfo(
 );
 
 const demolist2: SectionInfo[] = [
-  { name: "あああ", start: 1, end: 20 },
-  { name: "ががが", start: 1, end: 10 },
+  { name: "あああ", start: 2000, end: 3000 },
+  { name: "ががが", start: 5000, end: 20000 },
 ];
 module;
 const demo2 = new AudioInfo(
   "タイトル2",
-  "/sm2.mp3",
+  "/FTampa_EDM_Sux.mp3",
   "#fff",
   "テストですよ！",
   demolist2
@@ -52,12 +52,12 @@ const AudioList = () => {
     <div className={Styles.wrap_all}>
       <div className={Styles.papars_wrap}>
         <Link href="./user-setting">
-          <div className={Styles.papar_st}>Setting</div>
+          <div className={Styles.papar_third}>Setting</div>
         </Link>
         <Link href="./audio-upload">
-          <div className={Styles.papar_up}>Upload</div>
+          <div className={Styles.papar_second}>Upload</div>
         </Link>
-        <div className={Styles.papar_ls}>
+        <div className={Styles.papar_main}>
           <div className={Styles.papar_line}>
             <div className={Styles.wrap}>
               <div className={Styles.title}>List</div>

@@ -1,5 +1,6 @@
 import Styles from "../../styles/components/audio-card.module.scss";
 import { SectionInfo } from "../components/interface";
+import MiniAudioPlayer from "./MiniAudioPlayer";
 
 const AudioCard = (props: {
   section_info: SectionInfo;
@@ -10,7 +11,7 @@ const AudioCard = (props: {
   const start: number = props.section_info.start;
   const end: number = props.section_info.end;
   const color: string = props.color;
-  const audioroute: string = `${props.audioroute}#t=${start},${end}`;
+  const audioroute: string = props.audioroute;
 
   return (
     <>
@@ -56,13 +57,7 @@ const AudioCard = (props: {
       <div className="cards">
         <div className={Styles.contents_wrap}>
           <div className={Styles.title}>{name}</div>
-          <audio
-            className={Styles.audio_bar}
-            controls
-            controlsList="nodownload"
-          >
-            <source src={audioroute} type="audio/mp3" />
-          </audio>
+          <MiniAudioPlayer source={audioroute} startMs={start} endMs={end} />
         </div>
       </div>
     </>
