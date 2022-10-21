@@ -1,9 +1,9 @@
-import Styles from "../../../../styles/edit-info.module.scss";
-import Link from "next/link";
-import { useState, useRef, ChangeEvent } from "react";
-import { AudioInfo, SectionInfo } from "../../../components/interface";
-import { Alert, LinearProgress, TextField, Button } from "@mui/material";
+import { Alert, Button, LinearProgress, TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
+import Link from "next/link";
+import { ChangeEvent, useRef, useState } from "react";
+import Styles from "../../../../styles/edit-info.module.scss";
+import { AudioInfo, SectionInfo } from "../../../components/interface";
 
 const EditInfo = () => {
   const nameref = useRef(null);
@@ -83,15 +83,8 @@ const EditInfo = () => {
 
   const [finishMessage, finishMessageSet] = useState<JSX.Element>(null);
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
-  const [finishbutton, finishbuttoneSet] = useState<JSX.Element>(
-    <Button
-      variant="contained"
-      onClick={() => handleNextPage()}
-      className={Styles.button}
-    >
-      完成
-    </Button>
-  );
+  const [isActiveFinishButton, isActiveFinishButtonSet] =
+    useState<boolean>(true);
 
   const determinate_bar = (
     <LinearProgress
@@ -122,7 +115,7 @@ const EditInfo = () => {
     // データをサーバーに移動
     // 動画作成中．これはサーバーのみなのでパスするべき？それとも待つべき？
 
-    finishbuttoneSet(null);
+    isActiveFinishButtonSet(false);
     finishMessageSet(
       <>
         <div className={Styles.descriotion}>
@@ -142,7 +135,8 @@ const EditInfo = () => {
   const handleNextPage = () => {
     console.log(title);
 
-    if (title === "") { // titleに文字列が入らない．
+    if (title === "") {
+      // titleに文字列が入らない．
       alertPopSet(
         <Alert severity="error" className={Styles.error}>
           タイトルを記入してください。
@@ -247,7 +241,15 @@ const EditInfo = () => {
 
                 {info_output}
 
-                {finishbutton}
+                {isActiveFinishButton && (
+                  <Button
+                    variant="contained"
+                    onClick={() => handleNextPage()}
+                    className={Styles.button}
+                  >
+                    完成
+                  </Button>
+                )}
 
                 {finishMessage}
               </div>
