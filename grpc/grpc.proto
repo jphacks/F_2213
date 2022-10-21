@@ -12,7 +12,6 @@ service TopPageClient {
   rpc DeleteAudio(AudioId) returns (Status){}
 }
 
-
 message User{
   string Id = 1;
   string Name = 2;
@@ -51,3 +50,13 @@ message Tag{
   int64 EndMs = 3;
   string TagName = 4;
 }
+
+// mouseサーバー : backend間
+service Mouse {
+  rpc UploadAudioFile(stream AudioFile) returns (stream VideoFile) {};
+}
+
+message AudioFile { bytes Data = 1; }
+
+message VideoFile { bytes Data = 1; }
+
