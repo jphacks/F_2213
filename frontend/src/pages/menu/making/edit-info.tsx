@@ -123,7 +123,7 @@ const EditInfo = () => {
         </div>
         <Link href="../list">
           <Button variant="contained" className={Styles.button}>
-            Let's Prolis!!
+            Let&apos;s Prolis!!!
           </Button>
         </Link>
       </>
