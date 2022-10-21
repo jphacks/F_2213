@@ -58,7 +58,7 @@ func (s *server) FetchAudioList(ctx context.Context, in *pb.Empty) (*pb.AudioLis
 		if audio.Tags == nil {
 			audio.Tags = []*pb.Tag{&pbTag}
 		} else {
-			audio.Tags = append(audioMap[tag.Id].Tags, &pbTag)
+			audio.Tags = append(audio.Tags, &pbTag)
 		}
 	}
 
