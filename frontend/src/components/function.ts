@@ -1,3 +1,5 @@
+import { MouseEvent } from "react";
+
 export const timeExpetion = (input_time: number[]) => {
   //音楽の時間長さも例外処理に入れる．
 
@@ -33,4 +35,14 @@ export const timeExpetion = (input_time: number[]) => {
   }
 
   return error_messages;
+};
+
+
+export const getClickRatio = (e: MouseEvent<HTMLProgressElement>) => {
+  const clickX = e.clientX;
+  const clientRect = e.currentTarget.getBoundingClientRect();
+  const itemX = clientRect.x;
+  const width = clientRect.right - clientRect.left;
+  const ratio = (clickX - itemX) / width;
+  return ratio;
 };
