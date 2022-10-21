@@ -20,28 +20,28 @@ ___
 
 ### 製品説明（具体的な製品の説明）
 ___
-####Uploadで音声にタグを追加しよう
+#### Uploadで音声にタグを追加しよう
 Uploadで使いたい音声ファイルを選択して、音声にタイトルとタグ付けをしよう
 
 最初に、mp3の音声ファイルを選択しよう<br/>
-<img src="https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image1.png" width="190">
+![upload-image1]("https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image1.png")
 
 次に、音声の聞き返したい部分を選択して、タグとして追加しよう<br/>
-<img src="https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image2.png" width="190">
+![upload-image2]("https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image2.png")
 
 最後に、音声に情報を記入して完了しよう<br/>
-<img src="https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image3.png" width="190">
+![upload-image3]("https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image3.png")
 
 
-####Listで音声を聞き返そう
-ListからUploadで選択した音声と追加したタグが聞けるよ
-<img src="https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/list-image1.png" width="190">
+#### Listで音声を聞き返そう
+ListからUploadで選択した音声と追加したタグが聞けるよ<br/>
+![list-image1]("https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/list-image2.png")
 
 画面左側で、元になった音声全体が聞けるよ<br/>
 つけたタグを聞きたいときは、画面右側で再生できるよ<br/>
 別の音声のタグを聞きたいときは、画面左側で聞きたい音声にカーソルを合わせると聞けるようになるよ<br/>
 
-####Settingで情報を確認しよう
+#### Settingで情報を確認しよう
 Settingからアカウントの情報が確認できるよ<br/>
 
 
