@@ -28,6 +28,7 @@ public class CreatePhoto : MonoBehaviour {
 
     void savePng()
     {
+        var args = System.Environment.GetCommandLineArgs();
         Texture2D tex = new Texture2D(RenderTextureRef.width, RenderTextureRef.height, TextureFormat.RGB24, false);
         RenderTexture.active = RenderTextureRef;
         tex.ReadPixels(new Rect(0, 0, RenderTextureRef.width, RenderTextureRef.height), 0, 0);
@@ -38,7 +39,7 @@ public class CreatePhoto : MonoBehaviour {
         Object.Destroy(tex);
 
         //Write to a file in the project folder
-        File.WriteAllBytes(Application.dataPath + "/../SaveMouse/SavedMouse" + count + ".png", bytes);
+        File.WriteAllBytes(Application.dataPath + "/../SaveMouse/" + args[2] + count + ".png", bytes);
         count += 1;
     }
 
