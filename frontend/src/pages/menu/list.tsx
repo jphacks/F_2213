@@ -54,7 +54,7 @@ const List = () => {
         <Link href="./setting">
           <div className={Styles.papar_third}>Setting</div>
         </Link>
-        <Link href="./upload">
+        <Link href="./making/upload">
           <div className={Styles.papar_second}>Upload</div>
         </Link>
         <div className={Styles.papar_main}>

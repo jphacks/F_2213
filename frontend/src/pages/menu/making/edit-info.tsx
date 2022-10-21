@@ -8,7 +8,7 @@ import { AudioInfo, SectionInfo } from "../../../components/interface";
 const EditInfo = () => {
   const nameref = useRef(null);
   const memoref = useRef(null);
-  /*  
+  /*  TODO
   const my_audio_infos: AudioInfo = JSON.parse(
     sessionStorage.getItem("my_audio_info")
   );
@@ -136,7 +136,6 @@ const EditInfo = () => {
     console.log(title);
 
     if (title === "") {
-      // titleに文字列が入らない．
       alertPopSet(
         <Alert severity="error" className={Styles.error}>
           タイトルを記入してください。
