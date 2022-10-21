@@ -8,7 +8,7 @@ import { AudioInfo, SectionInfo } from "../../../components/interface";
 import {
   getSessionAudioName,
   getSessionAudioUrl,
-  setSessionAudioInfo
+  setSessionAudioInfo,
 } from "../../../components/SessionStorage";
 
 const EditAudio = () => {
@@ -124,13 +124,15 @@ const EditAudio = () => {
               {alertPop}
 
               <div className={Styles.audioplay_warp}>
-                <audio
-                  className={Styles.audio_bar}
-                  controls
-                  controlsList="nodownload"
-                >
-                  <source src={myAudioInfos.audioroute} type="audio/mp3" />
-                </audio>
+                {myAudioInfos.audioroute && (
+                  <audio
+                    className={Styles.audio_bar}
+                    controls
+                    controlsList="nodownload"
+                  >
+                    <source src={myAudioInfos.audioroute} type="audio/mp3" />
+                  </audio>
+                )}
 
                 <div className={Styles.input_box}>
                   <TextField
