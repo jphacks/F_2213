@@ -87,7 +87,13 @@ func (s *server) DeleteAudio(ctx context.Context, in *pb.AudioId) (*pb.Status, e
 		return nil, err
 	}
 
-	res, err := db.Exec("DELETE FROM audio WHERE user_id=? AND id=?", user.Id, in.Id)
+	tx, err := db.BeginTxx(ctx, nil)
+	defer tx.Rollback()
+	if err != nil {
+		return nil, err
+	}
+
+	res, err := tx.Exec("DELETE FROM audio WHERE user_id=? AND id=?", user.Id, in.Id)
 	if err != nil {
 		return nil, err
 	}
@@ -97,11 +103,12 @@ func (s *server) DeleteAudio(ctx context.Context, in *pb.AudioId) (*pb.Status, e
 		return nil, err
 	}
 
-	_, err = db.Exec("DELETE FROM tag WHERE user_id=? AND audio_id=?", user.Id, in.Id)
+	_, err = tx.Exec("DELETE FROM tag WHERE user_id=? AND audio_id=?", user.Id, in.Id)
 	if err != nil {
 		return nil, err
 	}
 
+	tx.Commit()
 	return &status, nil
 }
 
@@ -146,20 +153,28 @@ func (s *server) UploadAudio(ctx context.Context, in *pb.Audio) (*pb.AudioId, er
 		return nil, err
 	}
 
+	tx, err := db.BeginTxx(ctx, nil)
+	defer tx.Rollback()
+	if err != nil {
+		return nil, err
+	}
+
 	audio := Audio{UserId: user.Id, AudioName: in.AudioName, Description: in.Description, Url: in.Url}
 	fmt.Printf("%v\n", audio)
-	res, err := db.NamedExec("INSERT INTO audio (user_id, audio_name, description, url) VALUES(:user_id, :audio_name, :description, :url)", audio)
+	res, err := tx.NamedExec("INSERT INTO audio (user_id, audio_name, description, url) VALUES(:user_id, :audio_name, :description, :url)", audio)
 	if err != nil {
 		return nil, err
 	}
 	assignedId, _ := res.LastInsertId()
 	for _, v := range in.Tags {
 		tag := Tag{UserId: user.Id, AudioId: int(assignedId), StartMs: int(v.StartMs), EndMs: int(v.EndMs), TagName: v.TagName}
-		_, err := db.NamedExec("INSERT INTO tag (user_id, audio_id, start_ms, end_ms, tag_name) VALUES(:user_id, :audio_id, :start_ms, :end_ms, :tag_name)", tag)
+		_, err := tx.NamedExec("INSERT INTO tag (user_id, audio_id, start_ms, end_ms, tag_name) VALUES(:user_id, :audio_id, :start_ms, :end_ms, :tag_name)", tag)
 		if err != nil {
 			return nil, err
 		}
 	}
+
+	tx.Commit()
 	return &pb.AudioId{Id: assignedId}, nil
 }
 
