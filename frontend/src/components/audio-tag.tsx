@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 import Styles from "../../styles/components/audio-tag.module.scss";
 import { AudioInfo } from "../components/interface";
 
 const AudioTag = (props: { audio_info: AudioInfo; handleHover: any }) => {
+  const router = useRouter();
   const color: string = props.audio_info.color;
   const title: string = props.audio_info.title;
   const audioroute: string = props.audio_info.audioroute;
@@ -56,7 +58,13 @@ const AudioTag = (props: { audio_info: AudioInfo; handleHover: any }) => {
           transform: scale(0.8, 1);
         }
       `}</style>
-      <div className={Styles.contents_wrap} onMouseOver={props.handleHover}>
+      <div
+        className={Styles.contents_wrap}
+        onMouseOver={props.handleHover}
+        onClick={() => {
+          router.push("/menu/playing/" + props.audio_info.uuid);
+        }}
+      >
         <div className="contents">
           <div className="title">{title}</div>
           <audio

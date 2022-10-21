@@ -18,6 +18,9 @@ const Playing = () => {
 
   // 初回のみ実行
   useEffect(() => {
+    if (typeof audioId !== "string") {
+      return;
+    }
     const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
       withCredentials: true,
     });
@@ -26,19 +29,15 @@ const Playing = () => {
       if (err) {
         console.error(err.message);
       } else {
-        if (typeof audioId !== "string") {
-          console.error(err.message);
-          return;
-        }
         const audioList = response.getAudiosList();
         const audio = audioList.find((v) => {
-          v.getId() + "" === audioId;
+          return v.getId() == parseInt(audioId);
         });
         my_audio_infos_set(audio);
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [audioId]);
 
   const [indList, indListSet] = useState<number>(0);
 
@@ -48,7 +47,6 @@ const Playing = () => {
     };
   }
   // TODO: 見つかりませんなどのメッセージを出す
-  console.log(my_audio_infos);
   const playingTag = my_audio_infos.getTagsList()[indList] || new Tag();
 
   return (
@@ -75,7 +73,7 @@ const Playing = () => {
                 タグ {indList + 1} : {playingTag.getTagname()}
               </div>
               <MovieAudioPlayer
-                source={my_audio_infos.getAudioname()}
+                source={my_audio_infos.getUrl()}
                 startMs={playingTag.getStartms()}
                 endMs={playingTag.getEndms()}
                 tagNumber={indList}
