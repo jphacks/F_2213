@@ -7,7 +7,6 @@ public class SoundManager : MonoBehaviour
 {
     private AudioClip Sound;
     private AudioSource audio;
-    private bool isAudioEnd;
 
 	void Start()
 	{
@@ -17,7 +16,6 @@ public class SoundManager : MonoBehaviour
             Sound = www.GetAudioClip(false, true);
             audio = GetComponent<AudioSource>();
             audio.clip = Sound;
-            isAudioEnd = false;
         }
         audio.Play();
 	}
