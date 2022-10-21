@@ -1,0 +1,101 @@
+@mixin backMenu {
+  padding: 15px 20px;
+  box-shadow: 0 0 20px #00000048;
+}
+
+
+
+.papars_wrap {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+
+  .papar_main {
+    background: #fff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    box-shadow: 0 0 20px #00000048;
+    .papar_line {
+      background-image: radial-gradient(#b9b9b5 1px, transparent 1px),
+        linear-gradient(180deg, #e3e3e2 1px, transparent 1px);
+      background-size: 2em 2em, 100% 2em;
+      background-position: 0px -0.9em, 0 1px;
+      line-height: 2;
+      width: 100%;
+      height: 100%;
+      .wrap {
+        padding: 50px;
+        height: 100%;
+      }
+      .title {
+        font-size: 50px;
+        color: #5ad0ff;
+      }
+
+      .descriotion {
+        font-size: 24px;
+        line-height: 1.7;
+      }
+    }
+  }
+}
+
+.progress {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%, 0);
+}
+
+.button {
+  position: absolute;
+  font-size: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+
+
+.titlebox input,
+.titlebox label,
+.button,
+.memobox label,
+.memobox textarea,
+.colorbox label,
+.colorbox div {
+  font-family: "Kiwi Maru", serif;
+}
+
+.button {
+  font-size: 20px;
+}
+
+.titlebox input {
+  font-size: 25px;
+}
+
+.memobox textarea {
+  font-size: 20px;
+  width: 500px;
+}
+.colorbox {
+  width: 150px;
+}
+
+.select_wrap {
+  position: absolute;
+  top: 33%;
+  width: 90%;
+  .form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px;
+  }
+}
