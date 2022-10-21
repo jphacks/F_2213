@@ -1,41 +1,41 @@
+import { RpcError } from "grpc-web";
 import Link from "next/link";
-import { useState } from "react";
-import Styles from "../../../styles/list.module.scss";
+import { useEffect, useState } from "react";
+import Styles from "../../../../styles/playing.module.scss";
+import { TopPageClientClient } from "../../../grpc_out/GrpcServiceClientPb";
+import { AudioList, Empty } from "../../../grpc_out/grpc_pb";
 import Audiotag from "../../components/audio-tag";
 import Editpapar from "../../components/edit-papar";
-import { AudioInfo, SectionInfo } from "../../components/interface";
-
-/* example */
-
-const demolist: SectionInfo[] = [
-  { name: "zzz", start: 2, end: 3 },
-  { name: "aaa", start: 1, end: 2 },
-];
-const demo = new AudioInfo(
-  "タイトル1",
-  "/sm1.mp3",
-  "#b2f1a3",
-  "テストです....",
-  demolist
-);
-
-const demolist2: SectionInfo[] = [
-  { name: "あああ", start: 2000, end: 3000 },
-  { name: "ががが", start: 5000, end: 20000 },
-];
-
-const demo2 = new AudioInfo(
-  "タイトル2",
-  "/FTampa_EDM_Sux.mp3",
-  "#fff",
-  "テストですよ！",
-  demolist2
-);
-
-const audiodemolists = [demo, demo2];
+import { AudioInfo } from "../../components/interface";
+import { convertAudioToAudioInfo } from "../../components/SessionStorage";
+import { BACKEND_ORIGIN } from "../sample_api";
 
 const List = () => {
-  const [hoveringDemo, setHoveringDemo] = useState<AudioInfo>(demo2);
+  const [hoveringDemo, setHoveringDemo] = useState<AudioInfo>(
+    new AudioInfo("", "", "", "", [])
+  );
+  const [audiodemolists, setAudiodemolists] = useState<AudioInfo[]>([]);
+
+  // 初回のみ実行
+  useEffect(() => {
+    const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
+      withCredentials: true,
+    });
+    const query = new Empty();
+    client.fetchAudioList(query, null, (err: RpcError, response: AudioList) => {
+      if (err) {
+        console.error(err.message);
+      } else {
+        const audioList = response.getAudiosList();
+        const audioInfoList = audioList.map((v) => {
+          return convertAudioToAudioInfo(v);
+        });
+        setAudiodemolists(audioInfoList);
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const distplay_tags = audiodemolists.map((x: AudioInfo) => (
     <Audiotag
       key={x.uuid}

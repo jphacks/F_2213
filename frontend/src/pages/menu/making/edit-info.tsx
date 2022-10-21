@@ -1,21 +1,22 @@
 import { Alert, Button, LinearProgress, TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
+import { RpcError } from "grpc-web";
 import Link from "next/link";
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { TopPageClientClient } from "../../../../grpc_out/GrpcServiceClientPb";
+import { AudioId } from "../../../../grpc_out/grpc_pb";
 import Styles from "../../../../styles/edit-info.module.scss";
-import { AudioInfo, SectionInfo } from "../../../components/interface";
+import { AudioInfo } from "../../../components/interface";
+import {
+  getSessionAudio,
+  getSessionAudioInfo,
+  setSessionAudioInfo
+} from "../../../components/SessionStorage";
+import { BACKEND_ORIGIN } from "../../sample_api";
 
 const EditInfo = () => {
   const nameref = useRef(null);
   const memoref = useRef(null);
-  /*  TODO
-  const my_audio_infos: AudioInfo = JSON.parse(
-    sessionStorage.getItem("my_audio_info")
-  );
-  */
-
-  /* --sample-- */
-
   const color_model = [
     {
       value: "#f78181",
@@ -47,17 +48,12 @@ const EditInfo = () => {
     },
   ];
 
-  let my_audio_list: SectionInfo[] = [];
-
-  const my_audio_infos = new AudioInfo(
-    "", // ファイル名．
-    "",
-    "#b2f1a3",
-    "", // メモは未記入なので空白．
-    my_audio_list
+  const [my_audio_infos, my_audio_infos_set] = useState<AudioInfo>(
+    new AudioInfo("", "", "", "", [])
   );
-
-  /*  */
+  useEffect(() => {
+    my_audio_infos_set(getSessionAudioInfo());
+  }, []);
 
   const [color, colorSet] = useState<string>("#fff");
   const [title, titleSet] = useState<string>("");
@@ -110,10 +106,24 @@ const EditInfo = () => {
       <LinearProgress variant="query" className={Styles.progress} />
     );
 
-    await new Promise((r) => setTimeout(r, 1000));
-
-    // データをサーバーに移動
-    // 動画作成中．これはサーバーのみなのでパスするべき？それとも待つべき？
+    // サーバーに保存する処理
+    await new Promise((resolve, reject) => {
+      setSessionAudioInfo(my_audio_infos);
+      const audio = getSessionAudio();
+      const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
+        withCredentials: true,
+      });
+      client.uploadAudio(audio, null, (err: RpcError, response: AudioId) => {
+        if(err){
+          console.error(err)
+          reject("サーバーへの保存に失敗しました")
+          throw err;
+        }else{
+          console.log(response)
+          resolve(response)
+        }
+      });
+    });
 
     isActiveFinishButtonSet(false);
     finishMessageSet(
