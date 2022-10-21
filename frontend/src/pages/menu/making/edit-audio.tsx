@@ -1,12 +1,10 @@
 import { Alert, Button, LinearProgress, TextField } from "@mui/material";
 import Router from "next/router";
-import { useRef, useState } from "react";
 import Styles from "../../../../styles/edit-audio.module.scss";
 import Editpapar from "../../../components/edit-papar";
 import { useState, useRef } from "react";
 import { AudioInfo, SectionInfo } from "../../../components/interface";
 import { timeExpetion } from "../../../components/function";
-import { AudioInfo, SectionInfo } from "../../../components/interface";
 
 const EditAudio = () => {
   let my_audio_list: SectionInfo[] = [];
