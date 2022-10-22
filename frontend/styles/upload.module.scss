@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "main_font";
+  src: url("../public/fonts/KiwiMaru-Medium.ttf") format("truetype");
+}
+
 @mixin backMenu {
   padding: 15px 20px;
   box-shadow: 0 0 20px #00000048;
@@ -57,12 +62,6 @@
   position: absolute;
   width: 100%;
   user-select: none;
-
-  &:hover {
-    background: #fff;
-    color: #3ec8ff;
-    cursor: pointer;
-  }
 }
 .papar_third {
   @include backMenu;
@@ -72,9 +71,6 @@
   top: -10px;
   transform: rotate(-5deg);
 
-  &:hover {
-    color: #8bf875;
-  }
 }
 .papar_second {
   @include backMenu;
@@ -86,6 +82,8 @@
 
   &:hover {
     color: #ff4d4d;
+    background: #fff;
+    cursor: pointer;
   }
 }
 
@@ -97,7 +95,7 @@
   height: 70px;
   width: 200px;
   .button {
-    font-family: "Kiwi Maru", serif;
+    font-family: "main_font", serif;
     height: 100%;
     width: 100%;
     border-radius: 10px;

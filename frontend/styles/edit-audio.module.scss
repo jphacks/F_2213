@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "main_font";
+  src: url("../public/fonts/KiwiMaru-Medium.ttf") format("truetype");
+}
+
 @mixin backMenu {
   padding: 15px 20px;
   box-shadow: 0 0 20px #00000048;
@@ -100,7 +105,7 @@
 .button,
 .nbutton,
 .titlebox label {
-  font-family: "Kiwi Maru", serif;
+  font-family: "main_font", serif;
 }
 
 .error {
@@ -148,7 +153,7 @@
 }
 
 .titlebox input, .timebox input{
-  font-family: "Kiwi Maru", serif;
+  font-family: "main_font", serif;
   font-size: 20px;
 }
 

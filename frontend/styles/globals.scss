@@ -1,10 +1,7 @@
-
-/*!
- * "fontname" is lisenced under the SIL Open Font License 1.1  (http://scripts.sil.org/OFL)
- * by https://github.com/Kiwi-KawagotoKajiru/Kiwi-Maru
- */
-
- @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400&display=swap');
+@font-face {
+  font-family: "main_font";
+  src: url("../public/fonts/KiwiMaru-Medium.ttf") format("truetype");
+}
 
 
 html,
@@ -31,7 +28,7 @@ a {
 
 .MuiList-root li,
 * {
-  font-family: 'Kiwi Maru', serif;
+  font-family: "main_font", serif;
   box-sizing: border-box;
 }
 

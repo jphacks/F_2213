@@ -51,9 +51,7 @@ const List = () => {
   return (
     <div className={Styles.wrap_all}>
       <div className={Styles.papars_wrap}>
-        <Link href="./setting">
-          <div className={Styles.papar_third}>Setting</div>
-        </Link>
+          <div className={Styles.papar_third}></div>
         <Link href="./making/upload">
           <div className={Styles.papar_second}>Upload</div>
         </Link>

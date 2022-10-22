@@ -34,7 +34,7 @@
       }
       .title {
         font-size: 50px;
-        color: #ff4d4d
+        color: #ff4d4d;
       }
     }
   }
@@ -46,12 +46,6 @@
   position: absolute;
   width: 100%;
   user-select: none;
-
-  &:hover {
-    background: #fff;
-    color: #3ec8ff;
-    cursor: pointer;
-  }
 }
 .papar_third {
   @include backMenu;
@@ -60,10 +54,6 @@
   left: -65px;
   top: 4px;
   transform: rotate(-8deg);
-
-  &:hover {
-    color: #5ad0ff;
-  }
 }
 .papar_second {
   @include backMenu;
@@ -74,7 +64,9 @@
   transform: rotate(4deg);
 
   &:hover {
-    color: #8bf875;
+    background: #fff;
+    color: #3ec8ff;
+    cursor: pointer;
   }
 }
 

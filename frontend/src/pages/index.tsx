@@ -6,7 +6,6 @@ import Styles from "../../styles/title.module.scss";
 import { BACKEND_ORIGIN } from "./sample_api";
 
 const TitleLogo = () => {
-  // hoverlogo();
   return <h1 className={Styles.title_logo}>プロリス</h1>;
 };
 
@@ -14,9 +13,9 @@ const IntroCarousel = () => {
   const photo_width: number = 600;
   const photo_rate: number = 9 / 16;
 
-  const e1: string = "/images/examples/e1.jpg";
-  const e2: string = "/images/examples/e2.png";
-  const e3: string = "/images/examples/e3.png";
+  const e1: string = "/images/s1.png";
+  const e2: string = "/images/s2.png";
+  const e3: string = "/images/s3.png";
   const photo_urls = [e1, e2, e3];
   const showList = photo_urls.map((x) => (
     <Carousel.Item interval={2000} key={x}>
@@ -33,8 +32,9 @@ const Title = () => {
       <div className={Styles.text}>
         <TitleLogo></TitleLogo>
         <div className={Styles.description}>
-          example <br />
-          example <br />
+          pronunciation & Lisning
+          <br />
+          　オリジナル発音帳
         </div>
         <IntroCarousel></IntroCarousel>
         <div className={Styles.login_contents}>

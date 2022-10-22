@@ -63,9 +63,7 @@ const Upload = () => {
 
   return (
     <div className={Styles.papars_wrap}>
-      <Link href="../setting">
-        <div className={Styles.papar_third}>Setting</div>
-      </Link>
+        <div className={Styles.papar_third}></div>
       <Link href="../list">
         <div className={Styles.papar_second}>List</div>
       </Link>
