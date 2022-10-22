@@ -8,10 +8,10 @@ import {
   AudioUrl,
   Empty,
   Tag,
-  TagId,
+  TagId
 } from "../../grpc_out/grpc_pb";
 
-const BACKEND_ORIGIN = process.env.NEXT_PUBLIC_BACKEND_ORIGIN;
+export const BACKEND_ORIGIN = process.env.NEXT_PUBLIC_BACKEND_ORIGIN;
 if (!BACKEND_ORIGIN) {
   throw new Error("NEXT_PUBLIC_BACKEND_ORIGIN環境変数が読み込まれていません");
 }

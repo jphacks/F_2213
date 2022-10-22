@@ -1,24 +1,34 @@
 import { Alert, Button, LinearProgress, TextField } from "@mui/material";
 import Router from "next/router";
+import { useEffect, useRef, useState } from "react";
 import Styles from "../../../../styles/edit-audio.module.scss";
 import Editpapar from "../../../components/edit-papar";
-import { useState, useRef } from "react";
-import { AudioInfo, SectionInfo } from "../../../components/interface";
 import { timeExpetion } from "../../../components/function";
+import { AudioInfo, SectionInfo } from "../../../components/interface";
+import {
+  getSessionAudioName,
+  getSessionAudioUrl,
+  setSessionAudioInfo
+} from "../../../components/SessionStorage";
 
 const EditAudio = () => {
   let my_audio_list: SectionInfo[] = [];
   const demotmpstring: string = "null"; // sessionStorage.getItem("prolis_route");
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
   const [myAudioInfos, myAudioInfosSet] = useState<AudioInfo>(
-    new AudioInfo(
-      "", // ファイル名．
-      demotmpstring,
-      "#b2f1a3",
-      "", // メモは未記入なので空白．
-      []
-    )
+    new AudioInfo("", "", "#b2f1a3", "", [])
   );
+  useEffect(() => {
+    myAudioInfosSet(
+      new AudioInfo(
+        getSessionAudioName(),
+        getSessionAudioUrl(),
+        "#b2f1a3",
+        "", // メモは未記入なので空白．
+        []
+      )
+    );
+  }, []);
   const nameref = useRef(null);
   const timeref_st = [useRef(null), useRef(null)];
   const timeref_ed = [useRef(null), useRef(null)];
@@ -82,7 +92,7 @@ const EditAudio = () => {
 
   const asyncAction = async () => {
     pValueSet(67);
-    await new Promise((r) => setTimeout(r, 1000));
+    setSessionAudioInfo(myAudioInfos);
     Router.push("./edit-info");
   };
 

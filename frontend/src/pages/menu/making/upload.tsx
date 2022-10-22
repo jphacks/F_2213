@@ -1,18 +1,38 @@
-import Styles from "../../../../styles/upload.module.scss";
+import { Alert, Button, LinearProgress } from "@mui/material";
 import Link from "next/link";
+import Router from "next/router";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { Button, Alert, LinearProgress } from "@mui/material";
-import Router from "next/router";
+import Styles from "../../../../styles/upload.module.scss";
+import {
+  setSessionAudioName,
+  setSessionAudioUrl,
+} from "../../../components/SessionStorage";
+import { BACKEND_ORIGIN } from "../../sample_api";
 
 const Upload = () => {
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
   const [pValue, pValueSet] = useState<number>(0);
 
-  const  asyncAction = async () => {
+  const asyncAction = async () => {
     pValueSet(33);
     await new Promise((r) => setTimeout(r, 1000));
     Router.push("./edit-audio");
+  };
+
+  const upload = async (file: File) => {
+    const formData = new FormData();
+    formData.append("avatar", file);
+    const param = {
+      method: "POST",
+      body: formData,
+    };
+    const res = await fetch(BACKEND_ORIGIN + "/img/upload");
+    const url = await res.text();
+
+    setSessionAudioUrl(url);
+    setSessionAudioName(file.name);
+    asyncAction();
   };
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -25,14 +45,12 @@ const Upload = () => {
     } else if (acceptedFiles[0].type !== "audio/mpeg") {
       alertPopSet(
         <Alert severity="error" className={Styles.error}>
-          mp4ファイルをアップロードしてください。
+          mp3ファイルをアップロードしてください。
         </Alert>
       );
     } else {
       const file = acceptedFiles[0];
-      const url : string = URL.createObjectURL(file);
-      sessionStorage.setItem('prolis_route', url);
-      asyncAction();
+      upload(file);
     }
   }, []);
 
@@ -60,7 +78,7 @@ const Upload = () => {
             <div className={Styles.wrap}>
               <div className={Styles.title}>Upload</div>
               <div className={Styles.descriotion}>
-                mp4ファイルをここにドロップアウトするか、以下のボタンからファイルを選択してください。
+                mp3ファイルをここにドロップアウトするか、以下のボタンからファイルを選択してください。
               </div>
               {alertPop}
               <div className={Styles.button_wrap}>

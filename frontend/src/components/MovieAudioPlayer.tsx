@@ -1,13 +1,13 @@
-import { useMemo, useState, useRef, useEffect } from "react";
-import styles from "styles/components/MovieAudioPlayer.module.scss";
-import { SectionSource, PlayStatus } from "./interface";
-import { Fab, Slider } from "@mui/material";
 import FastForwardIcon from "@mui/icons-material/FastForward";
 import FastRewindIcon from "@mui/icons-material/FastRewind";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import VolumeDownIcon from "@mui/icons-material/VolumeDown";
+import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import { Fab, Slider } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
+import styles from "styles/components/MovieAudioPlayer.module.scss";
+import { PlayStatus, SectionSource } from "./interface";
 
 const MiniVideoPlayer = ({
   source,
@@ -28,6 +28,7 @@ const MiniVideoPlayer = ({
     // 次のタグに移動したときに呼ばれる
     changeState("paused");
     backToStart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tagNumber]);
 
   const setVideoProgress = (p: number) => {
