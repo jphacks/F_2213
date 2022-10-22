@@ -24,18 +24,18 @@ ___
 Uploadで使いたい音声ファイルを選択して、音声にタイトルとタグ付けをしよう
 
 - 最初に、mp3の音声ファイルを選択します。<br/>
-![upload-image1]("./ReadmeResources/uploadImage1.png")
+![uploadImage1]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage1.png")
 
 - 次に、音声の聞き返したい部分を選択して、タグとして追加できます。<br/>
-![upload-image2]("./ReadmeResources/uploadImage2.png")
+![uploadImage2]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage2.png")
 
 - 最後に、音声に情報を記入して完了です。<br/>
-![upload-image3]("./ReadmeResources/uploadImage3.png")<br/>
+![uploadImage3]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage3.png")<br/>
 
 
 #### Listで音声を聞き返そう
 ListからUploadで選択した音声と追加したタグが聞けるよ<br/>
-![list-image1]("./ReadmeResources/listImage1.png")
+![listImage1]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/listImage1.png")
 
 - 画面左側で、元になった音声全体が聞けます<br/>
 - つけたタグを聞きたいときは、画面右側で再生できます<br/>
@@ -45,9 +45,8 @@ ListからUploadで選択した音声と追加したタグが聞けるよ<br/>
 #### Settingで情報を確認しよう
 Settingからアカウントの情報が確認できるよ<br/>
 
-- 
+- settingでは、現在ログインしているアカウントが確認できます。<br/>
 
-<br/>
 
 #### 口の動きを見てみよう
 アップロードした音声の口の動きが確認できるよ<br/>
