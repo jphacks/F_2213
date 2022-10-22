@@ -22,13 +22,15 @@ const Upload = () => {
 
   const upload = async (file: File) => {
     const formData = new FormData();
-    formData.append("avatar", file);
-    const param = {
+    formData.append("upload", file);
+    const param: RequestInit = {
       method: "POST",
       body: formData,
+      credentials: "include",
     };
-    const res = await fetch(BACKEND_ORIGIN + "/img/upload");
+    const res = await fetch(BACKEND_ORIGIN + "/img/upload", param);
     const url = await res.text();
+    console.log(url);
 
     setSessionAudioUrl(url);
     setSessionAudioName(file.name);

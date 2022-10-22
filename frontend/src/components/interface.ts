@@ -8,11 +8,11 @@ export type SectionInfo = {
 
 export type PlayStatus = "playing" | "paused";
 
-export interface SectionSource{
+export interface SectionSource {
   source: string;
   startMs: number;
   endMs: number;
-  tagNumber:number;
+  tagNumber: number;
 }
 
 export class AudioInfo {
@@ -28,13 +28,15 @@ export class AudioInfo {
     audioroute: string,
     color: string,
     memo: string,
-    audios: SectionInfo[]
+    audios: SectionInfo[],
+    uuid?: string | undefined
   ) {
     this.title = title;
     this.audioroute = audioroute;
     this.color = color;
     this.memo = memo;
     this.audios = audios;
-    this.audios.sort((a : SectionInfo, b : SectionInfo) => a.start - b.start);
+    this.audios.sort((a: SectionInfo, b: SectionInfo) => a.start - b.start);
+    this.uuid = uuid;
   }
 }
