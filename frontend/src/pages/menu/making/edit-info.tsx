@@ -102,9 +102,6 @@ const EditInfo = () => {
 
     await new Promise((r) => setTimeout(r, 1000));
 
-    progressBarSet(
-      <LinearProgress variant="query" className={Styles.progress} />
-    );
 
     // grpc-Audio形式に変換
     setSessionAudioInfo(my_audio_infos);
