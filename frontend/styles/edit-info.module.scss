@@ -46,7 +46,7 @@
 }
 
 .progress {
-  position: absolute;
+  position: absolute !important;
   width: 90%;
   left: 50%;
   bottom: 25px;
@@ -54,7 +54,7 @@
 }
 
 .button {
-  position: absolute;
+  position: absolute !important;
   font-size: 20px;
   left: 50%;
   transform: translate(-50%, 0);

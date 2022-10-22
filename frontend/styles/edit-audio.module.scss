@@ -4,7 +4,7 @@
 }
 
 .progress {
-  position: absolute;
+  position: absolute !important;
   width: 90%;
   left: 50%;
   bottom: 25px;
@@ -13,7 +13,7 @@
 
 .nbutton {
   font-size: 25px;
-  position: absolute;
+  position: absolute !important;
   left: 85%;
   bottom: 50px;
 }
