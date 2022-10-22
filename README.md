@@ -5,6 +5,12 @@
 
 ## 製品概要
 
+<br/>
+
+### 紹介動画URL：https://youtu.be/5AdvY4PC1Hs
+
+<br/><br/>
+
 ### 英語学習 x Tech <br/><br/><br/>
 
 ### 背景(製品開発のきっかけ、課題等）
