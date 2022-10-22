@@ -4,13 +4,13 @@ import { RpcError } from "grpc-web";
 import Link from "next/link";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { TopPageClientClient } from "../../../../grpc_out/GrpcServiceClientPb";
-import { AudioId } from "../../../../grpc_out/grpc_pb";
+import { AudioId, AudioUrl } from "../../../../grpc_out/grpc_pb";
 import Styles from "../../../../styles/edit-info.module.scss";
 import { AudioInfo } from "../../../components/interface";
 import {
   getSessionAudio,
   getSessionAudioInfo,
-  setSessionAudioInfo
+  setSessionAudioInfo,
 } from "../../../components/SessionStorage";
 import { BACKEND_ORIGIN } from "../../sample_api";
 
@@ -106,21 +106,47 @@ const EditInfo = () => {
       <LinearProgress variant="query" className={Styles.progress} />
     );
 
+    // grpc-Audio形式に変換
+    setSessionAudioInfo(my_audio_infos);
+    const audio = getSessionAudio();
+
+    // サーバーに接続
+    const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
+      withCredentials: true,
+    });
+
+    await new Promise((resolve, reject) => {
+      const query = new AudioUrl();
+      query.setUrl(audio.getUrl());
+      const stream = client.generateMovie(query);
+
+      // TODO 例外処理
+      console.log("生成中. . .");
+      stream.on("data", (response) => {
+        console.log("生成完了: " + response.getUrl());
+        audio.setUrl(response.getUrl());
+        resolve(undefined);
+      });
+      stream.on("status", (status) => {
+        console.log(status.code);
+        console.log(status.details);
+        console.log(status.metadata);
+      });
+      stream.on("end", () => {
+        console.log("end");
+      });
+    });
+
     // サーバーに保存する処理
     await new Promise((resolve, reject) => {
-      setSessionAudioInfo(my_audio_infos);
-      const audio = getSessionAudio();
-      const client = new TopPageClientClient(BACKEND_ORIGIN + "", null, {
-        withCredentials: true,
-      });
       client.uploadAudio(audio, null, (err: RpcError, response: AudioId) => {
-        if(err){
-          console.error(err)
-          reject("サーバーへの保存に失敗しました")
+        if (err) {
+          console.error(err);
+          reject("サーバーへの保存に失敗しました");
           throw err;
-        }else{
-          console.log(response)
-          resolve(response)
+        } else {
+          console.log(response);
+          resolve(response);
         }
       });
     });

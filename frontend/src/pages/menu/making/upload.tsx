@@ -4,16 +4,35 @@ import Router from "next/router";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Styles from "../../../../styles/upload.module.scss";
-import { setSessionAudioName, setSessionAudioUrl } from "../../../components/SessionStorage";
+import {
+  setSessionAudioName,
+  setSessionAudioUrl,
+} from "../../../components/SessionStorage";
+import { BACKEND_ORIGIN } from "../../sample_api";
 
 const Upload = () => {
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
   const [pValue, pValueSet] = useState<number>(0);
 
-  const  asyncAction = async () => {
+  const asyncAction = async () => {
     pValueSet(33);
     await new Promise((r) => setTimeout(r, 1000));
     Router.push("./edit-audio");
+  };
+
+  const upload = async (file: File) => {
+    const formData = new FormData();
+    formData.append("avatar", file);
+    const param = {
+      method: "POST",
+      body: formData,
+    };
+    const res = await fetch(BACKEND_ORIGIN + "/img/upload");
+    const url = await res.text();
+
+    setSessionAudioUrl(url);
+    setSessionAudioName(file.name);
+    asyncAction();
   };
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -31,10 +50,7 @@ const Upload = () => {
       );
     } else {
       const file = acceptedFiles[0];
-      const url : string = URL.createObjectURL(file);
-      setSessionAudioUrl(url)
-      setSessionAudioName(file.name)
-      asyncAction();
+      upload(file);
     }
   }, []);
 
