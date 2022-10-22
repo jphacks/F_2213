@@ -24,31 +24,39 @@ ___
 Uploadで使いたい音声ファイルを選択して、音声にタイトルとタグ付けをしよう
 
 - 最初に、mp3の音声ファイルを選択します。<br/>
-![upload-image1]("./readme_resources/upload-image1.png")
+![upload-image1]("./ReadmeResources/uploadImage1.png")
 
 - 次に、音声の聞き返したい部分を選択して、タグとして追加できます。<br/>
-![upload-image2]("./readme_resources/upload-image2.png")
+![upload-image2]("./ReadmeResources/uploadImage2.png")
 
 - 最後に、音声に情報を記入して完了です。<br/>
-![upload-image3]("./readme_resources/upload-image3.png")
+![upload-image3]("./ReadmeResources/uploadImage3.png")<br/>
 
 
 #### Listで音声を聞き返そう
 ListからUploadで選択した音声と追加したタグが聞けるよ<br/>
-![list-image1]("./readme_resources/list-image2.png")
+![list-image1]("./ReadmeResources/listImage1.png")
 
 - 画面左側で、元になった音声全体が聞けます<br/>
 - つけたタグを聞きたいときは、画面右側で再生できます<br/>
 - 別の音声のタグを聞きたいときは、画面左側で聞きたい音声にカーソルを合わせると画面右側が変わり、聞けるようになります<br/>
+
 
 #### Settingで情報を確認しよう
 Settingからアカウントの情報が確認できるよ<br/>
 
 - 
 
+<br/>
+
+#### 口の動きを見てみよう
+アップロードした音声の口の動きが確認できるよ<br/>
+
+- 
+- 
+- 
 
 
-口の動きを見るには...
 <br/><br/><br/>
 
 ### 特長
@@ -77,6 +85,7 @@ ___
 - 選択できる音声ファイルの種類を増やす。
 - 
 - 口の動きを生成するのに時間がかかるので、短い時間で処理できるようにする。
+- より正確な口の動きを再現する。
 
 <br/><br/><br/>
 
