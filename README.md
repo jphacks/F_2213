@@ -14,7 +14,7 @@ ___
 
 単語帳みたいに付箋を付けて、いつでも簡単に確認できたらいいなぁって思ったことありませんか？
 
-そんな課題を解決するため、私たちは**付箋をつけるように音声の一部を保存、再生できる**製品を開発しました
+そんな課題を解決するため、私たちは**付箋をつけるように音声の一部を保存、再生できる**製品を開発しました！
 
 さらに、日本人はスピーキングに対して課題を感じている人が多くいるようなので、口の動きをシュミレートして見せることで**スピーキング練習もできる**ようにしちゃいました！<br/><br/><br/>
 
@@ -24,22 +24,22 @@ ___
 Uploadで使いたい音声ファイルを選択して、音声にタイトルとタグ付けをしよう
 
 - 最初に、mp3の音声ファイルを選択します。<br/>
-![uploadImage1](https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage1.png)
+<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/530.png">
 
 - 次に、音声の聞き返したい部分を選択して、タグとして追加できます。<br/>
-![uploadImage2](https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage2.png)
+<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/529.png">
 
 - 最後に、音声に情報を記入して完了です。<br/>
-![uploadImage3](https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage3.png)<br/>
+<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/533.png"><br/>
 
 
 #### Listで音声を聞き返そう
 ListからUploadで選択した音声と追加したタグが聞けるよ<br/>
-![listImage1]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/listImage1.png")
+<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/534.png">
 
-- 画面左側で、元になった音声全体が聞けます<br/>
-- つけたタグを聞きたいときは、画面右側で再生できます<br/>
-- 別の音声のタグを聞きたいときは、画面左側で聞きたい音声にカーソルを合わせると画面右側が変わり、聞けるようになります<br/>
+- 画面左側で、元になった音声全体が聞けます。<br/>
+- つけたタグを聞きたいときは、画面右側で再生できます。<br/>
+- 別の音声のタグを聞きたいときは、画面左側で聞きたい音声にカーソルを合わせると画面右側が変わり、聞けるようになります。<br/>
 
 
 #### Settingで情報を確認しよう
@@ -50,7 +50,7 @@ Settingからアカウントの情報が確認できるよ<br/>
 
 #### 口の動きを見てみよう
 アップロードした音声の口の動きが確認できるよ<br/>
-
+<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/527.png">
 - 
 - 
 - 
@@ -107,7 +107,7 @@ ___
 #### フレームワーク・ライブラリ・モジュール
 
 -
--　OVR lipsync
+-　Oculus Lipsync Unity
 
 #### デバイス
 
