@@ -8,7 +8,7 @@ import {
   setSessionAudioName,
   setSessionAudioUrl,
 } from "../../../components/SessionStorage";
-import { BACKEND_ORIGIN } from "../../sample_api";
+
 
 const Upload = () => {
   const [alertPop, alertPopSet] = useState<JSX.Element>(null);
@@ -27,12 +27,7 @@ const Upload = () => {
       method: "POST",
       body: formData,
     };
-    const res = await fetch(BACKEND_ORIGIN + "/img/upload");
-    const url = await res.text();
-
-    setSessionAudioUrl(url);
-    setSessionAudioName(file.name);
-    asyncAction();
+ 
   };
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -61,10 +56,6 @@ const Upload = () => {
 
   return (
     <div className={Styles.papars_wrap}>
-        <div className={Styles.papar_third}></div>
-      <Link href="../list">
-        <div className={Styles.papar_second}>List</div>
-      </Link>
       <div {...getRootProps()}>
         <div className={Styles.papar_main}>
           {isDragActive ? (

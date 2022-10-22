@@ -3,7 +3,6 @@
   box-shadow: 0 0 20px #00000048;
 }
 
-
 .progress {
   position: absolute !important;
   width: 90%;
@@ -11,7 +10,6 @@
   bottom: 25px;
   transform: translate(-50%, 0);
 }
-
 
 .papars_wrap {
   width: 80%;
@@ -57,12 +55,6 @@
   position: absolute;
   width: 100%;
   user-select: none;
-
-  &:hover {
-    background: #fff;
-    color: #3ec8ff;
-    cursor: pointer;
-  }
 }
 .papar_third {
   @include backMenu;
@@ -71,10 +63,6 @@
   right: 180px;
   top: -10px;
   transform: rotate(-5deg);
-
-  &:hover {
-    color: #8bf875;
-  }
 }
 .papar_second {
   @include backMenu;
@@ -85,6 +73,8 @@
   transform: rotate(-2deg);
 
   &:hover {
+    background: #fff;
+    cursor: pointer;
     color: #ff4d4d;
   }
 }

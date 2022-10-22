@@ -47,11 +47,6 @@
   width: 100%;
   user-select: none;
 
-  &:hover {
-    background: #fff;
-    color: #3ec8ff;
-    cursor: pointer;
-  }
 }
 .papar_third {
   @include backMenu;
@@ -62,7 +57,9 @@
   transform: rotate(-8deg);
 
   &:hover {
-    color: #5ad0ff;
+    background: #fff;
+    color: #3ec8ff;
+    cursor: pointer;
   }
 }
 .papar_second {
@@ -73,9 +70,6 @@
   top: -35px;
   transform: rotate(4deg);
 
-  &:hover {
-    color: #8bf875;
-  }
 }
 
 .wrap_all {
