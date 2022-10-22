@@ -1,7 +1,9 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 import Styles from "../../styles/title.module.scss";
+import { BACKEND_ORIGIN } from "./sample_api";
 
 const TitleLogo = () => {
   // hoverlogo();
@@ -25,6 +27,7 @@ const IntroCarousel = () => {
 };
 
 const Title = () => {
+  const router = useRouter();
   return (
     <main>
       <div className={Styles.text}>
@@ -37,7 +40,13 @@ const Title = () => {
         <div className={Styles.login_contents}>
           <div className={Styles.button_title}>ログインする</div>
 
-          <Button className={Styles.button_body} variant="outline-light">
+          <Button
+            className={Styles.button_body}
+            variant="outline-light"
+            onClick={() => {
+              router.push(BACKEND_ORIGIN + "/auth/login");
+            }}
+          >
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18">
               <path
                 d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 002.38-5.88c0-.57-.05-.66-.15-1.18z"
