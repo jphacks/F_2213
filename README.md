@@ -1,5 +1,6 @@
 # プロリス
 
+#### 画像クリックで製品ページへ移動します
 [![](ReadmeResources/535.png)](https://prolis.tech/)
 
 ## 製品概要
