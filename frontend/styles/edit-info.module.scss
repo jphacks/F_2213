@@ -8,6 +8,17 @@
   box-shadow: 0 0 20px #00000048;
 }
 
+.titlebox input,
+.titlebox label,
+.button,
+.memobox label,
+.memobox textarea,
+.colorbox label,
+.colorbox div {
+  font-family: "main_font", serif;
+}
+
+
 
 
 .papars_wrap {
@@ -68,19 +79,7 @@
 
 
 
-.titlebox input,
-.titlebox label,
-.button,
-.memobox label,
-.memobox textarea,
-.colorbox label,
-.colorbox div {
-  font-family: "main_font", serif;
-}
 
-.button {
-  font-size: 20px;
-}
 
 .titlebox input {
   font-size: 25px;

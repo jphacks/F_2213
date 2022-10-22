@@ -1,12 +1,28 @@
 @font-face {
   font-family: "main_font";
-  src: url("../public/fonts/bananaslipplus.otf") format("truetype");
+  src: url("../public/fonts/KiwiMaru-Medium.ttf") format("truetype");
 }
 
 @mixin backMenu {
   padding: 15px 20px;
   box-shadow: 0 0 20px #00000048;
 }
+
+.timebox,
+.timebox label,
+.button,
+.nbutton,
+.titlebox label {
+  font-family: "main_font", serif;
+}
+
+
+
+.titlebox input, .timebox input{
+  font-size: 20px;
+}
+
+
 
 .progress {
   position: absolute !important;
@@ -100,13 +116,6 @@
   justify-content: space-between;
 }
 
-.timebox,
-.timebox label,
-.button,
-.nbutton,
-.titlebox label {
-  font-family: "main_font", serif;
-}
 
 .error {
   font-size: 18px;
@@ -151,9 +160,3 @@
     }
   }
 }
-
-.titlebox input, .timebox input{
-  font-family: "main_font", serif;
-  font-size: 20px;
-}
-
