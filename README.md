@@ -23,30 +23,39 @@ ___
 #### Uploadで音声にタグを追加しよう
 Uploadで使いたい音声ファイルを選択して、音声にタイトルとタグ付けをしよう
 
-最初に、mp3の音声ファイルを選択しよう<br/>
-![upload-image1]("https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image1.png")
+- 最初に、mp3の音声ファイルを選択します。<br/>
+![uploadImage1]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage1.png")
 
-次に、音声の聞き返したい部分を選択して、タグとして追加しよう<br/>
-![upload-image2]("https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image2.png")
+- 次に、音声の聞き返したい部分を選択して、タグとして追加できます。<br/>
+![uploadImage2]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage2.png")
 
-最後に、音声に情報を記入して完了しよう<br/>
-![upload-image3]("https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/upload-image3.png")
+- 最後に、音声に情報を記入して完了です。<br/>
+![uploadImage3]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage3.png")<br/>
 
 
 #### Listで音声を聞き返そう
 ListからUploadで選択した音声と追加したタグが聞けるよ<br/>
-![list-image1]("https://github.com/jphacks/F_2213/tree/feature/README/readme_resources/list-image2.png")
+![listImage1]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/listImage1.png")
 
-画面左側で、元になった音声全体が聞けるよ<br/>
-つけたタグを聞きたいときは、画面右側で再生できるよ<br/>
-別の音声のタグを聞きたいときは、画面左側で聞きたい音声にカーソルを合わせると聞けるようになるよ<br/>
+- 画面左側で、元になった音声全体が聞けます<br/>
+- つけたタグを聞きたいときは、画面右側で再生できます<br/>
+- 別の音声のタグを聞きたいときは、画面左側で聞きたい音声にカーソルを合わせると画面右側が変わり、聞けるようになります<br/>
+
 
 #### Settingで情報を確認しよう
 Settingからアカウントの情報が確認できるよ<br/>
 
+- settingでは、現在ログインしているアカウントが確認できます。<br/>
 
 
-口の動きを見るには...
+#### 口の動きを見てみよう
+アップロードした音声の口の動きが確認できるよ<br/>
+
+- 
+- 
+- 
+
+
 <br/><br/><br/>
 
 ### 特長
@@ -56,11 +65,10 @@ ___
 #### 1. 音声の一部を保存、再生ができる
 - 選択した音声から聞き返したい部分を選んで保存が出来ます。
 - 一つの音声に対して複数箇所を保存することも可能です。
-- 保存したものそれぞれに名前を付けることが可能です。
+- 保存したものに色や名前を付けて管理することが可能です。
 
 #### 2. 保存した音声を、元になっている音声毎にまとめることができる
 - 保存した音声は元となった音声と共に確認することが出来ます。
-- 
 
 #### 3. 音声データから口の動きを生成できる
 - 音声データを元に口の動きをシュミレートして、見ることが出来ます。
@@ -68,7 +76,7 @@ ___
 
 ### 解決出来ること
 ___
-- 英語のリスニング学習をする際に、必要な部分だけを取り出して聞き返せるため、復習の効率化が図れます。
+- 英語のリスニング学習をする際に、必要な部分だけを取り出して聞き返せるため、学習の効率化が図れます。
 - 音声から口の動きを生成することで、スピーキングの練習にも役立てることが出来ます。<br/><br/><br/>
 
 ### 今後の展望
@@ -76,6 +84,7 @@ ___
 - 選択できる音声ファイルの種類を増やす。
 - 
 - 口の動きを生成するのに時間がかかるので、短い時間で処理できるようにする。
+- より正確な口の動きを再現する。
 
 <br/><br/><br/>
 
@@ -98,7 +107,7 @@ ___
 #### フレームワーク・ライブラリ・モジュール
 
 -
--
+-　OVR lipsync
 
 #### デバイス
 
