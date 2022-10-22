@@ -23,34 +23,36 @@ ___
 #### Uploadで音声にタグを追加しよう
 Uploadで使いたい音声ファイルを選択して、音声にタイトルとタグ付けをしよう
 
-- 最初に、mp3の音声ファイルを選択します。<br/>
-<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/530.png">
+- 最初に、mp3の音声ファイルを選択します。
+![](ReadmeResources/530.png)
 
-- 次に、音声の聞き返したい部分を選択して、タグとして追加できます。<br/>
-<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/529.png">
+- 次に、音声の聞き返したい部分を選択して、タグとして追加できます。
+![](ReadmeResources/529.png)
 
-- 最後に、音声に情報を記入して完了です。<br/>
-<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/533.png"><br/>
-
+- 最後に、音声に情報を記入して完了です。
+![](ReadmeResources/533.png)
+<br/><br/><br/>
 
 #### Listで音声を聞き返そう
-ListからUploadで選択した音声と追加したタグが聞けるよ<br/>
-<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/534.png">
+ListからUploadで選択した音声と追加したタグが聞けるよ
+
+![](ReadmeResources/534.png)
 
 - 画面左側で、元になった音声全体が聞けます。<br/>
 - つけたタグを聞きたいときは、画面右側で再生できます。<br/>
-- 別の音声のタグを聞きたいときは、画面左側で聞きたい音声にカーソルを合わせると画面右側が変わり、聞けるようになります。<br/>
-
+- 別の音声のタグを聞きたいときは、画面左側で聞きたい音声にカーソルを合わせると画面右側が変わり、聞けるようになります。
+<br/><br/><br/>
 
 #### Settingで情報を確認しよう
 Settingからアカウントの情報が確認できるよ<br/>
 
-- settingでは、現在ログインしているアカウントが確認できます。<br/>
-
+- settingでは、現在ログインしているアカウントが確認できます。
+<br/><br/><br/>
 
 #### 口の動きを見てみよう
-アップロードした音声の口の動きが確認できるよ<br/>
-<image src="https://github.com/jphacks/F_2213/tree/master//ReadmeResources/527.png">
+アップロードした音声の口の動きが確認できるよ
+
+![](ReadmeResources/527.png)
 - 
 - 
 - 
