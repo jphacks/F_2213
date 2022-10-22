@@ -24,13 +24,13 @@ ___
 Uploadで使いたい音声ファイルを選択して、音声にタイトルとタグ付けをしよう
 
 - 最初に、mp3の音声ファイルを選択します。<br/>
-![uploadImage1]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage1.png")
+![uploadImage1](https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage1.png)
 
 - 次に、音声の聞き返したい部分を選択して、タグとして追加できます。<br/>
-![uploadImage2]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage2.png")
+![uploadImage2](https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage2.png)
 
 - 最後に、音声に情報を記入して完了です。<br/>
-![uploadImage3]("https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage3.png")<br/>
+![uploadImage3](https://github.com/jphacks/F_2213/tree/master//ReadmeResources/uploadImage3.png)<br/>
 
 
 #### Listで音声を聞き返そう
