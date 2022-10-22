@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "main_font";
+  src: url("../../public/fonts/KiwiMaru-Medium.ttf") format("truetype");
+}
+
+
 .wrap_all {
 margin-top: 17%;
 }
@@ -49,14 +55,14 @@ margin-top: 17%;
       margin: 20px;
       width: 100px;
       height: 100px;
-      font-family: "Kiwi Maru", serif;
+      font-family: "main_font", serif;
       svg {
         font-size: 60px;
       }
     }
     .ebutton {
       margin: 20px;
-      font-family: "Kiwi Maru", serif;
+      font-family: "main_font", serif;
       height: 70px;
       border-radius: 50px;
       padding: 30px;
