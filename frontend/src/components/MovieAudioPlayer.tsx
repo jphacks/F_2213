@@ -9,7 +9,12 @@ import PauseIcon from "@mui/icons-material/Pause";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeDownIcon from "@mui/icons-material/VolumeDown";
 
-const MiniVideoPlayer = ({ source, startMs, endMs, tagNumber }: SectionSource) => {
+const MiniVideoPlayer = ({
+  source,
+  startMs,
+  endMs,
+  tagNumber,
+}: SectionSource) => {
   const [playStatus, _setPlayStatus] = useState<PlayStatus>("paused");
   const [isRepeat, setIsRepeat] = useState<boolean>(false);
   const [audioProgress, _setVideoProgress] = useState<number>(0);
@@ -19,11 +24,11 @@ const MiniVideoPlayer = ({ source, startMs, endMs, tagNumber }: SectionSource) =
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoSpeed, setVideoSpeed] = useState<number>(1);
 
-  useEffect(()=>{
+  useEffect(() => {
     // 次のタグに移動したときに呼ばれる
     changeState("paused");
     backToStart();
-  },[tagNumber])
+  }, [tagNumber]);
 
   const setVideoProgress = (p: number) => {
     if (isCursorDrag) return;
@@ -83,87 +88,105 @@ const MiniVideoPlayer = ({ source, startMs, endMs, tagNumber }: SectionSource) =
     _setCurrentTime(videoRef.current.currentTime);
   };
 
-
   const MstoJsx = (Mstime: number) => {
     const sec: number = Math.round(Mstime / 1000);
     return (
-      <>
-        {Math.floor(sec / 60)} : {Math.floor(sec % 60)}
-      </>
+      <span className={styles.st_count}>
+        {("00" + Math.floor(sec / 60)).slice(-2)} :{" "}
+        {("00" + Math.floor(sec % 60)).slice(-2)}
+      </span>
     );
   };
 
   return (
     <>
-      <video ref={videoRef} src={source} className={styles.video}></video>;
-      <div className={styles.seek_box}>
-        {MstoJsx(startMs)}
-        <Slider
-          value={audioProgress}
-          onChange={handleChangeSeek}
-          onChangeCommitted={handleChangeSeekCommit}
-        />
-        {MstoJsx(endMs)}
+      <div className={styles.media_wrap}>
+        <div className={styles.tape}></div>
+        <video ref={videoRef} src={source} className={styles.video}></video>
       </div>
-      {Math.floor(currentTime / 60)} : {Math.floor(currentTime % 60)}
-      <div>{videoSpeed}</div>
+      <div className={styles.wrap_all}>
+        <div className={styles.seek_box}>
+          {MstoJsx(startMs)}
+          <Slider
+            size="small"
+            className={styles.seek_bar}
+            value={audioProgress}
+            onChange={handleChangeSeek}
+            onChangeCommitted={handleChangeSeekCommit}
+          />
+          {MstoJsx(endMs)}
+        </div>
 
-      <Fab
-        variant="extended"
-        onClick={() => {
-          const speed = (videoSpeed * 10 - 1) / 10;
-          if (speed >= 0.5) {
-            videoRef.current.playbackRate = speed;
-            setVideoSpeed(videoRef.current.playbackRate);
-          }
-        }}
-      >
-        <FastRewindIcon /> -0.1
-      </Fab>
-      {playStatus === "playing" && (
-        <Fab
-          onClick={() => {
-            changeState("paused");
-          }}
-        >
-          <PauseIcon />;
-        </Fab>
-      )}
-      {playStatus === "paused" && (
-        <Fab
-          onClick={() => {
-            changeState("playing");
-          }}
-        >
-          <PlayArrowIcon />;
-        </Fab>
-      )}
-      <Fab
-        variant="extended"
-        onClick={() => {
-          const speed = (videoSpeed * 10 + 1) / 10;
-          if (speed <= 1.5) {
-            videoRef.current.playbackRate = speed;
-            setVideoSpeed(videoRef.current.playbackRate);
-          }
-        }}
-      >
-        + 0.1
-        <FastForwardIcon />;
-      </Fab>
-  
-      <div className={styles.sound_box}>
-        <VolumeDownIcon />
-        <Slider
-          defaultValue={100}
-          aria-label="Default"
-          valueLabelDisplay="auto"
-          onChange={(event: Event, newValue: number) => {
-            _setVolumeProgress(newValue);
-            videoRef.current.volume = volumeProgress / 100;
-          }}
-        />
-        <VolumeUpIcon />
+        <div className={styles.wrap_box}>
+          <span className={styles.time_value}>
+            {("00" + Math.floor(currentTime / 60)).slice(-2)} :
+            {("00" + Math.floor(currentTime % 60)).slice(-2)}
+          </span>
+          <div className={styles.simu_box}>
+            <Fab
+              className={styles.ebutton}
+              variant="extended"
+              onClick={() => {
+                const speed = (videoSpeed * 10 - 1) / 10;
+                if (speed >= 0.5) {
+                  videoRef.current.playbackRate = speed;
+                  setVideoSpeed(videoRef.current.playbackRate);
+                }
+              }}
+            >
+              <FastRewindIcon /> -0.1
+            </Fab>
+            {playStatus === "playing" && (
+              <Fab
+                className={styles.button}
+                onClick={() => {
+                  changeState("paused");
+                }}
+              >
+                <PauseIcon />
+              </Fab>
+            )}
+            {playStatus === "paused" && (
+              <Fab
+                className={styles.button}
+                onClick={() => {
+                  changeState("playing");
+                }}
+              >
+                <PlayArrowIcon />
+              </Fab>
+            )}
+            <Fab
+              className={styles.ebutton}
+              variant="extended"
+              onClick={() => {
+                const speed = (videoSpeed * 10 + 1) / 10;
+                if (speed <= 1.5) {
+                  videoRef.current.playbackRate = speed;
+                  setVideoSpeed(videoRef.current.playbackRate);
+                }
+              }}
+            >
+              + 0.1
+              <FastForwardIcon />
+            </Fab>
+          </div>
+          <span className={styles.time_value}>x{videoSpeed}</span>
+          <div className={styles.sound_box}>
+            <VolumeDownIcon className={styles.vicon} />
+            <Slider
+              className={styles.sound_bar}
+              defaultValue={100}
+              aria-label="Default"
+              valueLabelDisplay="auto"
+              onChange={(event: Event, newValue: number) => {
+                _setVolumeProgress(newValue);
+                videoRef.current.volume = volumeProgress / 100;
+              }}
+            />
+            <VolumeUpIcon className={styles.vicon} />
+          </div>
+        </div>
       </div>
     </>
   );

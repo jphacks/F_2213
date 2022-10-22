@@ -5,12 +5,11 @@
 
 
 .progress {
-  position: absolute;
+  position: absolute !important;
   width: 90%;
   left: 50%;
   bottom: 25px;
   transform: translate(-50%, 0);
-
 }
 
 
