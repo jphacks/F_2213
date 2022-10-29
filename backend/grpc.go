@@ -158,7 +158,11 @@ func RunGrpc() {
 	db = connectDB()
 
 	// 動画生成サービスに接続
-	connect, _ := grpc.Dial("kajikentaro.clear-net.jp:20768", grpc.WithInsecure())
+	MOUSE_GEN_SERVER_URL := getEnv("MOUSE_GEN_SERVER_URL", "")
+	if MOUSE_GEN_SERVER_URL == "" {
+		log.Fatalln("MOUSE_GEN_SERVER_URL環境変数が見つかりません")
+	}
+	connect, _ := grpc.Dial(MOUSE_GEN_SERVER_URL, grpc.WithInsecure())
 	defer connect.Close()
 	uploadhalder = pb.NewMouseClient(connect)
 

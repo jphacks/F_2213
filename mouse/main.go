@@ -1,12 +1,15 @@
 package main
 
 import (
+	"archive/zip"
 	"errors"
 	"flag"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"net"
+	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -15,7 +18,67 @@ import (
 	"google.golang.org/grpc"
 )
 
+// unityのmouse-image.exeが存在しない場合はダウンロードする
+func downloadMouseGenerator() error {
+	// zipダウンロード
+	res, err := http.Get("https://github.com/jphacks/F_2213/releases/download/MouseGenerator_win64_1.0/MouseGenerator_win64.zip")
+	if err != nil {
+		return err
+	}
+	fileZip, err := ioutil.TempFile(os.TempDir(), "MouseGenerator.tmp.zip")
+	if err != nil {
+		return err
+	}
+	defer fileZip.Close()
+	_, err = io.Copy(fileZip, res.Body)
+	if err != nil {
+		return err
+	}
+
+	fmt.Println(fileZip.Name())
+	r, err := zip.OpenReader(fileZip.Name())
+	if err != nil {
+		return err
+	}
+	defer r.Close()
+
+	for _, f := range r.File {
+		rc, err := f.Open()
+		if err != nil {
+			return err
+		}
+		defer rc.Close()
+
+		path := filepath.Join("UnityBuild", f.Name)
+		if f.FileInfo().IsDir() {
+			os.MkdirAll(path, f.Mode())
+		} else {
+			f, err := os.OpenFile(
+				path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+			if err != nil {
+				return err
+			}
+			defer f.Close()
+
+			_, err = io.Copy(f, rc)
+			if err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 func main() {
+	if _, err := os.Stat("./UnityBuild/mouse-image.exe"); err != nil {
+		log.Println("UnityBuild/mouse-image.exe が存在しません。ダウンロードを開始します")
+		err = downloadMouseGenerator()
+		if err != nil {
+			log.Fatalln("ダウンロードに失敗しました。", err)
+		}
+		log.Println("ダウンロード完了")
+	}
+
 	// tcpをlistenする
 	flag.Parse()
 	port := flag.Int("port", 20768, "The server port")
